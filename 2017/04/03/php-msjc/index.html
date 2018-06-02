@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://abcdkyd.github.io">
   <title>php面试基础整理 | Jxie的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="php类型转换 (int)$abc intvel($abc) settype($abc,”float”)  php 闭包 类似匿名函数echo和print区别两者都不是函数，echo没有返回值，print只支持一个参数，print会返回true或false">
+  <meta name="description" content="¶php类型转换  (int)$abc intvel($abc) settype($abc,”float”)  ¶php 闭包 类似匿名函数 ¶echo和print区别 两者都不是函数，echo没有返回值，print只支持一个参数，print会返回true或false">
 <meta name="keywords" content="php,面试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="php面试基础整理">
 <meta property="og:url" content="https://abcdkyd.github.io/2017/04/03/php-msjc/index.html">
 <meta property="og:site_name" content="Jxie的个人博客">
-<meta property="og:description" content="php类型转换 (int)$abc intvel($abc) settype($abc,”float”)  php 闭包 类似匿名函数echo和print区别两者都不是函数，echo没有返回值，print只支持一个参数，print会返回true或false">
+<meta property="og:description" content="¶php类型转换  (int)$abc intvel($abc) settype($abc,”float”)  ¶php 闭包 类似匿名函数 ¶echo和print区别 两者都不是函数，echo没有返回值，print只支持一个参数，print会返回true或false">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-06-02T10:50:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="php面试基础整理">
-<meta name="twitter:description" content="php类型转换 (int)$abc intvel($abc) settype($abc,”float”)  php 闭包 类似匿名函数echo和print区别两者都不是函数，echo没有返回值，print只支持一个参数，print会返回true或false">
+<meta name="twitter:description" content="¶php类型转换  (int)$abc intvel($abc) settype($abc,”float”)  ¶php 闭包 类似匿名函数 ¶echo和print区别 两者都不是函数，echo没有返回值，print只支持一个参数，print会返回true或false">
   
     <link rel="alternative" href="/atom.xml" title="Jxie的个人博客" type="application/atom+xml">
   
@@ -165,41 +165,50 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="php类型转换"><a href="#php类型转换" class="headerlink" title="php类型转换"></a>php类型转换</h3><ol>
+        <h3 id="php类型转换"><a class="header-anchor" href="#php类型转换">¶</a>php类型转换</h3>
+<ol>
 <li>(int)$abc</li>
 <li>intvel($abc)</li>
 <li>settype($abc,”float”)</li>
 </ol>
-<h3 id="php-闭包-类似匿名函数"><a href="#php-闭包-类似匿名函数" class="headerlink" title="php 闭包 类似匿名函数"></a>php 闭包 类似匿名函数</h3><h3 id="echo和print区别"><a href="#echo和print区别" class="headerlink" title="echo和print区别"></a>echo和print区别</h3><p>两者都不是函数，echo没有返回值，print只支持一个参数，print会返回true或false<br><a id="more"></a></p>
-<h3 id="php数组函数"><a href="#php数组函数" class="headerlink" title="php数组函数"></a>php数组函数</h3><ul>
-<li><a href="http://www.w3school.com.cn/php/func_array_map.asp" target="_blank" rel="noopener">array_map()</a>    把数组中的每个值发送到用户自定义函数，返回新的值</li>
-<li><a href="http://www.w3school.com.cn/php/func_array_key_exists.asp" target="_blank" rel="noopener">array_key_exists()</a>    检查指定的键名是否存在于数组中</li>
-<li><a href="http://www.w3school.com.cn/php/func_array_merge.asp" target="_blank" rel="noopener">array_merge()</a>    把一个或多个数组合并为一个数组。</li>
-<li><a href="http://www.w3school.com.cn/php/func_array_walk.asp" target="_blank" rel="noopener">array_walk()</a>    对数组中的每个成员应用用户函数</li>
-<li><a href="http://www.w3school.com.cn/php/func_array_filter.asp" target="_blank" rel="noopener">array_filter()</a>    用回调函数过滤数组中的元素。</li>
-<li><a href="http://www.w3school.com.cn/php/func_array_reverse.asp" target="_blank" rel="noopener">array_reverse()</a>    以相反的顺序返回数组。</li>
-<li><a href="http://www.w3school.com.cn/php/func_array_in_array.asp" target="_blank" rel="noopener">in_array()</a>    检查数组中是否存在指定的值。</li>
-<li><a href="http://www.w3school.com.cn/php/func_array_sort.asp" target="_blank" rel="noopener">sort()</a>    对数组排序。</li>
-<li><a href="http://www.w3school.com.cn/php/func_array_rsort.asp" target="_blank" rel="noopener">rsort()</a>    对数组逆向排序。</li>
-<li><a href="http://www.w3school.com.cn/php/func_array_unique.asp" target="_blank" rel="noopener">array_unique()</a>    删除数组中的重复值</li>
-<li><a href="http://www.w3school.com.cn/php/func_array_extract.asp" target="_blank" rel="noopener">extract()</a>    数组(对数字索引数组无效)每对key和value，生成以key为变量名、value为对应值的多组新变量。</li>
+<h3 id="php-闭包-类似匿名函数"><a class="header-anchor" href="#php-闭包-类似匿名函数">¶</a>php 闭包 类似匿名函数</h3>
+<h3 id="echo和print区别"><a class="header-anchor" href="#echo和print区别">¶</a>echo和print区别</h3>
+<p>两者都不是函数，echo没有返回值，print只支持一个参数，print会返回true或false</p>
+<a id="more"></a>
+<h3 id="php数组函数"><a class="header-anchor" href="#php数组函数">¶</a>php数组函数</h3>
+<ul>
+<li><a href="http://www.w3school.com.cn/php/func_array_map.asp" target="_blank" rel="noopener">array_map()</a>	把数组中的每个值发送到用户自定义函数，返回新的值</li>
+<li><a href="http://www.w3school.com.cn/php/func_array_key_exists.asp" target="_blank" rel="noopener">array_key_exists()</a>	检查指定的键名是否存在于数组中</li>
+<li><a href="http://www.w3school.com.cn/php/func_array_merge.asp" target="_blank" rel="noopener">array_merge()</a>	把一个或多个数组合并为一个数组。</li>
+<li><a href="http://www.w3school.com.cn/php/func_array_walk.asp" target="_blank" rel="noopener">array_walk()</a>	对数组中的每个成员应用用户函数</li>
+<li><a href="http://www.w3school.com.cn/php/func_array_filter.asp" target="_blank" rel="noopener">array_filter()</a>	用回调函数过滤数组中的元素。</li>
+<li><a href="http://www.w3school.com.cn/php/func_array_reverse.asp" target="_blank" rel="noopener">array_reverse()</a>	以相反的顺序返回数组。</li>
+<li><a href="http://www.w3school.com.cn/php/func_array_in_array.asp" target="_blank" rel="noopener">in_array()</a>	检查数组中是否存在指定的值。</li>
+<li><a href="http://www.w3school.com.cn/php/func_array_sort.asp" target="_blank" rel="noopener">sort()</a>	对数组排序。</li>
+<li><a href="http://www.w3school.com.cn/php/func_array_rsort.asp" target="_blank" rel="noopener">rsort()</a>	对数组逆向排序。</li>
+<li><a href="http://www.w3school.com.cn/php/func_array_unique.asp" target="_blank" rel="noopener">array_unique()</a>	删除数组中的重复值</li>
+<li><a href="http://www.w3school.com.cn/php/func_array_extract.asp" target="_blank" rel="noopener">extract()</a>	数组(对数字索引数组无效)每对key和value，生成以key为变量名、value为对应值的多组新变量。</li>
 </ul>
-<h3 id="正则"><a href="#正则" class="headerlink" title="正则"></a>正则</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">*  重复0次或多次</span><br><span class="line">+  重复一次或多次</span><br><span class="line">？ 重复0次或一次</span><br><span class="line"></span><br><span class="line">/&lt;(.*)&gt;.*&lt;\/\1&gt;|&lt;(.*) \/&gt;/    匹配HTML标记的正则表达式</span><br><span class="line"></span><br><span class="line">/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/   匹配邮箱格式</span><br><span class="line"></span><br><span class="line">非负整数：^\d+$ </span><br><span class="line">正整数：^[0-9]*[1-9][0-9]*$ </span><br><span class="line">非正整数：^((-\d+)|(0+))$ </span><br><span class="line">负整数：^-[0-9]*[1-9][0-9]*$ </span><br><span class="line">整数：^-?\d+$ </span><br><span class="line">非负浮点数：^\d+(\.\d+)?$ </span><br><span class="line">正浮点数：^((0-9)+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*))$ </span><br><span class="line">非正浮点数：^((-\d+\.\d+)?)|(0+(\.0+)?))$ </span><br><span class="line">负浮点数：^(-((正浮点数正则式)))$ </span><br><span class="line">英文字符串：^[A-Za-z]+$ </span><br><span class="line">英文大写串：^[A-Z]+$ </span><br><span class="line">英文小写串：^[a-z]+$ </span><br><span class="line">英文字符数字串：^[A-Za-z0-9]+$ </span><br><span class="line">英数字加下划线串：^\w+$ </span><br><span class="line">E-mail地址：^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$ </span><br><span class="line">URL：^[a-zA-Z]+://(\w+(-\w+)*)(\.(\w+(-\w+)*))*(\?\s*)?$ </span><br><span class="line">或：^http:\/\/[A-Za-z0-9]+\.[A-Za-z0-9]+[\/=\?%\-&amp;_~`@[\]\&apos;:+!]*([^&lt;&gt;\&quot;\&quot;])*$ </span><br><span class="line">邮政编码：^[1-9]\d&#123;5&#125;$ </span><br><span class="line">中文：^[\u0391-\uFFE5]+$ </span><br><span class="line">电话号码：^((\(\d&#123;2,3&#125;\))|(\d&#123;3&#125;\-))?(\(0\d&#123;2,3&#125;\)|0\d&#123;2,3&#125;-)?[1-9]\d&#123;6,7&#125;(\-\d&#123;1,4&#125;)?$ </span><br><span class="line">手机号码：^((\(\d&#123;2,3&#125;\))|(\d&#123;3&#125;\-))?13\d&#123;9&#125;$ </span><br><span class="line">双字节字符(包括汉字在内)：^\x00-\xff </span><br><span class="line">匹配首尾空格：(^\s*)|(\s*$)（像vbscript那样的trim函数） </span><br><span class="line">匹配HTML标记：&lt;(.*)&gt;.*&lt;\/\1&gt;|&lt;(.*) \/&gt; </span><br><span class="line">匹配空行：\n[\s| ]*\r </span><br><span class="line">提取信息中的网络链接：(h|H)(r|R)(e|E)(f|F) *= *(&apos;|&quot;)?(\w|\\|\/|\.)+(&apos;|&quot;| *|&gt;)? </span><br><span class="line">提取信息中的邮件地址：\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)* </span><br><span class="line">提取信息中的图片链接：(s|S)(r|R)(c|C) *= *(&apos;|&quot;)?(\w|\\|\/|\.)+(&apos;|&quot;| *|&gt;)? </span><br><span class="line">提取信息中的IP地址：(\d+)\.(\d+)\.(\d+)\.(\d+) </span><br><span class="line">提取信息中的中国手机号码：(86)*0*13\d&#123;9&#125; </span><br><span class="line">提取信息中的中国固定电话号码：(\(\d&#123;3,4&#125;\)|\d&#123;3,4&#125;-|\s)?\d&#123;8&#125; </span><br><span class="line">提取信息中的中国电话号码（包括移动和固定电话）：(\(\d&#123;3,4&#125;\)|\d&#123;3,4&#125;-|\s)?\d&#123;7,14&#125; </span><br><span class="line">提取信息中的中国邮政编码：[1-9]&#123;1&#125;(\d+)&#123;5&#125; </span><br><span class="line">提取信息中的浮点数（即小数）：(-?\d*)\.?\d+ </span><br><span class="line">提取信息中的任何数字 ：(-?\d*)(\.\d+)? </span><br><span class="line">IP：(\d+)\.(\d+)\.(\d+)\.(\d+) </span><br><span class="line">电话区号：/^0\d&#123;2,3&#125;$/ </span><br><span class="line">腾讯QQ号：^[1-9]*[1-9][0-9]*$ </span><br><span class="line">帐号(字母开头，允许5-16字节，允许字母数字下划线)：^[a-zA-Z][a-zA-Z0-9_]&#123;4,15&#125;$ </span><br><span class="line">中文、英文、数字及下划线：^[\u4e00-\u9fa5_a-zA-Z0-9]+$</span><br></pre></td></tr></table></figure>
-<h3 id="php异常处理"><a href="#php异常处理" class="headerlink" title="php异常处理"></a>php异常处理</h3><blockquote>
+<h3 id="正则"><a class="header-anchor" href="#正则">¶</a>正则</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">*  重复0次或多次</span><br><span class="line">+  重复一次或多次</span><br><span class="line">？ 重复0次或一次</span><br><span class="line"></span><br><span class="line">/&lt;(.*)&gt;.*&lt;\/\1&gt;|&lt;(.*) \/&gt;/    匹配HTML标记的正则表达式</span><br><span class="line"></span><br><span class="line">/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/   匹配邮箱格式</span><br><span class="line"></span><br><span class="line">非负整数：^\d+$ </span><br><span class="line">正整数：^[0-9]*[1-9][0-9]*$ </span><br><span class="line">非正整数：^((-\d+)|(0+))$ </span><br><span class="line">负整数：^-[0-9]*[1-9][0-9]*$ </span><br><span class="line">整数：^-?\d+$ </span><br><span class="line">非负浮点数：^\d+(\.\d+)?$ </span><br><span class="line">正浮点数：^((0-9)+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*))$ </span><br><span class="line">非正浮点数：^((-\d+\.\d+)?)|(0+(\.0+)?))$ </span><br><span class="line">负浮点数：^(-((正浮点数正则式)))$ </span><br><span class="line">英文字符串：^[A-Za-z]+$ </span><br><span class="line">英文大写串：^[A-Z]+$ </span><br><span class="line">英文小写串：^[a-z]+$ </span><br><span class="line">英文字符数字串：^[A-Za-z0-9]+$ </span><br><span class="line">英数字加下划线串：^\w+$ </span><br><span class="line">E-mail地址：^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$ </span><br><span class="line">URL：^[a-zA-Z]+://(\w+(-\w+)*)(\.(\w+(-\w+)*))*(\?\s*)?$ </span><br><span class="line">或：^http:\/\/[A-Za-z0-9]+\.[A-Za-z0-9]+[\/=\?%\-&amp;_~`@[\]\&apos;:+!]*([^&lt;&gt;\&quot;\&quot;])*$ </span><br><span class="line">邮政编码：^[1-9]\d&#123;5&#125;$ </span><br><span class="line">中文：^[\u0391-\uFFE5]+$ </span><br><span class="line">电话号码：^((\(\d&#123;2,3&#125;\))|(\d&#123;3&#125;\-))?(\(0\d&#123;2,3&#125;\)|0\d&#123;2,3&#125;-)?[1-9]\d&#123;6,7&#125;(\-\d&#123;1,4&#125;)?$ </span><br><span class="line">手机号码：^((\(\d&#123;2,3&#125;\))|(\d&#123;3&#125;\-))?13\d&#123;9&#125;$ </span><br><span class="line">双字节字符(包括汉字在内)：^\x00-\xff </span><br><span class="line">匹配首尾空格：(^\s*)|(\s*$)（像vbscript那样的trim函数） </span><br><span class="line">匹配HTML标记：&lt;(.*)&gt;.*&lt;\/\1&gt;|&lt;(.*) \/&gt; </span><br><span class="line">匹配空行：\n[\s| ]*\r </span><br><span class="line">提取信息中的网络链接：(h|H)(r|R)(e|E)(f|F) *= *(&apos;|&quot;)?(\w|\\|\/|\.)+(&apos;|&quot;| *|&gt;)? </span><br><span class="line">提取信息中的邮件地址：\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)* </span><br><span class="line">提取信息中的图片链接：(s|S)(r|R)(c|C) *= *(&apos;|&quot;)?(\w|\\|\/|\.)+(&apos;|&quot;| *|&gt;)? </span><br><span class="line">提取信息中的IP地址：(\d+)\.(\d+)\.(\d+)\.(\d+) </span><br><span class="line">提取信息中的中国手机号码：(86)*0*13\d&#123;9&#125; </span><br><span class="line">提取信息中的中国固定电话号码：(\(\d&#123;3,4&#125;\)|\d&#123;3,4&#125;-|\s)?\d&#123;8&#125; </span><br><span class="line">提取信息中的中国电话号码（包括移动和固定电话）：(\(\d&#123;3,4&#125;\)|\d&#123;3,4&#125;-|\s)?\d&#123;7,14&#125; </span><br><span class="line">提取信息中的中国邮政编码：[1-9]&#123;1&#125;(\d+)&#123;5&#125; </span><br><span class="line">提取信息中的浮点数（即小数）：(-?\d*)\.?\d+ </span><br><span class="line">提取信息中的任何数字 ：(-?\d*)(\.\d+)? </span><br><span class="line">IP：(\d+)\.(\d+)\.(\d+)\.(\d+) </span><br><span class="line">电话区号：/^0\d&#123;2,3&#125;$/ </span><br><span class="line">腾讯QQ号：^[1-9]*[1-9][0-9]*$ </span><br><span class="line">帐号(字母开头，允许5-16字节，允许字母数字下划线)：^[a-zA-Z][a-zA-Z0-9_]&#123;4,15&#125;$ </span><br><span class="line">中文、英文、数字及下划线：^[\u4e00-\u9fa5_a-zA-Z0-9]+$</span><br></pre></td></tr></table></figure>
+<h3 id="php异常处理"><a class="header-anchor" href="#php异常处理">¶</a>php异常处理</h3>
+<blockquote>
 <p>error错误码1，warning错误码2，notice错误码8  出现error了系统是挂掉了，但是warning和notice是我们可以捕捉并处理的</p>
 </blockquote>
 <p>php.ini中的配置指令修改：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. error_reporting  =  E_ALL;		//将会向PHP报告发生的每个错误   </span><br><span class="line">2. display_errors = Off;	//不显示满足上条 指令所定义规则的所有错误报告   </span><br><span class="line">3. log_errors = On;		//决定日志语句记录的位置   </span><br><span class="line">4. log_errors_max_len = 1024;		//设置每个日志项的最大长度   </span><br><span class="line">5. error_log = /usr/local/error.log;		//指定产生的 错误报告写入的日志文件位置</span><br></pre></td></tr></table></figure>
-<h3 id="php日期处理"><a href="#php日期处理" class="headerlink" title="php日期处理"></a>php日期处理</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">date_default_timezone_set(); 函数设置用在脚本中所有日期/时间函数的默认时区。</span><br><span class="line">date(‘Y-m-d H:i:s’);</span><br><span class="line">strtotime(‘<span class="number">2017</span><span class="number">-3</span><span class="number">-8</span> <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span>’);</span><br><span class="line">date(<span class="string">'w'</span>, strtotime(<span class="string">'2017-3-5'</span>));  <span class="comment">// 0  0是星期天</span></span><br><span class="line">date(<span class="string">'l'</span>, strtotime(<span class="string">'2017-3-5'</span>));   <span class="comment">// Sunday</span></span><br></pre></td></tr></table></figure>
-<h3 id="php文件处理"><a href="#php文件处理" class="headerlink" title="php文件处理"></a>php文件处理</h3><p>文件类型</p>
+<h3 id="php日期处理"><a class="header-anchor" href="#php日期处理">¶</a>php日期处理</h3>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">date_default_timezone_set(); 函数设置用在脚本中所有日期/时间函数的默认时区。</span><br><span class="line">date(‘Y-m-d H:i:s’);</span><br><span class="line">strtotime(‘<span class="number">2017</span><span class="number">-3</span><span class="number">-8</span> <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span>’);</span><br><span class="line">date(<span class="string">'w'</span>, strtotime(<span class="string">'2017-3-5'</span>));  <span class="comment">// 0  0是星期天</span></span><br><span class="line">date(<span class="string">'l'</span>, strtotime(<span class="string">'2017-3-5'</span>));   <span class="comment">// Sunday</span></span><br></pre></td></tr></table></figure>
+<h3 id="php文件处理"><a class="header-anchor" href="#php文件处理">¶</a>php文件处理</h3>
+<p>文件类型</p>
 <blockquote>
 <ul>
 <li>char: 字符设备，I/O （输入输出中）以字符为单位的设备， 例如键盘，打印机等</li>
-<li>dir:  目录也是文件的一种/目录文件</li>
+<li>dir:  目录也是文件的一种/目录文件</li>
 <li>fifo: 信息管道，从一个程序传输到另一个进程</li>
 <li>file: 普通的文件类型如文本文件，可执行文件</li>
 <li>link: 链接文件，相当于windows下的快捷方式</li>
-<li>unknown  ：未知类型</li>
+<li>unknown  ：未知类型</li>
 </ul>
 </blockquote>
 <p>文件属性处理函数</p>
@@ -215,14 +224,18 @@
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">substr(strrchr($file, <span class="string">'.'</span>), <span class="number">1</span>); </span><br><span class="line">substr($file, strrpos($file, <span class="string">'.'</span>)+<span class="number">1</span>); </span><br><span class="line">end(explode(<span class="string">'.'</span>, $file)); </span><br><span class="line"></span><br><span class="line">$info = pathinfo($file);   <span class="keyword">return</span> $info[<span class="string">'extension'</span>];</span><br><span class="line"></span><br><span class="line">pathinfo($file, PATHINFO_EXTENSION);</span><br><span class="line">PATHINFO_DIRNAME - 目录 </span><br><span class="line">PATHINFO_BASENAME - 文件名（含扩展名） </span><br><span class="line">PATHINFO_EXTENSION - 扩展名 </span><br><span class="line">PATHINFO_FILENAME - 文件名（不含扩展名，PHP&gt;<span class="number">5.2</span>） </span><br><span class="line"><span class="comment">//这四个常量的值分别是1、2、4、8</span></span><br></pre></td></tr></table></figure>
 <p>会话控制</p>
 <blockquote>
-<h4 id="cookie-和-session"><a href="#cookie-和-session" class="headerlink" title="cookie 和 session"></a>cookie 和 session</h4><p>PHP的session会话是通过唯一的会话ID来驱动的，PHP的会话ID一般保存在用户机器的cookie中。客户端浏览器禁用cookie后会使session失效，这时可以通过改写URL的方法，就是在URL上添加会话ID来进行会话控制。</p>
+<h4 id="cookie-和-session"><a class="header-anchor" href="#cookie-和-session">¶</a>cookie 和 session</h4>
+<p>PHP的session会话是通过唯一的会话ID来驱动的，PHP的会话ID一般保存在用户机器的cookie中。客户端浏览器禁用cookie后会使session失效，这时可以通过改写URL的方法，就是在URL上添加会话ID来进行会话控制。</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Setcookie(string name, string value, int expire,string path, string domain, int secure); </span><br><span class="line">SetCookie(&quot;Cookie&quot;, &quot;cookievalue&quot;,time()+3600, &quot;/forum&quot;, &quot;.learnphp.cn&quot;, 1);</span><br><span class="line">SetCookie(&quot;Cookie&quot;, &quot;&quot;);		//删除cookie</span><br><span class="line">SetCookie(&quot;Cookie&quot;, &quot;value&quot; , time()-1 / time() );		//删除cookie</span><br></pre></td></tr></table></figure>
 <p>其中name是cookie变量名称标识，你在php中将能象使用普通变量名相同来用他引用cookie变量。value是cookie变量的初始值，expire 表示该cookie变量的有效时间；path 为该cookie变量的相关路径；domain 表示cookie变量的网站；secure 则需在 https 的安全传输时才有效。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">session_start();        //初始化session.需在文件头部</span><br><span class="line">$_SESSION[name]=value;  //配置Seeeion</span><br><span class="line">echo $_SESSION[name];    //使用session</span><br><span class="line">isset($_SESSION[name]);   // 判断</span><br><span class="line">unset($_SESSION[name]);   //删除</span><br><span class="line">session_destroy()；       //消耗所有session</span><br></pre></td></tr></table></figure>
-<h3 id="php安全处理"><a href="#php安全处理" class="headerlink" title="php安全处理"></a>php安全处理</h3><p>防Sql注入，防止Xss攻击，防盗链，防CSRF等</p>
-<h3 id="php字符串处理函数"><a href="#php字符串处理函数" class="headerlink" title="php字符串处理函数"></a>php字符串处理函数</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">int strlen(string str)			<span class="comment">// 获取字符长度</span></span><br><span class="line">string strtolower(string str)		<span class="comment">// 转换成小写</span></span><br><span class="line">string strtoupper(string str)	<span class="comment">// 转换成大写</span></span><br><span class="line">string ucfirst(string str)		<span class="comment">// 第一个字符大写</span></span><br><span class="line">string ucword(string str)		<span class="comment">// 每个单词变成大写</span></span><br><span class="line"><span class="keyword">array</span> explode(string separator,string str[,int limit])	<span class="comment">// 字符转数组</span></span><br><span class="line">string implode(string delimiter, <span class="keyword">array</span> <span class="keyword">array</span>)		<span class="comment">// 数组拼接成字符</span></span><br><span class="line">int strrpos(string str,char substr[,offset])			<span class="comment">// 字符最后一次出现的位置</span></span><br><span class="line">mixed str_replace(string occurrence,mixed replacement,mixed str[,int count])	<span class="comment">// 字符替换</span></span><br><span class="line">string substr(string str,int start[,ing length])			<span class="comment">// 字符截取</span></span><br><span class="line">string trim(string str[,string charliset])				<span class="comment">// 去掉两端字符</span></span><br></pre></td></tr></table></figure>
-<h3 id="网络状态码"><a href="#网络状态码" class="headerlink" title="网络状态码"></a>网络状态码</h3><p><strong>1xx（临时响应）表示临时响应并需要请求者继续执行操作的状态代码。</strong></p>
+<h3 id="php安全处理"><a class="header-anchor" href="#php安全处理">¶</a>php安全处理</h3>
+<p>防Sql注入，防止Xss攻击，防盗链，防CSRF等</p>
+<h3 id="php字符串处理函数"><a class="header-anchor" href="#php字符串处理函数">¶</a>php字符串处理函数</h3>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">int strlen(string str)			<span class="comment">// 获取字符长度</span></span><br><span class="line">string strtolower(string str)		<span class="comment">// 转换成小写</span></span><br><span class="line">string strtoupper(string str)	<span class="comment">// 转换成大写</span></span><br><span class="line">string ucfirst(string str)		<span class="comment">// 第一个字符大写</span></span><br><span class="line">string ucword(string str)		<span class="comment">// 每个单词变成大写</span></span><br><span class="line"><span class="keyword">array</span> explode(string separator,string str[,int limit])	<span class="comment">// 字符转数组</span></span><br><span class="line">string implode(string delimiter, <span class="keyword">array</span> <span class="keyword">array</span>)		<span class="comment">// 数组拼接成字符</span></span><br><span class="line">int strrpos(string str,char substr[,offset])			<span class="comment">// 字符最后一次出现的位置</span></span><br><span class="line">mixed str_replace(string occurrence,mixed replacement,mixed str[,int count])	<span class="comment">// 字符替换</span></span><br><span class="line">string substr(string str,int start[,ing length])			<span class="comment">// 字符截取</span></span><br><span class="line">string trim(string str[,string charliset])				<span class="comment">// 去掉两端字符</span></span><br></pre></td></tr></table></figure>
+<h3 id="网络状态码"><a class="header-anchor" href="#网络状态码">¶</a>网络状态码</h3>
+<p><strong>1xx（临时响应）表示临时响应并需要请求者继续执行操作的状态代码。</strong></p>
 <ul>
 <li>100 （继续） 请求者应当继续提出请求。 服务器返回此代码表示已收到请求的第一部分，正在等待其余部分</li>
 <li>101 （切换协议） 请求者已要求服务器切换协议，服务器已确认并准备切换。</li>
@@ -263,7 +276,9 @@
 <li>505 （HTTP 版本不受支持） 服务器不支持请求中所用的 HTTP 协议版本。</li>
 </ul>
 <p><a href="http://tool.oschina.net/commons?type=5" target="_blank" rel="noopener">http://tool.oschina.net/commons?type=5</a></p>
-<h3 id="URL的处理函数"><a href="#URL的处理函数" class="headerlink" title="URL的处理函数"></a>URL的处理函数</h3><p>array parse_url (string url)<br>数组中的键值有：</p>
+<h3 id="url的处理函数"><a class="header-anchor" href="#url的处理函数">¶</a>URL的处理函数</h3>
+<p>array parse_url (string url)<br>
+数组中的键值有：</p>
 <ul>
 <li>scheme - 如 http</li>
 <li>host</li>
@@ -502,7 +517,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">about</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -511,14 +534,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">面试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">about</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
             
             <div class="clearfix"></div>

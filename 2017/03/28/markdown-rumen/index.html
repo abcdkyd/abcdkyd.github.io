@@ -167,14 +167,36 @@
       
         <p>Markdown是一种轻量级的标记语言，可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。</p>
 <a id="more"></a>
-<h1 id="简要规则"><a href="#简要规则" class="headerlink" title="简要规则"></a>简要规则</h1><h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><p>1.在需要作为标题的内容前添加 <code>#</code><br>一共6级标题，右边可补充等量或不等量闭合符号，标题等级由前面 <code>#</code> 数量决定<br>如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br><span class="line">### 三级标题 ####</span><br></pre></td></tr></table></figure></p>
-<p>2.在标题下添加两个以上的 <code>=</code> （最高阶标题） 和 <code>-</code> （第二阶标题）<br>如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">一级标题</span><br><span class="line">====</span><br><span class="line">二级标题</span><br><span class="line">----</span><br></pre></td></tr></table></figure></p>
-<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><p>在需要引用的内容前添加 <code>&gt;</code><br>如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; 这是引用的内容</span><br></pre></td></tr></table></figure></p>
-<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><p>无序列表使用 <code>*</code>、<code>-</code> 和 <code>+</code>，有序列表使用数字加英文句点 <code>1.</code><br>如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">* 1</span><br><span class="line">* 2</span><br><span class="line">* 3</span><br><span class="line"> </span><br><span class="line">- 1</span><br><span class="line">- 2</span><br><span class="line">- 3</span><br><span class="line"></span><br><span class="line">1. 1</span><br><span class="line">2. 2</span><br><span class="line">3. 3</span><br></pre></td></tr></table></figure></p>
-<h3 id="粗体和斜体"><a href="#粗体和斜体" class="headerlink" title="粗体和斜体"></a>粗体和斜体</h3><p>在需要设置的文字两端添加 <code>*</code> 或 <code>_</code><br>斜体1个 <code>*斜体*、_斜体_</code>，粗体2个 <code>**粗体**、__粗体__</code><br>如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">***斜体加粗***</span><br><span class="line">~~删除线~~</span><br></pre></td></tr></table></figure></p>
-<p><strong><em>斜体加粗</em></strong><br><del>删除线</del></p>
-<h3 id="分隔线"><a href="#分隔线" class="headerlink" title="分隔线"></a>分隔线</h3><p>在一行中用三个以上的 <code>*</code>、 <code>-</code>、 <code>_</code> 来建立一个分隔线，行内不能有其他东西。也可以在符号号中间插入空格。<br>如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">***</span><br><span class="line">* * *</span><br><span class="line">- - -</span><br><span class="line">______</span><br></pre></td></tr></table></figure></p>
-<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">|title|name|</span><br><span class="line">|---:|:--:|</span><br><span class="line">|title1|name1|</span><br></pre></td></tr></table></figure>
+<h1>简要规则</h1>
+<h3 id="标题"><a class="header-anchor" href="#标题">¶</a>标题</h3>
+<p>1.在需要作为标题的内容前添加 <code>#</code><br>
+一共6级标题，右边可补充等量或不等量闭合符号，标题等级由前面 <code>#</code> 数量决定<br>
+如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br><span class="line">### 三级标题 ####</span><br></pre></td></tr></table></figure>
+<p>2.在标题下添加两个以上的 <code>=</code> （最高阶标题） 和 <code>-</code> （第二阶标题）<br>
+如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">一级标题</span><br><span class="line">====</span><br><span class="line">二级标题</span><br><span class="line">----</span><br></pre></td></tr></table></figure>
+<h3 id="引用"><a class="header-anchor" href="#引用">¶</a>引用</h3>
+<p>在需要引用的内容前添加 <code>&gt;</code><br>
+如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; 这是引用的内容</span><br></pre></td></tr></table></figure>
+<h3 id="列表"><a class="header-anchor" href="#列表">¶</a>列表</h3>
+<p>无序列表使用 <code>*</code>、<code>-</code> 和 <code>+</code>，有序列表使用数字加英文句点 <code>1.</code><br>
+如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">* 1</span><br><span class="line">* 2</span><br><span class="line">* 3</span><br><span class="line"> </span><br><span class="line">- 1</span><br><span class="line">- 2</span><br><span class="line">- 3</span><br><span class="line"></span><br><span class="line">1. 1</span><br><span class="line">2. 2</span><br><span class="line">3. 3</span><br></pre></td></tr></table></figure>
+<h3 id="粗体和斜体"><a class="header-anchor" href="#粗体和斜体">¶</a>粗体和斜体</h3>
+<p>在需要设置的文字两端添加 <code>*</code> 或 <code>_</code><br>
+斜体1个 <code>*斜体*、_斜体_</code>，粗体2个 <code>**粗体**、__粗体__</code><br>
+如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">***斜体加粗***</span><br><span class="line">~~删除线~~</span><br></pre></td></tr></table></figure>
+<p><strong><em>斜体加粗</em></strong><br>
+<s>删除线</s></p>
+<h3 id="分隔线"><a class="header-anchor" href="#分隔线">¶</a>分隔线</h3>
+<p>在一行中用三个以上的 <code>*</code>、 <code>-</code>、 <code>_</code> 来建立一个分隔线，行内不能有其他东西。也可以在符号号中间插入空格。<br>
+如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">***</span><br><span class="line">* * *</span><br><span class="line">- - -</span><br><span class="line">______</span><br></pre></td></tr></table></figure>
+<h3 id="表格"><a class="header-anchor" href="#表格">¶</a>表格</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">|title|name|</span><br><span class="line">|---:|:--:|</span><br><span class="line">|title1|name1|</span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -189,20 +211,38 @@
 </tr>
 </tbody>
 </table>
-<h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p>链接有两种方式，内联方式和引用方式<br>内联方式：<br><code>[]</code> 里面是链接的文字，<code>()</code> 里面是链接的地址<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">这是[百度](http://www.baidu.com)的链接</span><br></pre></td></tr></table></figure></p>
+<h3 id="链接"><a class="header-anchor" href="#链接">¶</a>链接</h3>
+<p>链接有两种方式，内联方式和引用方式<br>
+内联方式：<br>
+<code>[]</code> 里面是链接的文字，<code>()</code> 里面是链接的地址</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">这是[百度](http://www.baidu.com)的链接</span><br></pre></td></tr></table></figure>
 <p>这是<a href="http://www.baidu.com" target="_blank" rel="noopener">百度</a>的链接</p>
-<p>引用方式：<br><code>[]</code> 里面是引用标记，接着是链接的地址，最后可以加上链接的title属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[百度一下][baidu]、[必应][biying]</span><br><span class="line">[baidu]: http://www.baidu.com &quot;鼠标停留显示的文字&quot;</span><br><span class="line">[biying]: http://cn.bing.com &quot;鼠标停留显示的文字&quot;</span><br></pre></td></tr></table></figure></p>
-<p>[百度一下][baidu]、[必应][biying]<br>[baidu]: <a href="http://www.baidu.com" target="_blank" rel="noopener">http://www.baidu.com</a> “鼠标停留显示的文字”<br>[biying]: <a href="http://cn.bing.com" target="_blank" rel="noopener">http://cn.bing.com</a> “鼠标停留显示的文字”</p>
-<h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><p>图片跟链接格式相似，同样有内联方式和引用方式，区别是图片前面多一个 <code>!</code><br>内联方式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![Alt text](/path/to/img.jpg &quot;Optional title&quot;)</span><br></pre></td></tr></table></figure></p>
-<p>引用方式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">![Alt text][id]</span><br><span class="line">[id]: url/to/image  &quot;Optional title&quot;</span><br></pre></td></tr></table></figure></p>
-<h3 id="Emoji-表情"><a href="#Emoji-表情" class="headerlink" title="Emoji 表情"></a>Emoji 表情</h3><p><code>:blush:</code> :blush: <code>:smile:</code> :smile: <code>:joy:</code> :joy: <code>:sob:</code> :sob:</p>
+<p>引用方式：<br>
+<code>[]</code> 里面是引用标记，接着是链接的地址，最后可以加上链接的title属性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[百度一下][baidu]、[必应][biying]</span><br><span class="line">[baidu]: http://www.baidu.com &quot;鼠标停留显示的文字&quot;</span><br><span class="line">[biying]: http://cn.bing.com &quot;鼠标停留显示的文字&quot;</span><br></pre></td></tr></table></figure>
+<p>[百度一下][baidu]、[必应][biying]<br>
+[baidu]: <a href="http://www.baidu.com" target="_blank" rel="noopener">http://www.baidu.com</a> “鼠标停留显示的文字”<br>
+[biying]: <a href="http://cn.bing.com" target="_blank" rel="noopener">http://cn.bing.com</a> “鼠标停留显示的文字”</p>
+<h3 id="图片"><a class="header-anchor" href="#图片">¶</a>图片</h3>
+<p>图片跟链接格式相似，同样有内联方式和引用方式，区别是图片前面多一个 <code>!</code><br>
+内联方式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![Alt text](/path/to/img.jpg &quot;Optional title&quot;)</span><br></pre></td></tr></table></figure>
+<p>引用方式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">![Alt text][id]</span><br><span class="line">[id]: url/to/image  &quot;Optional title&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="emoji-表情"><a class="header-anchor" href="#emoji-表情">¶</a>Emoji 表情</h3>
+<p><code>:blush:</code> 😊 <code>:smile:</code> 😄 <code>:joy:</code> 😂 <code>:sob:</code> 😭</p>
 <p><a href="https://github.com/abcdkyd/abcdkyd.github.io/blob/hexo/emoji.md" target="_blank" rel="noopener">表情名称参考</a></p>
 <p><strong>让hexo支持emoji表情</strong></p>
-<p>  markdown 变成html的转换器叫做<code>markdown渲染器</code>，在Hexo中默认的markdown渲染器 使用的是<code>hexo-renderer-marked</code>,是Hexo版本，这个渲染器不支持插件扩展。<br>  另外一个 markdown 渲染器 <code>hexo-renderer-markdown-it</code>，这个支持插件配置，可以使用 markwon-it-emoji插件来支持emoji。需要将原来的 marked 渲染器换成 markdown-it渲染器。</p>
+<p>markdown 变成html的转换器叫做<code>markdown渲染器</code>，在Hexo中默认的markdown渲染器 使用的是<code>hexo-renderer-marked</code>,是Hexo版本，这个渲染器不支持插件扩展。<br>
+另外一个 markdown 渲染器 <code>hexo-renderer-markdown-it</code>，这个支持插件配置，可以使用 markwon-it-emoji插件来支持emoji。需要将原来的 marked 渲染器换成 markdown-it渲染器。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># cd Documents/blog</span><br><span class="line"># npm un hexo-renderer-marked --save</span><br><span class="line"># npm i hexo-renderer-markdown-it --save</span><br></pre></td></tr></table></figure>
-<p>安装markdown-it-emoji插件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install markdown-it-emoji --save</span><br></pre></td></tr></table></figure></p>
-<p>配置根目录下的_config.yml，添加以下配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"># Markdown-it config</span><br><span class="line">## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki</span><br><span class="line">markdown:</span><br><span class="line">  render:</span><br><span class="line">    html: true</span><br><span class="line">    xhtmlOut: false</span><br><span class="line">    breaks: true</span><br><span class="line">    linkify: true</span><br><span class="line">    typographer: true</span><br><span class="line">    quotes: &apos;“”‘’&apos;</span><br><span class="line">  plugins:</span><br><span class="line">    - markdown-it-abbr</span><br><span class="line">    - markdown-it-footnote</span><br><span class="line">    - markdown-it-ins</span><br><span class="line">    - markdown-it-sub</span><br><span class="line">    - markdown-it-sup</span><br><span class="line">    - markdown-it-emoji  # add emoji</span><br><span class="line">  anchors:</span><br><span class="line">    level: 2</span><br><span class="line">    collisionSuffix: &apos;v&apos;</span><br><span class="line">    permalink: true</span><br><span class="line">    permalinkClass: header-anchor</span><br><span class="line">    permalinkSymbol: ¶</span><br></pre></td></tr></table></figure></p>
-<h3 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h3><p>用 <code>`</code> 标记简单的代码行<br>用 <code>``</code>  <code>或 4个空格， 标记代码段，</code> <code>`后面可以跟代码类型来实现高亮 如：`</code> php `。</p>
+<p>安装markdown-it-emoji插件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install markdown-it-emoji --save</span><br></pre></td></tr></table></figure>
+<p>配置根目录下的_config.yml，添加以下配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"># Markdown-it config</span><br><span class="line">## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki</span><br><span class="line">markdown:</span><br><span class="line">  render:</span><br><span class="line">    html: true</span><br><span class="line">    xhtmlOut: false</span><br><span class="line">    breaks: true</span><br><span class="line">    linkify: true</span><br><span class="line">    typographer: true</span><br><span class="line">    quotes: &apos;“”‘’&apos;</span><br><span class="line">  plugins:</span><br><span class="line">    - markdown-it-abbr</span><br><span class="line">    - markdown-it-footnote</span><br><span class="line">    - markdown-it-ins</span><br><span class="line">    - markdown-it-sub</span><br><span class="line">    - markdown-it-sup</span><br><span class="line">    - markdown-it-emoji  # add emoji</span><br><span class="line">  anchors:</span><br><span class="line">    level: 2</span><br><span class="line">    collisionSuffix: &apos;v&apos;</span><br><span class="line">    permalink: true</span><br><span class="line">    permalinkClass: header-anchor</span><br><span class="line">    permalinkSymbol: ¶</span><br></pre></td></tr></table></figure>
+<h3 id="代码块"><a class="header-anchor" href="#代码块">¶</a>代码块</h3>
+<p>用 <code>`</code> 标记简单的代码行<br>
+用 <code>```</code> 或 4个空格， 标记代码段，<code>```</code>后面可以跟代码类型来实现高亮 如：<code>``` php</code>。</p>
 
       
 
@@ -434,7 +474,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">about</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -443,14 +491,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">面试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">about</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
             
             <div class="clearfix"></div>
