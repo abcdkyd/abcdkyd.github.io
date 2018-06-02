@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Jxie的个人博客">
 <meta property="og:description" content="大概流程   创建仓库，abcdkyd.github.io； 创建两个分支：master 与 hexo； 设置hexo为默认分支（因为我们只需要手动管理这个分支上的Hexo网站文件）； 使用git clone git@github.com:abcdkyd/abcdkyd.github.io.git拷贝仓库； 在本地 abcdkyd.github.io 文件夹下通过Git bash依次执行npm i">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-02T11:18:31.000Z">
+<meta property="og:updated_time" content="2018-06-02T12:17:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo+github 创建个人博客">
 <meta name="twitter:description" content="大概流程   创建仓库，abcdkyd.github.io； 创建两个分支：master 与 hexo； 设置hexo为默认分支（因为我们只需要手动管理这个分支上的Hexo网站文件）； 使用git clone git@github.com:abcdkyd/abcdkyd.github.io.git拷贝仓库； 在本地 abcdkyd.github.io 文件夹下通过Git bash依次执行npm i">
@@ -176,40 +176,32 @@
 <li>修改_config.yml中的deploy参数，分支应为master；</li>
 <li>使用git init 、git remote add origin <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:sylujia/sylujia.github.io.git以及git pull命令重新关联远端库。</li>
 <li>使用git checkout hexo命令切换到hexo分支然后依次执行git add .、git commit -m “…”、git push origin hexo提交网站相关的文件；</li>
-<li>执行hexo generate -d生成网站并部署到GitHub上。<a id="more"></a>
-</li>
+<li>执行hexo generate -d生成网站并部署到GitHub上。</li>
 </ol>
 </blockquote>
-<h3 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a>GitHub</h3><ol>
+<a id="more"></a>
+<h2 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a>GitHub</h2><ol>
 <li>创建一个仓库，命名为 username.github.io  GitHub Page类型为 User Pages</li>
 <li>创建两个分支 master 和 hexo ，hexo为默认修改代码，master为发布代码</li>
 <li>用 ssh 建立连接</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># ssh-keygen -t rsa -C “email@email.com”</span><br><span class="line">添加公钥到github上</span><br><span class="line"># ssh -T git@github.com</span><br><span class="line"># git config --global user.name “username&quot;</span><br><span class="line"># git config --global user.email &quot;email@email.com”</span><br></pre></td></tr></table></figure>
-<h3 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h3><ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># ssh-keygen -t rsa -C &quot;email@email.com&quot;</span><br><span class="line">添加公钥到github上</span><br><span class="line"># ssh -T git@github.com</span><br><span class="line"># git config --global user.name &quot;username&quot;</span><br><span class="line"># git config --global user.email &quot;email@email.com&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><ol>
 <li><p>需要安装 node.js</p>
 </li>
 <li><p>使用hexo在本地建站</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># npm install -g hexo-cli</span><br><span class="line"># git clone git@github.com:abcdkyd/abcdkyd.github.io.git</span><br><span class="line"># cd abcdkyd.github.io.git</span><br><span class="line"># hexo init</span><br><span class="line"># npm install</span><br><span class="line"># hexo generate</span><br><span class="line"># hexo server</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>部署博客到GitHub上修稿配置文件 _config.yml  为：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">type: git</span><br><span class="line">repository:git@github.com:abcdkyd/abcdkyd.github.io.git</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># npm install -g hexo-cli</span><br><span class="line"># git clone git@github.com:abcdkyd/abcdkyd.github.io.git</span><br><span class="line"># cd abcdkyd.github.io.git</span><br><span class="line"># hexo init</span><br><span class="line"># npm install</span><br><span class="line"># hexo generate</span><br><span class="line"># hexo server</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>部署博客到GitHub上修稿配置文件 _config.yml  为：</li>
-</ol>
-<blockquote>
-<ul>
-<li>deploy:</li>
-<li>type: git</li>
-<li>repository:<a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:abcdkyd/abcdkyd.github.io.git</li>
-<li>branch: master</li>
-</ul>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># npm install hexo-deployer-git —save  //安装部署的插件</span><br><span class="line"># hexo clean         //清空public文件夹下生成的静态文件和db.json文件</span><br><span class="line"># hexo generate   //重新生成静态文件和db.json</span><br><span class="line"># hexo deploy      //按照站点配置文件部署到github上</span><br></pre></td></tr></table></figure>
+<h2 id="上传和部署"><a href="#上传和部署" class="headerlink" title="上传和部署"></a>上传和部署</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># npm install hexo-deployer-git —save  //安装部署的插件</span><br><span class="line"># hexo clean         //清空public文件夹下生成的静态文件和db.json文件</span><br><span class="line"># hexo generate   //重新生成静态文件和db.json</span><br><span class="line"># hexo deploy      //按照站点配置文件部署到github上</span><br></pre></td></tr></table></figure>
 <p>提交到hexo分支，由于上面执行了hexo init 命令，所以要重新关联远程库</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># git init</span><br><span class="line"># git remote add origin git@github.com:abcdkyd/abcdkyd.github.io.git</span><br><span class="line"># git checkout hexo</span><br><span class="line"># git add -A</span><br><span class="line"># git commit -m ’blog start’</span><br><span class="line"># git push origin hexo</span><br></pre></td></tr></table></figure>
-<h3 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h3><p>如果想要使用其他主题，可以使用git clone将别人的主题拷贝到H:\sylujia.github.io\themes下，然后将_config.yml中的theme: landscape改为对应的主题名字。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># git init</span><br><span class="line"># git remote add origin git@github.com:abcdkyd/abcdkyd.github.io.git</span><br><span class="line"># git checkout hexo</span><br><span class="line"># git add -A</span><br><span class="line"># git commit -m &apos;blog start&apos;</span><br><span class="line"># git push origin hexo</span><br></pre></td></tr></table></figure>
+<h2 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h2><p>如果想要使用其他主题，可以使用git clone将别人的主题拷贝到H:\sylujia.github.io\themes下，然后将_config.yml中的theme: landscape改为对应的主题名字。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># git clone https://github.com/iissnan/hexo-theme-next.git themes/next</span><br><span class="line"># git clone https://github.com/litten/hexo-theme-yilia.git</span><br></pre></td></tr></table></figure>
-<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;postName&quot; #新建文章</span><br><span class="line">hexo new page &quot;pageName&quot; #新建页面</span><br><span class="line">hexo generate #生成静态页面至public目录</span><br><span class="line">hexo server #开启预览访问端口（默认端口4000，&apos;ctrl + c&apos;关闭server）</span><br><span class="line">hexo deploy #部署到GitHub</span><br><span class="line">hexo help  # 查看帮助</span><br><span class="line">hexo version  #查看Hexo的版本</span><br><span class="line"></span><br><span class="line">hexo n == hexo new</span><br><span class="line">hexo g == hexo generate</span><br><span class="line">hexo s == hexo server</span><br><span class="line">hexo d == hexo deploy</span><br><span class="line"></span><br><span class="line">// 头部信息</span><br><span class="line">title: 使用Hexo搭建个人博客</span><br><span class="line">layout: post</span><br><span class="line">date: 2014-03-03 19:07:43</span><br><span class="line">comments: true</span><br><span class="line">categories: Blog</span><br><span class="line">tags: [Hexo]</span><br><span class="line">keywords: Hexo, Blog</span><br><span class="line">description:</span><br></pre></td></tr></table></figure>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;postName&quot; #新建文章</span><br><span class="line">hexo new page &quot;pageName&quot; #新建页面</span><br><span class="line">hexo generate #生成静态页面至public目录</span><br><span class="line">hexo server #开启预览访问端口（默认端口4000，&apos;ctrl + c&apos;关闭server）</span><br><span class="line">hexo deploy #部署到GitHub</span><br><span class="line">hexo help  # 查看帮助</span><br><span class="line">hexo version  #查看Hexo的版本</span><br><span class="line"></span><br><span class="line">hexo n == hexo new</span><br><span class="line">hexo g == hexo generate</span><br><span class="line">hexo s == hexo server</span><br><span class="line">hexo d == hexo deploy</span><br><span class="line"></span><br><span class="line">// 头部信息</span><br><span class="line">title: 使用Hexo搭建个人博客</span><br><span class="line">layout: post</span><br><span class="line">date: 2014-03-03 19:07:43</span><br><span class="line">comments: true</span><br><span class="line">categories: Blog</span><br><span class="line">tags: [Hexo]</span><br><span class="line">keywords: Hexo, Blog</span><br><span class="line">description:</span><br></pre></td></tr></table></figure>
 
       
 
@@ -441,15 +433,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">about</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -458,6 +442,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">about</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
             
             <div class="clearfix"></div>
