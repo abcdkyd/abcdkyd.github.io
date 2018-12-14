@@ -142,13 +142,116 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-管理php扩展配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-切换php版本" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/14/切换php版本/">mac下php版本切换</a>
+    </h1>
+  
+
+        
+        <a href="/2018/12/14/切换php版本/" class="archive-article-date">
+  	<time datetime="2018-12-14T13:11:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-14</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="添加php额外配置-引入php扩展"><a class="header-anchor" href="#添加php额外配置-引入php扩展">¶</a>添加php额外配置，引入php扩展</h3>
-<p><strong><code>phpinfo</code></strong> 中 <code>Scan this dir for additional .ini files</code> 配置参数是php扩展配置路径。</p>
+        <h4 id="brew安装php-version"><a class="header-anchor" href="#brew安装php-version">¶</a>brew安装php-version</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># brew install php56</span><br><span class="line"># brew install php70</span><br><span class="line"># brew install php-version</span><br><span class="line"># source $(brew --prefix php-version)/php-version.sh</span><br><span class="line"></span><br><span class="line"># php-version</span><br><span class="line"># php-version 5.6.5</span><br></pre></td></tr></table></figure>
+<h4 id="php开机启动"><a class="header-anchor" href="#php开机启动">¶</a>php开机启动</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># mkdir -p ~/Library/LaunchAgents</span><br><span class="line"># cp /usr/local/opt/php56/homebrew.mxcl.php56.plist ~/Library/LaunchAgents/</span><br><span class="line"># launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.php56.plist</span><br><span class="line"># launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php56.plist</span><br></pre></td></tr></table></figure>
+<h4 id="切换本机php版本"><a class="header-anchor" href="#切换本机php版本">¶</a>切换本机php版本</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// 先确认phpinfo里面的php版本，先卸载5.6的plist，在加载7.1的plist</span><br><span class="line"># launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php56.plist</span><br><span class="line"># launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php71.plist</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/环境配置//" class="article-tag-list-link color5">环境配置</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/12/14/切换php版本/">阅读全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-管理php扩展配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/14/管理php扩展配置/">添加php额外配置，引入php扩展</a>
+    </h1>
+  
+
+        
+        <a href="/2018/12/14/管理php扩展配置/" class="archive-article-date">
+  	<time datetime="2018-12-14T13:11:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong><code>phpinfo</code></strong> 中 <code>Scan this dir for additional .ini files</code> 配置参数是php扩展配置路径。</p>
 <p>你可以在该路径下，配置文件结尾为<code>.ini</code>的文件作为你的额外配置参数。</p>
 <p>我们可以利用它来更好的管理我们php的扩展的相关配置：</p>
 <p>引用pdo_pgsql扩展<br>
@@ -161,11 +264,33 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/环境配置//" class="article-tag-list-link color5">环境配置</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/08/管理php扩展配置/">阅读全文 >></a>
+          <a class="article-more-a" href="/2018/12/14/管理php扩展配置/">阅读全文 >></a>
         </p>
       
 
@@ -478,59 +603,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/06/15/创建虚拟列/">阅读全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-切换php版本" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="mac下php版本切换"><a class="header-anchor" href="#mac下php版本切换">¶</a>mac下php版本切换</h3>
-<h4 id="brew安装php-version"><a class="header-anchor" href="#brew安装php-version">¶</a>brew安装php-version</h4>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># brew install php56</span><br><span class="line"># brew install php70</span><br><span class="line"># brew install php-version</span><br><span class="line"># source $(brew --prefix php-version)/php-version.sh</span><br><span class="line"></span><br><span class="line"># php-version</span><br><span class="line"># php-version 5.6.5</span><br></pre></td></tr></table></figure>
-<h4 id="php开机启动"><a class="header-anchor" href="#php开机启动">¶</a>php开机启动</h4>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># mkdir -p ~/Library/LaunchAgents</span><br><span class="line"># cp /usr/local/opt/php56/homebrew.mxcl.php56.plist ~/Library/LaunchAgents/</span><br><span class="line"># launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.php56.plist</span><br><span class="line"># launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php56.plist</span><br></pre></td></tr></table></figure>
-<h4 id="切换本机php版本"><a class="header-anchor" href="#切换本机php版本">¶</a>切换本机php版本</h4>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// 先确认phpinfo里面的php版本，先卸载5.6的plist，在加载7.1的plist</span><br><span class="line"># launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php56.plist</span><br><span class="line"># launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php71.plist</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/08/22/切换php版本/">阅读全文 >></a>
         </p>
       
 
@@ -1024,15 +1096,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">about</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">
