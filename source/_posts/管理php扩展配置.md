@@ -1,4 +1,9 @@
-### 添加php额外配置，引入php扩展
+---
+title: 添加php额外配置，引入php扩展
+date: 2018-12-14 21:11:41
+tags: php
+categories: 环境配置
+---
 
 __`phpinfo`__ 中 `Scan this dir for additional .ini files` 配置参数是php扩展配置路径。
 

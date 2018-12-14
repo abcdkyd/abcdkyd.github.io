@@ -1,4 +1,10 @@
-### mac下php版本切换
+---
+title: mac下php版本切换
+date: 2018-12-14 21:11:41
+tags: php
+categories: 环境配置
+---
+
 #### brew安装php-version
 
 ```
