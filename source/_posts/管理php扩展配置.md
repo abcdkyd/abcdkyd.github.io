@@ -40,8 +40,8 @@ __`phpinfo`__ 中 `Scan this dir for additional .ini files` 配置参数是php�
 		
 	#### pecl安装扩展
 	
-	1. pecl install mongodb
-	2. 配置php.ini，通过运行 php --ini查找php.ini文件位置，然后在文件中添加extension=memcached.so
+	1. `pecl install mongodb`
+	2. 配置php.ini，通过运行 php --ini查找php.ini文件位置，然后在文件中添加`extension=memcached.so`
 
 3. phpize安装
 
