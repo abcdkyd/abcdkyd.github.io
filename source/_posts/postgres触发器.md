@@ -1,3 +1,12 @@
+---
+title: postgres触发器
+date: 2019-01-08 14:28:48
+tags: 
+    - Postgres
+    - 触发器
+categories: 数据库
+---
+
 ###  触发器的创建语法
 
 ```

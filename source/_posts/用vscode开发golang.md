@@ -1,3 +1,10 @@
+---
+title: 用vscode开发golang
+date: 2019-02-14 16:56:28
+tags: golang
+categories: 后端
+---
+
 ### 首先配置GOPATH
 
 `GOPATH`允许多个目录，当有多个目录时，请注意分隔符，多个目录的时候Windows是分号`;`，Linux系统是冒号`:`，当有多个GOPATH时默认将`go get`获取的包存放在第一个目录下，在开发的gopath中写代码，使用go工具(`go install`, `go build`) 会将二进制包安装到开发的gopath中
