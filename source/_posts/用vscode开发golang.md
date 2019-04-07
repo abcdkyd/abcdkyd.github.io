@@ -15,6 +15,7 @@ categories: 后端
 - `pkg`编译时生成的中间文件（比如：.a）
 - `bin`编译后生成的可执行文件（为了方便，可以把此目录加入到 `$PATH` 变量中，如果有多个gopath，那么使用`${GOPATH//://bin:}/bin`添加所有的bin目录）
 
+<!-- more -->
 
 ### 使用vscode
 

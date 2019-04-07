@@ -20,6 +20,8 @@ categories: 设计模式
 2. 引入NewConsumer类。这个类的doSomthing( )函数在执行期间期望调用MyObject实例的一个公共方法: methodB()
 3. 通过扩展MyObject类创建MyObjectAdapterForNewConsumer类。像NewConsumer期望的样，新创建的类会提供名为methodB()的公共方法。在这个简单的示例中，所有methodB()都会调用methodA()
 
+<!-- more -->
+
 #### 代码示例
 
 1. 类适配器模式（类适配器使用的是继承）

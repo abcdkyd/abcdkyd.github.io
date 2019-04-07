@@ -19,7 +19,7 @@ ON table_name
 [ WHEN (condition) ]
 EXECUTE PROCEDURE function_name ( arguments )
 ```
-
+<!-- more -->
 ### 触发器创建步骤
 
 先为触发器创建一个执行函数，返回类型为触发器类型，然后创建相应的触发器
