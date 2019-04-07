@@ -1,3 +1,11 @@
+---
+title: mac安装MongoDB
+date: 2019-04-07 11:30:44
+tags: 
+    - MongoDB
+categories: 数据库
+---
+
 #### 下载安装
 
 1. `curl -O https://fastdl.mongodb.org/osx/mongodb-osx-ssl-x86_64-4.0.5.tgz` 或者 [官网下载tar包](https://www.mongodb.com/dr/fastdl.mongodb.org/osx/mongodb-osx-ssl-x86_64-4.0.5.tgz/download) 
