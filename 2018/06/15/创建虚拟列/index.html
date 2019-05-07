@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://abcdkyd.github.io">
   <title>PostgreSQL pgcrypto模块加密解密函数 | Jxie的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="¶pgcrypto 模块  加密后返回二进制的数据    加密解密函数  encrypt(data bytea, key bytea, type text) returns bytea decrypt(data bytea, key bytea, type text) returns bytea 例子： encrypt(data, &apos;fooz&apos;, &apos;bf-cbc/pad:pkcs&apos;) encryp">
+  <meta name="description" content="¶pgcrypto 模块  加密后返回二进制的数据    加密解密函数 encrypt(data bytea, key bytea, type text) returns bytea decrypt(data bytea, key bytea, type text) returns bytea 例子： encrypt(data, &apos;fooz&apos;, &apos;bf-cbc/pad:pkcs&apos;) encrypt">
 <meta name="keywords" content="PostgreSQL,pgcrypto">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PostgreSQL pgcrypto模块加密解密函数">
 <meta property="og:url" content="https://abcdkyd.github.io/2018/06/15/创建虚拟列/index.html">
 <meta property="og:site_name" content="Jxie的个人博客">
-<meta property="og:description" content="¶pgcrypto 模块  加密后返回二进制的数据    加密解密函数  encrypt(data bytea, key bytea, type text) returns bytea decrypt(data bytea, key bytea, type text) returns bytea 例子： encrypt(data, &apos;fooz&apos;, &apos;bf-cbc/pad:pkcs&apos;) encryp">
+<meta property="og:description" content="¶pgcrypto 模块  加密后返回二进制的数据    加密解密函数 encrypt(data bytea, key bytea, type text) returns bytea decrypt(data bytea, key bytea, type text) returns bytea 例子： encrypt(data, &apos;fooz&apos;, &apos;bf-cbc/pad:pkcs&apos;) encrypt">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-14T17:46:12.000Z">
+<meta property="og:updated_time" content="2019-05-07T03:05:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PostgreSQL pgcrypto模块加密解密函数">
-<meta name="twitter:description" content="¶pgcrypto 模块  加密后返回二进制的数据    加密解密函数  encrypt(data bytea, key bytea, type text) returns bytea decrypt(data bytea, key bytea, type text) returns bytea 例子： encrypt(data, &apos;fooz&apos;, &apos;bf-cbc/pad:pkcs&apos;) encryp">
+<meta name="twitter:description" content="¶pgcrypto 模块  加密后返回二进制的数据    加密解密函数 encrypt(data bytea, key bytea, type text) returns bytea decrypt(data bytea, key bytea, type text) returns bytea 例子： encrypt(data, &apos;fooz&apos;, &apos;bf-cbc/pad:pkcs&apos;) encrypt">
   
     <link rel="alternative" href="/atom.xml" title="Jxie的个人博客" type="application/atom+xml">
   
@@ -172,24 +172,20 @@
 <ol>
 <li>
 <p>加密解密函数</p>
-<ul>
-<li><code>encrypt(data bytea, key bytea, type text) returns bytea</code></li>
-<li><code>decrypt(data bytea, key bytea, type text) returns bytea</code><br>
-例子：</li>
-<li><code>encrypt(data, 'fooz', 'bf-cbc/pad:pkcs')</code></li>
-<li><code>encrypt('this is a message', 'key', 'aes-ecb')</code></li>
-<li><code>decrypt('\x39c3c665757a0ff973b83fb98cc3d63f', 'key', 'aes-ecb')</code></li>
-</ul>
+<p><code>encrypt(data bytea, key bytea, type text) returns bytea</code></p>
+<p><code>decrypt(data bytea, key bytea, type text) returns bytea</code></p>
+<p>例子：</p>
+<p><code>encrypt(data, 'fooz', 'bf-cbc/pad:pkcs')</code></p>
+<p><code>encrypt('this is a message', 'key', 'aes-ecb')</code></p>
+<p><code>decrypt('\x39c3c665757a0ff973b83fb98cc3d63f', 'key', 'aes-ecb')</code></p>
 </li>
 <li>
 <p>类型转换</p>
 <blockquote>
 <p>pgcrypto模块加密出来的二进制数据，转换成base64后与PHP加密的结果。</p>
 </blockquote>
-<ul>
-<li><code>encode(data bytea, type text)</code></li>
-<li><code>decode(string text, type text)</code></li>
-</ul>
+<p><code>encode(data bytea, type text)</code></p>
+<p><code>decode(string text, type text)</code></p>
 <blockquote>
 <p>aes解密是自动识别 aes128, aes192, aes256，aes加密默认是aes128，暂时没发现怎么指定位数</p>
 </blockquote>
@@ -212,10 +208,8 @@
 </li>
 </ul>
 <p>例子：</p>
-<ul>
-<li><code>openssl_encrypt($data, 'AES-256-ECB', $key);</code></li>
-<li><code>openssl_decrypt($data, 'AES-256-ECB', $key);</code></li>
-</ul>
+<p><code>openssl_encrypt($data, 'AES-256-ECB', $key);</code></p>
+<p><code>openssl_decrypt($data, 'AES-256-ECB', $key);</code></p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 解密函数</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">or</span> <span class="keyword">replace</span> <span class="keyword">function</span> userInfoDecrypt(encrypted_data <span class="built_in">varchar</span>) <span class="keyword">returns</span> <span class="built_in">text</span> <span class="keyword">as</span> </span><br><span class="line">$<span class="keyword">body</span>$</span><br><span class="line"><span class="keyword">declare</span></span><br><span class="line">    <span class="keyword">key</span> bytea := <span class="string">'PVrW9sRqsT37cJhnqxgcHWvbCrsjcRRT'</span>;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">    <span class="keyword">return</span> convert_from(<span class="keyword">decrypt</span>(<span class="keyword">decode</span>(encrypted_data, <span class="string">'base64'</span>), <span class="keyword">key</span>, <span class="string">'aes-ecb'</span>), <span class="string">'SQL_ASCII'</span>);</span><br><span class="line"><span class="keyword">end</span>;</span><br><span class="line">$body$ language plpgsql;</span><br></pre></td></tr></table></figure>
       
 
@@ -451,6 +445,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
@@ -459,11 +461,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">php</a>
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color2">Pygame</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -475,11 +477,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">存储过程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+                <a href="javascript:void(0)" class="js-tag color4">pgcrypto</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -495,11 +493,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">php</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">golang</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">pgcrypto</a>
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">存储过程</a>
               </li>
             
             <div class="clearfix"></div>

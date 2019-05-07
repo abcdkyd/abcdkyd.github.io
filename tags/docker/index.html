@@ -6,20 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://abcdkyd.github.io">
-  <title>mac安装MongoDB | Jxie的个人博客</title>
+  <title>Tag: docker | Jxie的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="¶下载安装  curl -O https://fastdl.mongodb.org/osx/mongodb-osx-ssl-x86_64-4.0.5.tgz 或者 官网下载tar包 解压 tar -zxvf mongodb-osx-ssl-x86_64-4.0.5.tgz 重命名 mv ./mongodb-osx-ssl-x86_64-4.0.5.tgz ./mongodb 移动到合适位置 sud">
-<meta name="keywords" content="MongoDB">
-<meta property="og:type" content="article">
-<meta property="og:title" content="mac安装MongoDB">
-<meta property="og:url" content="https://abcdkyd.github.io/2019/04/07/mac安装mongodb/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Jxie的个人博客">
+<meta property="og:url" content="https://abcdkyd.github.io/tags/docker/index.html">
 <meta property="og:site_name" content="Jxie的个人博客">
-<meta property="og:description" content="¶下载安装  curl -O https://fastdl.mongodb.org/osx/mongodb-osx-ssl-x86_64-4.0.5.tgz 或者 官网下载tar包 解压 tar -zxvf mongodb-osx-ssl-x86_64-4.0.5.tgz 重命名 mv ./mongodb-osx-ssl-x86_64-4.0.5.tgz ./mongodb 移动到合适位置 sud">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-07T03:06:27.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mac安装MongoDB">
-<meta name="twitter:description" content="¶下载安装  curl -O https://fastdl.mongodb.org/osx/mongodb-osx-ssl-x86_64-4.0.5.tgz 或者 官网下载tar包 解压 tar -zxvf mongodb-osx-ssl-x86_64-4.0.5.tgz 重命名 mv ./mongodb-osx-ssl-x86_64-4.0.5.tgz ./mongodb 移动到合适位置 sud">
+<meta name="twitter:title" content="Jxie的个人博客">
   
     <link rel="alternative" href="/atom.xml" title="Jxie的个人博客" type="application/atom+xml">
   
@@ -145,234 +140,71 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-mac安装mongodb" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      mac安装MongoDB
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/05/07/docker笔记/" class="archive-article-date">
+  	<time datetime="2019-05-07T02:44:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-07</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/05/07/docker笔记/">docker笔记</a>
     </h1>
   
 
-        
-        <a href="/2019/04/07/mac安装mongodb/" class="archive-article-date">
-  	<time datetime="2019-04-07T03:30:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="下载安装"><a class="header-anchor" href="#下载安装">¶</a>下载安装</h4>
-<ol>
-<li><code>curl -O https://fastdl.mongodb.org/osx/mongodb-osx-ssl-x86_64-4.0.5.tgz</code> 或者 <a href="https://www.mongodb.com/dr/fastdl.mongodb.org/osx/mongodb-osx-ssl-x86_64-4.0.5.tgz/download" target="_blank" rel="noopener">官网下载tar包</a></li>
-<li>解压 <code>tar -zxvf mongodb-osx-ssl-x86_64-4.0.5.tgz</code></li>
-<li>重命名 <code>mv ./mongodb-osx-ssl-x86_64-4.0.5.tgz ./mongodb</code></li>
-<li>移动到合适位置 <code>sudo mv ./mongodb /usr/local/opt/</code></li>
-<li>在.bashrc文件添加 <code>export PATH=/usr/local/opt/mongodb/bin:$PATH</code></li>
-</ol>
-<h4 id="brew安装"><a class="header-anchor" href="#brew安装">¶</a>brew安装</h4>
-<ul>
-<li><code>sudo brew install mongodb</code></li>
-<li><code>sudo brew install mongodb --with-openssl</code> // 要安装支持 TLS/SSL 命令</li>
-<li><code>sudo brew install mongodb --devel</code> // 安装最新开发版本</li>
-</ul>
-<a id="more"></a>
-<h4 id="运行数据库"><a class="header-anchor" href="#运行数据库">¶</a>运行数据库</h4>
-<ol>
-<li>
-<p>创建数据库目录和日志目录</p>
-<p><code>sudo mkdir -p /usr/local/var/mongo/db /usr/local/var/mongo/logs</code></p>
-</li>
-<li>
-<p>启动数据库，指定数据库目录和日志目录，日志采用分文件存储</p>
-<p><code>mongod --dbpath /usr/local/var/mongo/db --logpath /usr/local/var/mongo/logs/mongodb.log --logRotate rename &amp;</code></p>
-</li>
-</ol>
-<!-- more -->
-<h4 id="连接数据库"><a class="header-anchor" href="#连接数据库">¶</a>连接数据库</h4>
-<p>连接命令：<code>mongo</code></p>
-<p>但是新版本会提示：‘WARNING: Access control is not enabled for the database.’，这是MongDB增加了安全性设计，推荐用户进行身份验证。</p>
-<ol>
-<li>
-<p>创建管理员账号和密码，并设置权限，在mongo命令行输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">use admin</span><br><span class="line">db.createUser(</span><br><span class="line">  &#123;</span><br><span class="line">    user: &quot;admin&quot;,</span><br><span class="line">    pwd: &quot;123123&quot;,</span><br><span class="line">    roles: [ &#123; role: &quot;userAdminAnyDatabase&quot;, db: &quot;admin&quot; &#125; ]</span><br><span class="line">  &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>重启MongoDB服务器</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 先kill了原来的进程，然后加--auth参数再启动mongo</span><br><span class="line">mongod --auth --dbpath /usr/local/var/mongo/db --logpath /usr/local/var/mongo/logs/mongodb.log --logRotate rename &amp;</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>用户名登录</p>
-<p><code>mongo -u admin -p 123123 --authenticationDatabase admin</code></p>
-</li>
-</ol>
-<h4 id="其他"><a class="header-anchor" href="#其他">¶</a>其他</h4>
-<p>添加额外权限用户</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">use test</span><br><span class="line">db.createUser(</span><br><span class="line">  &#123;</span><br><span class="line">    user: &quot;tester&quot;,</span><br><span class="line">    pwd: &quot;123&quot;,</span><br><span class="line">    roles: [ &#123; role: &quot;readWrite&quot;, db: &quot;test&quot; &#125;,</span><br><span class="line">             &#123; role: &quot;read&quot;, db: &quot;reporting&quot; &#125; ]</span><br><span class="line">  &#125;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">db.updateUser(&quot;jhpm&quot;,</span><br><span class="line">  &#123;</span><br><span class="line">    user: &quot;jhpm&quot;,</span><br><span class="line">    pwd: &quot;123123&quot;,</span><br><span class="line">    roles: [ &#123; role: &quot;readWrite&quot;, db: &quot;pht_log&quot; &#125;,</span><br><span class="line">             &#123; role: &quot;dbAdmin&quot;, db: &quot;pht_log&quot; &#125; ]</span><br><span class="line">  &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<ol>
-<li>数据库用户角色：read、readWrite;</li>
-<li>数据库管理角色：dbAdmin、dbOwner、userAdmin；</li>
-<li>集群管理角色：clusterAdmin、clusterManager、clusterMonitor、hostManager；</li>
-<li>备份恢复角色：backup、restore；</li>
-<li>所有数据库角色：readAnyDatabase、readWriteAnyDatabase、userAdminAnyDatabase、dbAdminAnyDatabase</li>
-<li>超级用户角色：root<br>
-// 这里还有几个角色间接或直接提供了系统超级用户的访问（dbOwner 、userAdmin、userAdminAnyDatabase）</li>
-<li>内部角色：__system</li>
-</ol>
-<ul>
-<li>Read：允许用户读取指定数据库</li>
-<li>readWrite：允许用户读写指定数据库</li>
-<li>dbAdmin：允许用户在指定数据库中执行管理函数，如索引创建、删除，查看统计或访问system.profile</li>
-<li>userAdmin：允许用户向system.users集合写入，可以找指定数据库里创建、删除和管理用户</li>
-<li>clusterAdmin：只在admin数据库中可用，赋予用户所有分片和复制集相关函数的管理权限。</li>
-<li>readAnyDatabase：只在admin数据库中可用，赋予用户所有数据库的读权限</li>
-<li>readWriteAnyDatabase：只在admin数据库中可用，赋予用户所有数据库的读写权限</li>
-<li>userAdminAnyDatabase：只在admin数据库中可用，赋予用户所有数据库的userAdmin权限</li>
-<li>dbAdminAnyDatabase：只在admin数据库中可用，赋予用户所有数据库的dbAdmin权限。</li>
-<li>root：只在admin数据库中可用。超级账号，超级权限</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">MongoDB</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">docker</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/数据库//" class="article-tag-list-link color4">数据库</a>
+        			<a href="/categories/docker//" class="article-tag-list-link color2">docker</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://abcdkyd.github.io/2019/04/07/mac安装mongodb/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2019/04/27/mac安装pygame/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          mac安装Pygame
-        
-      </div>
-    </a>
   
   
-    <a href="/2019/02/14/用vscode开发golang/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">用vscode开发golang</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -395,9 +227,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
