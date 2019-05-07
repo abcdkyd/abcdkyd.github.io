@@ -19,6 +19,8 @@ categories: 数据库
 - `sudo brew install mongodb --with-openssl` // 要安装支持 TLS/SSL 命令
 - `sudo brew install mongodb --devel` // 安装最新开发版本
 
+<!-- more -->
+
 #### 运行数据库
 
 1. 创建数据库目录和日志目录
@@ -28,6 +30,8 @@ categories: 数据库
 2. 启动数据库，指定数据库目录和日志目录，日志采用分文件存储
 
 	`mongod --dbpath /usr/local/var/mongo/db --logpath /usr/local/var/mongo/logs/mongodb.log --logRotate rename &`
+
+<!-- more -->
 
 #### 连接数据库
 
