@@ -20,11 +20,10 @@ __`phpinfo`__ 中 `Scan this dir for additional .ini files` 配置参数是php�
 
 1. brew、yum或者apt-get安装
 2. 使用pecl安装
-	
-	#### mac安装pecl
-	
+
+	**mac安装pecl**
+
 	1. 下载pecl `curl -O https://pear.php.net/go-pear.phar`
-		
 	2. 安装pecl
 	
 		```
@@ -35,11 +34,10 @@ __`phpinfo`__ 中 `Scan this dir for additional .ini files` 配置参数是php�
 		输入 4，将命令安装到 /usr/local/bin 目录； 
 		回车两次，其他让其默认，安装完成
 		```
-	
 	3. 检测是否安装成功 `pear version`
-		
-	#### pecl安装扩展
-	
+
+	**pecl安装扩展**
+
 	1. `pecl install mongodb`
 	2. 配置php.ini，通过运行 php --ini查找php.ini文件位置，然后在文件中添加`extension=memcached.so`
 
