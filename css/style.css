@@ -2652,6 +2652,7 @@ body,
 .article-meta {
   padding-top: 8px;
   font-size: 14px;
+  margin-bottom: 10px;
 }
 .article-date {
   color: #999;
