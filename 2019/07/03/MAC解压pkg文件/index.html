@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+
+    
+
+    
+
+    <title>MAC解压pkg文件 | Jxie的个人博客</title>
+    <meta name="author" content="Jxie" />
+    <meta name="version" content="1.0.0" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="12xar -xf Setup.pkgcat ./Payload | cpio -icpio用法cpio 指令可以将文件复制到 存档包（archives），也可以从存档包（archives）复制出文件。缺省情况下，cpio从标准输入读取输入数据，向标准输出写入输出数据。归档包（archives）是一种包含其他文件和有关信息的文件。 有关信息包括：文件名,属主,时间戳(timestamp),和访问权限。cpio支持下列的归档格式:binary,old ASCII,..." />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+
+    
+    <link rel="alternate" href="/atom.xml" title="Jxie的个人博客" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/images/favicon.ico">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <main class="app">
+        <header class="header clearfix">
+    <div id="nav" class="nav">
+    <div class="nav-mobile">
+        <button id="open-panel" class="open-panel nav-mobile-item"><i class="icon-documents"></i></button>
+        <h1 class="nav-mobile-title nav-mobile-item">Jxie的个人博客</h1>
+        <button id="open-menus" class="open-panel nav-mobile-item"><i class="icon-library"></i></button>
+    </div>
+
+    <nav id="nav-inner" class="nav-inner">
+        
+            <a class="nav-item" href="/">
+                <span class="nav-text">首页</span>
+            </a>
+        
+            <a class="nav-item" href="/categories">
+                <span class="nav-text">分类</span>
+            </a>
+        
+            <a class="nav-item" href="/tags">
+                <span class="nav-text">标签</span>
+            </a>
+        
+            <a class="nav-item" href="/archives">
+                <span class="nav-text">归档</span>
+            </a>
+        
+            <a class="nav-item" href="/atom.xml">
+                <span class="nav-text">订阅</span>
+            </a>
+        
+    </nav>
+</div>
+
+    <aside id="aside" class="aside">
+    <div id="aside-mask" class="aside-mask"></div>
+    <div id="aside-inner" class="aside-inner">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit"><i class="icon-search-stroke"></i></button><input type="hidden" name="sitesearch" value="https://abcdkyd.github.io"></form>
+
+        
+        
+        
+        
+
+        
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#cpio用法"><span class="toc-number">1.</span> <span class="toc-text">cpio用法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#copy-out-模式"><span class="toc-number">1.1.</span> <span class="toc-text">Copy-out 模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#copy-in-模式"><span class="toc-number">1.2.</span> <span class="toc-text">Copy-in 模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#copy-pass-模式"><span class="toc-number">1.3.</span> <span class="toc-text">Copy-pass 模式</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+</header>
+
+        <div id="content" class="content"><article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            MAC解压pkg文件
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="https://abcdkyd.github.io/2019/07/03/MAC解压pkg文件/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-07-03T05:55:41.000Z" itemprop="datePublished">2019-07-03</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/MAC/">MAC</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xar -xf Setup.pkg</span><br><span class="line">cat ./Payload | cpio -i</span><br></pre></td></tr></table></figure>
+<h3 id="cpio用法"><a class="header-anchor" href="#cpio用法"></a>cpio用法</h3>
+<p>cpio 指令可以将文件复制到 存档包（archives），也可以从存档包（archives）复制出文件。缺省情况下，cpio从标准输入读取输入数据，向标准输出写入输出数据。</p>
+<p>归档包（archives）是一种包含其他文件和有关信息的文件。 有关信息包括：</p>
+<ol>
+<li>文件名,</li>
+<li>属主,</li>
+<li>时间戳(timestamp),</li>
+<li>和访问权限。</li>
+</ol>
+<p>cpio支持下列的归档格式:</p>
+<ol>
+<li>binary,</li>
+<li>old ASCII,</li>
+<li>new ASCII, crc,</li>
+<li>HPUX binary,</li>
+<li>HPUX old ASCII,</li>
+<li>old tar,</li>
+<li>POSIX.1 tar。</li>
+</ol>
+<p>默认情况下，cpio创建二进制格式存档，以便与旧的cpio程序兼容。从档案中提取时，cpio会自动识别正在读取的归档类型，并可以读取在具有不同字节顺序的计算机上创建的归档。</p>
+<a id="more"></a>
+<p>cpio 有三种操作模式，某些选项只能用在对应的操作模式上;</p>
+<h4 id="copy-out-模式"><a class="header-anchor" href="#copy-out-模式"></a>Copy-out 模式</h4>
+<blockquote>
+<p>在copy-out模式下，cpio将文件复制到存档（archives）中。它从标准输入读取文件名列表（每行一个文件名），并将存档（archives）写入标准输出。生成文件名列表的典型方法是使用find命令; 您应该使用 -depth 选项，减少因为进入没有访问权限的目录而引起的麻烦。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cpio &#123;-o|--create&#125; [-0acvABLV] [-C bytes] [-H format] [-M message] \</span><br><span class="line">    [-O [[user@]host:]archive] [-F [[user@]host:]archive] \</span><br><span class="line">    [--file=[[user@]host:]archive] [--format=format] [--message=message]\</span><br><span class="line">    [--null] [--reset-access-time] [--verbose] [--dot] [--append] \</span><br><span class="line">    [--block-size=blocks] [--dereference] [--io-size=bytes] \</span><br><span class="line">    [--rsh-command=command] [--help] [--version] &lt; name-list [&gt; archive]</span><br></pre></td></tr></table></figure>
+<h4 id="copy-in-模式"><a class="header-anchor" href="#copy-in-模式"></a>Copy-in 模式</h4>
+<blockquote>
+<p>在copy-in模式中, cpio 从归档包里读取文件, 或者列出归档包里的内容。它从标准输入读入归档包。任何非选项的命令行参数都被认为是shell globbing的模式; 只有存档中的名称与这些模式中的一个或多个匹配的文件才会从存档中复制。和在shell中不同的是，不是使用<code>.</code>作为通配符，而是使用<code>/</code>作为通配符。如果没有给出任何模式，则提取所有文件</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">cpio &#123;-i|--extract&#125; [-bcdfmnrtsuvBSV] [-C bytes] [-E file] [-H format] [-M message] \</span><br><span class="line">    [-R [user][:.][group]] [-I [[user@]host:]archive] [-F [[user@]host:]archive] \</span><br><span class="line">    [--file=[[user@]host:]archive] [--make-directories] [--nonmatching] \</span><br><span class="line">    [--preserve-modification-time] [--numeric-uid-gid] [--rename] [-t|--list] \</span><br><span class="line">    [--swap-bytes] [--swap] [--dot] [--unconditional] [--verbose] [--block-size=blocks] \</span><br><span class="line">    [--swap-halfwords] [--io-size=bytes] [--pattern-file=file] [--format=format] \</span><br><span class="line">    [--owner=[user][:.][group]] [--no-preserve-owner] [--message=message] \</span><br><span class="line">    [--force-local] [--no-absolute-filenames] [--absolute-filenames] [--sparse] \</span><br><span class="line">    [--only-verify-crc] [--to-stdout] [--quiet] [--rsh-command=command] [--help] \</span><br><span class="line">    [--version] [pattern...] [&lt; archive]</span><br></pre></td></tr></table></figure>
+<h4 id="copy-pass-模式"><a class="header-anchor" href="#copy-pass-模式"></a>Copy-pass 模式</h4>
+<blockquote>
+<p>在copy-pass模式中, cpio把文件从一棵目录树复制到另一棵, 它结合了 copy-in 和 copy-out 的操作, 但不使用归档包。 cpio从标准输入读取欲复制的文件名列表; 并复制它们复制到目标目录（非选项的参数都被认为是目标目录）。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cpio &#123;-p|--pass-through&#125; [-0adlmuvLV] [-R [user][:.][group]] [--null] \</span><br><span class="line">     [--reset-access-time] [--make-directories] [--link] [--quiet] \</span><br><span class="line">    [--preserve-modification-time] [--unconditional] [--verbose] [--dot] \</span><br><span class="line">    [--dereference] [--owner=[user][:.][group]] [--no-preserve-owner] \</span><br><span class="line">    [--sparse] [--help] [--version] destination-directory &lt; name-list</span><br></pre></td></tr></table></figure>
+<p>备份会使用到的选项与参数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">  -o ：将数据 copy 输出到文件或装置上 </span><br><span class="line">  -B ：让默认的 Blocks 可以添加至 5120 bytes ，默认是 512 bytes ！ </span><br><span class="line">　  　 这样的好处是可以让大文件的储存速度加快(请参考 i-nodes 的观念) </span><br><span class="line">还原会使用到的选项与参数：</span><br><span class="line">  -i ：将数据自文件或装置 copy 出来系统当中 </span><br><span class="line">  -d ：自动创建目录！使用 cpio 所备份的数据内容不见得会在同一层目录中，因此我们</span><br><span class="line">       必须要让 cpio 在还原时可以创建新目录，此时就得要 -d 选项的帮助！</span><br><span class="line">  -u ：自动的将较新的文件覆盖较旧的文件！</span><br><span class="line">  -t ：需配合 -i 选项，可用在&quot;察看&quot;以 cpio 创建的文件或装置的内容 </span><br><span class="line">一些可共享的选项与参数：</span><br><span class="line">  -v ：让储存的过程中文件名称可以在萤幕上显示 </span><br><span class="line">  -c ：一种较新的 portable format 方式储存</span><br></pre></td></tr></table></figure>
+        
+    </section>
+</article>
+
+
+
+<div class="comments">
+    <div id="comments"></div>
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+    new Gitalk({
+        clientID: "6f5e8f287e18d0fe8720",
+        clientSecret: "d951a19150cabd06c9e4fb2d72f0dc25132d0999",
+        repo: "abcdkyd.github.io",
+        owner: "abcdkyd",
+        admin: ["abcdkyd"],
+        id: "2019/07/03/MAC解压pkg文件",
+        distractionFreeMode: true,
+        title: "MAC解压pkg文件",
+        body: "https://abcdkyd.github.io/2019/07/03/MAC解压pkg文件/",
+        labels: ["MAC"]
+    }).render('comments');
+    </script>
+</div>
+
+</div>
+        <footer class="footer">
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, Theme by <a href="https://github.com/sanonz/hexo-theme-concise" target="_blank">Concise</a>
+
+    
+</footer>
+
+    </main>
+
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        var nodes = {
+            nav: $('#nav'),
+            aside: $('#aside'),
+            asideInner: $('#aside-inner'),
+            navInner: $('#nav-inner')
+        };
+
+        var doing = false;
+        nodes.asideInner.on('webkitAnimationEnd mozAnimationEnd oAnimationEnd oanimationend animationend', function() {
+            if (nodes.aside.hasClass('mobile-open')) {
+                nodes.aside.removeClass('mobile-open');
+            } else {
+                nodes.aside.removeClass('mobile-close panel-show');
+            }
+            doing = false;
+        });
+        $('#open-panel, #aside-mask').on('click', function() {
+            if (doing) {
+                return;
+            }
+            
+            if (nodes.aside.hasClass('panel-show')) {
+                nodes.aside.addClass('mobile-close');
+            } else {
+                nodes.aside.addClass('mobile-open panel-show');
+            }
+        });
+        $('#open-menus').on('click', function() {
+            nodes.navInner.slideToggle();
+        });
+
+        if (window.innerWidth <= 960) {
+            setTimeout(function() {
+                nodes.navInner.slideUp();
+            }, 3000);
+        }
+    });
+    </script>
+    
+        <script type="text/javascript" src="/js/scrollspy.min.js"></script>
+        <script type="text/javascript">
+        $(document.body).scrollspy({target: '#aside-inner'});
+        </script>
+    
+
+</body>
+</html>
