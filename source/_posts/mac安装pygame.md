@@ -1,9 +1,10 @@
 ---
-title: mac安装Pygame
+title: MAC安装Pygame
 date: 2019-04-27 14:04:42
 tags: 
 	- Python
 	- Pygame
+	- MAC
 categories: 环境配置
 ---
 

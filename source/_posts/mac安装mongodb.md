@@ -1,8 +1,9 @@
 ---
-title: mac安装MongoDB
+title: MAC安装MongoDB
 date: 2019-04-07 11:30:44
 tags: 
     - MongoDB
+    - MAC
 categories: 数据库
 ---
 
