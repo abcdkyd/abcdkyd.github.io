@@ -171,54 +171,6 @@
     <header class="article-header">
         
         <h1 itemprop="name">
-            <a href="/2018/06/15/postgres编写存储过程/">PostgreSQL pl/pgsql 编写存储过程</a>
-        </h1>
-        
-        <div class="article-meta clearfix">
-            <a class="article-date" href="https://abcdkyd.github.io/page/2/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2018-06-14T16:49:43.000Z" itemprop="datePublished">2018-06-15</time>
-</a>
-
-            
-<div class="article-tag-list">
-    <i class="icon-tag"></i>
-    <a class="article-tag-link" href="/tags/PostgreSQL/">PostgreSQL</a>, <a class="article-tag-link" href="/tags/存储过程/">存储过程</a>
-</div>
-
-
-        </div>
-    </header>
-    
-    <section class="article-body markdown-body">
-        
-        <h3 id="基本结构"><a class="header-anchor" href="#基本结构"></a>基本结构</h3>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">or</span> <span class="keyword">replace</span> <span class="keyword">function</span> somefunc() </span><br><span class="line"><span class="keyword">returns</span> <span class="built_in">varchar</span> <span class="keyword">as</span> </span><br><span class="line">$$</span><br><span class="line"><span class="keyword">declare</span></span><br><span class="line">   <span class="keyword">name</span> <span class="built_in">varchar</span> := <span class="string">'wangzhen'</span>;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">   <span class="keyword">return</span> <span class="keyword">name</span>;</span><br><span class="line"><span class="keyword">end</span>   </span><br><span class="line">$$ <span class="keyword">language</span> plpgsql;</span><br></pre></td></tr></table></figure>
-<h3 id="作用"><a class="header-anchor" href="#作用"></a>$$作用</h3>
-<ul>
-<li>
-<p>函数代码在function中实际上为一个字符串，代码1和代码2等价，但代码中字符串的单引号需要写两个进行转义。</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 代码1</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">or</span> <span class="keyword">replace</span> <span class="keyword">function</span> somefunc() </span><br><span class="line"><span class="keyword">returns</span> <span class="built_in">varchar</span> <span class="keyword">as</span> </span><br><span class="line">$$</span><br><span class="line"><span class="keyword">declare</span></span><br><span class="line">   <span class="keyword">name</span> <span class="built_in">varchar</span> := <span class="string">'wangzhen'</span>;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">   <span class="keyword">return</span> <span class="keyword">name</span>;</span><br><span class="line"><span class="keyword">end</span>   </span><br><span class="line">$$ <span class="keyword">language</span> plpgsql;</span><br></pre></td></tr></table></figure>
-        
-        <p class="article-more-link">
-            <a href="/2018/06/15/postgres编写存储过程/#more">
-                <span class="vm">阅读更多</span>
-                <i class="icon-arrow-double-right vm"></i>    
-            </a>
-        </p>
-        
-        
-    </section>
-</article>
-
-
-    <article class="article" itemscope itemprop="blogPost">
-    
-    <header class="article-header">
-        
-        <h1 itemprop="name">
             <a href="/2018/06/15/创建虚拟列/">PostgreSQL pgcrypto模块加密解密函数</a>
         </h1>
         
@@ -269,6 +221,54 @@
         
         <p class="article-more-link">
             <a href="/2018/06/15/创建虚拟列/#more">
+                <span class="vm">阅读更多</span>
+                <i class="icon-arrow-double-right vm"></i>    
+            </a>
+        </p>
+        
+        
+    </section>
+</article>
+
+
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            <a href="/2018/06/15/postgres编写存储过程/">PostgreSQL pl/pgsql 编写存储过程</a>
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="https://abcdkyd.github.io/page/2/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2018-06-14T16:49:43.000Z" itemprop="datePublished">2018-06-15</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/PostgreSQL/">PostgreSQL</a>, <a class="article-tag-link" href="/tags/存储过程/">存储过程</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h3 id="基本结构"><a class="header-anchor" href="#基本结构"></a>基本结构</h3>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">or</span> <span class="keyword">replace</span> <span class="keyword">function</span> somefunc() </span><br><span class="line"><span class="keyword">returns</span> <span class="built_in">varchar</span> <span class="keyword">as</span> </span><br><span class="line">$$</span><br><span class="line"><span class="keyword">declare</span></span><br><span class="line">   <span class="keyword">name</span> <span class="built_in">varchar</span> := <span class="string">'wangzhen'</span>;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">   <span class="keyword">return</span> <span class="keyword">name</span>;</span><br><span class="line"><span class="keyword">end</span>   </span><br><span class="line">$$ <span class="keyword">language</span> plpgsql;</span><br></pre></td></tr></table></figure>
+<h3 id="作用"><a class="header-anchor" href="#作用"></a>$$作用</h3>
+<ul>
+<li>
+<p>函数代码在function中实际上为一个字符串，代码1和代码2等价，但代码中字符串的单引号需要写两个进行转义。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 代码1</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">or</span> <span class="keyword">replace</span> <span class="keyword">function</span> somefunc() </span><br><span class="line"><span class="keyword">returns</span> <span class="built_in">varchar</span> <span class="keyword">as</span> </span><br><span class="line">$$</span><br><span class="line"><span class="keyword">declare</span></span><br><span class="line">   <span class="keyword">name</span> <span class="built_in">varchar</span> := <span class="string">'wangzhen'</span>;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">   <span class="keyword">return</span> <span class="keyword">name</span>;</span><br><span class="line"><span class="keyword">end</span>   </span><br><span class="line">$$ <span class="keyword">language</span> plpgsql;</span><br></pre></td></tr></table></figure>
+        
+        <p class="article-more-link">
+            <a href="/2018/06/15/postgres编写存储过程/#more">
                 <span class="vm">阅读更多</span>
                 <i class="icon-arrow-double-right vm"></i>    
             </a>

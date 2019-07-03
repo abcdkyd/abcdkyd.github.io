@@ -206,7 +206,7 @@
         
         <h2 id="docker操作"><a class="header-anchor" href="#docker操作"></a>docker操作</h2>
 <h3 id="docker-run"><a class="header-anchor" href="#docker-run"></a>docker run</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// -i标志保证容器中STDIN是开启的 -t创建的容器分配一个伪tty终端</span><br><span class="line">docker run --name bob_the_container -i -t ubuntu /bin/bash</span><br><span class="line">	</span><br><span class="line">// 创建守护式容器，	</span><br><span class="line">docker run --name daemon_dave -d ubuntu /bin/sh -c &quot;while true; do echo hello world; sleep 1; done&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// -i标志保证容器中STDIN是开启的 -t创建的容器分配一个伪tty终端</span><br><span class="line">docker run --name bob_the_container -i -t ubuntu /bin/bash</span><br><span class="line">    </span><br><span class="line">// 创建守护式容器，	</span><br><span class="line">docker run --name daemon_dave -d ubuntu /bin/sh -c &quot;while true; do echo hello world; sleep 1; done&quot;</span><br></pre></td></tr></table></figure>
 <h3 id="docker-start-stop-restart-rm"><a class="header-anchor" href="#docker-start-stop-restart-rm"></a>docker start | stop | restart | rm</h3>
 <h3 id="docker-attach"><a class="header-anchor" href="#docker-attach"></a>docker attach</h3>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 重新回到了容器的Bash提示符</span><br><span class="line">docker attach bob_the_container</span><br></pre></td></tr></table></figure>
@@ -504,6 +504,45 @@
     <header class="article-header">
         
         <h1 itemprop="name">
+            <a href="/2018/12/14/切换php版本/">mac下php版本切换</a>
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="https://abcdkyd.github.io/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2018-12-14T13:11:41.000Z" itemprop="datePublished">2018-12-14</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/php/">php</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h4 id="brew安装php-version"><a class="header-anchor" href="#brew安装php-version"></a>brew安装php-version</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># brew install php56</span><br><span class="line"># brew install php70</span><br><span class="line"># brew install php-version</span><br><span class="line"># source $(brew --prefix php-version)/php-version.sh</span><br><span class="line"></span><br><span class="line"># php-version</span><br><span class="line"># php-version 5.6.5</span><br></pre></td></tr></table></figure>
+<h4 id="php开机启动"><a class="header-anchor" href="#php开机启动"></a>php开机启动</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># mkdir -p ~/Library/LaunchAgents</span><br><span class="line"># cp /usr/local/opt/php56/homebrew.mxcl.php56.plist ~/Library/LaunchAgents/</span><br><span class="line"># launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.php56.plist</span><br><span class="line"># launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php56.plist</span><br></pre></td></tr></table></figure>
+<h4 id="切换本机php版本"><a class="header-anchor" href="#切换本机php版本"></a>切换本机php版本</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// 先确认phpinfo里面的php版本，先卸载5.6的plist，在加载7.1的plist</span><br><span class="line"># launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php56.plist</span><br><span class="line"># launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php71.plist</span><br></pre></td></tr></table></figure>
+        
+    </section>
+</article>
+
+
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
             <a href="/2018/12/14/管理php扩展配置/">添加php额外配置，引入php扩展</a>
         </h1>
         
@@ -587,45 +626,6 @@
 </li>
 </ol>
 
-        
-    </section>
-</article>
-
-
-    <article class="article" itemscope itemprop="blogPost">
-    
-    <header class="article-header">
-        
-        <h1 itemprop="name">
-            <a href="/2018/12/14/切换php版本/">mac下php版本切换</a>
-        </h1>
-        
-        <div class="article-meta clearfix">
-            <a class="article-date" href="https://abcdkyd.github.io/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2018-12-14T13:11:41.000Z" itemprop="datePublished">2018-12-14</time>
-</a>
-
-            
-<div class="article-tag-list">
-    <i class="icon-tag"></i>
-    <a class="article-tag-link" href="/tags/php/">php</a>
-</div>
-
-
-        </div>
-    </header>
-    
-    <section class="article-body markdown-body">
-        
-        <h4 id="brew安装php-version"><a class="header-anchor" href="#brew安装php-version"></a>brew安装php-version</h4>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># brew install php56</span><br><span class="line"># brew install php70</span><br><span class="line"># brew install php-version</span><br><span class="line"># source $(brew --prefix php-version)/php-version.sh</span><br><span class="line"></span><br><span class="line"># php-version</span><br><span class="line"># php-version 5.6.5</span><br></pre></td></tr></table></figure>
-<h4 id="php开机启动"><a class="header-anchor" href="#php开机启动"></a>php开机启动</h4>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># mkdir -p ~/Library/LaunchAgents</span><br><span class="line"># cp /usr/local/opt/php56/homebrew.mxcl.php56.plist ~/Library/LaunchAgents/</span><br><span class="line"># launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.php56.plist</span><br><span class="line"># launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php56.plist</span><br></pre></td></tr></table></figure>
-<h4 id="切换本机php版本"><a class="header-anchor" href="#切换本机php版本"></a>切换本机php版本</h4>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// 先确认phpinfo里面的php版本，先卸载5.6的plist，在加载7.1的plist</span><br><span class="line"># launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php56.plist</span><br><span class="line"># launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php71.plist</span><br></pre></td></tr></table></figure>
         
     </section>
 </article>
