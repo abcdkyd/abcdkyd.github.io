@@ -2,7 +2,7 @@
 title: postgres触发器
 date: 2019-01-08 14:28:48
 tags: 
-    - Postgres
+    - PostgreSQL
     - 触发器
 categories: 数据库
 ---

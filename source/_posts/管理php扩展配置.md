@@ -54,6 +54,6 @@ __`phpinfo`__ 中 `Scan this dir for additional .ini files` 配置参数是php�
 		```
 	3. 执行phpize `phpize`
 	4. 执行./configure `./configure --with-php-config=/usr/bin/php-config`
-	5. `make && make install`
+	5. `make && make install`，如果出现`error: Cannot find OpenSSL's <evp.h>`，可以尝试加上 `--with-openssl-dir=/usr/local/opt/openssl@1.1`
 	6. 配置php.ini，添加so文件到ini
 		
