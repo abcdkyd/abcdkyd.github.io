@@ -103,7 +103,7 @@ docker inspect命令会对容器进行详细的检查，然后返回其配置信
 
 可以用-f或者--format标志来选定查看结果，根据json层级关系选取
 
-`docker inspect --format '{{.Name}} {{.State.Running}}' bob_the_container1 bob_the_container2`
+```docker inspect --format '{{.Name}} {{.State.Running}}' bob_the_container1 bob_the_container2```
 
 ## docker仓库和镜像
 
@@ -161,7 +161,7 @@ Docker大体上按照如下流程执行Dockerfile中的指令。
 
 `docker build -t="jamtur01/static_web:v1" .`
 
-上面命令中最后的.告诉Docker到本地目录中去找Dockerfile文件。也可以指定一个Git仓库的源地址来指定Dockerfile的位置
+上面命令中最后的`.`告诉Docker到本地目录中去找Dockerfile文件。也可以指定一个Git仓库的源地址来指定Dockerfile的位置
 
 `docker build -t="jamtur01/static_web:v1" git@github.com:jamtur01/docker-static_web`
 
