@@ -71,7 +71,7 @@
         
 
         
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#docker操作"><span class="toc-number">1.</span> <span class="toc-text">docker操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-run"><span class="toc-number">1.1.</span> <span class="toc-text">docker run</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-start-stop-restart-rm-rmi"><span class="toc-number">1.2.</span> <span class="toc-text">docker start | stop | restart | rm | rmi</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#批量删除镜像或者容器"><span class="toc-number">1.2.1.</span> <span class="toc-text">批量删除镜像或者容器</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-attach"><span class="toc-number">1.3.</span> <span class="toc-text">docker attach</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-logs"><span class="toc-number">1.4.</span> <span class="toc-text">docker logs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-run-log-driver-syslog"><span class="toc-number">1.5.</span> <span class="toc-text">docker run --log-driver=“syslog”</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-top"><span class="toc-number">1.6.</span> <span class="toc-text">docker top</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-stats"><span class="toc-number">1.7.</span> <span class="toc-text">docker stats</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-exec"><span class="toc-number">1.8.</span> <span class="toc-text">docker exec</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-run-restart-always"><span class="toc-number">1.9.</span> <span class="toc-text">docker run --restart=always</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-inspect"><span class="toc-number">1.10.</span> <span class="toc-text">docker inspect</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number"></span> <span class="toc-text">Version: 0.0.1</span></a>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#docker操作"><span class="toc-number">1.</span> <span class="toc-text">docker操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-run"><span class="toc-number">1.1.</span> <span class="toc-text">docker run</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-start-stop-restart-rm-rmi"><span class="toc-number">1.2.</span> <span class="toc-text">docker start | stop | restart | rm | rmi</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#批量删除镜像或者容器"><span class="toc-number">1.2.1.</span> <span class="toc-text">批量删除镜像或者容器</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-attach"><span class="toc-number">1.3.</span> <span class="toc-text">docker attach</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-logs"><span class="toc-number">1.4.</span> <span class="toc-text">docker logs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-run-log-driver-syslog"><span class="toc-number">1.5.</span> <span class="toc-text">docker run --log-driver=“syslog”</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-top"><span class="toc-number">1.6.</span> <span class="toc-text">docker top</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-stats"><span class="toc-number">1.7.</span> <span class="toc-text">docker stats</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-exec"><span class="toc-number">1.8.</span> <span class="toc-text">docker exec</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-run-restart-always"><span class="toc-number">1.9.</span> <span class="toc-text">docker run --restart=always</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-inspect"><span class="toc-number">1.10.</span> <span class="toc-text">docker inspect</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker仓库和镜像"><span class="toc-number">2.</span> <span class="toc-text">docker仓库和镜像</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-pull"><span class="toc-number">2.1.</span> <span class="toc-text">docker pull</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-search"><span class="toc-number">2.2.</span> <span class="toc-text">docker search</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-commit"><span class="toc-number">2.3.</span> <span class="toc-text">docker commit</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dockerfile"><span class="toc-number">2.4.</span> <span class="toc-text">DockerFile</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#docker-build"><span class="toc-number">2.4.1.</span> <span class="toc-text">docker build</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#dockerfile和构建缓存"><span class="toc-number">2.4.2.</span> <span class="toc-text">Dockerfile和构建缓存</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#docker-history"><span class="toc-number">2.4.3.</span> <span class="toc-text">docker history</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#docker-port"><span class="toc-number">2.4.4.</span> <span class="toc-text">docker port</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#dockerfile指令"><span class="toc-number">2.4.5.</span> <span class="toc-text">Dockerfile指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#docker-push"><span class="toc-number">2.4.6.</span> <span class="toc-text">docker push</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#docker-rmi"><span class="toc-number">2.4.7.</span> <span class="toc-text">docker rmi</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#运行自己的docker-registry"><span class="toc-number">2.4.8.</span> <span class="toc-text">运行自己的Docker Registry</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#docker-network"><span class="toc-number">2.4.9.</span> <span class="toc-text">docker network</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#volumes-from"><span class="toc-number">2.4.10.</span> <span class="toc-text">–volumes-from</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#备份卷"><span class="toc-number">2.4.11.</span> <span class="toc-text">备份卷</span></a></li></ol></li></ol></li></ol>
         
     </div>
 </aside>
@@ -154,69 +154,224 @@
 <p>docker inspect命令会对容器进行详细的检查，然后返回其配置信息，包括名称、命令、网络配置以及很多有用的数据</p>
 <p><code>docker inspect bob_the_container</code></p>
 <p>可以用-f或者–format标志来选定查看结果，根据json层级关系选取</p>
-<figure class="highlight docker"><figcaption><span>inspect --format '&#123;&#123;.Name&#125;&#125; &#123;&#123;.State.Running&#125;&#125;' bob_the_container1 bob_the_container2```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">## docker仓库和镜像</span></span><br><span class="line"></span><br><span class="line"><span class="comment">### docker pull</span></span><br><span class="line"></span><br><span class="line">`docker pull fedora:<span class="number">20</span>`</span><br><span class="line"></span><br><span class="line"><span class="comment">### docker search</span></span><br><span class="line"></span><br><span class="line">通过docker search命令来查找所有Docker Hub上公共的可用镜像</span><br><span class="line"></span><br><span class="line">`docker search fedora`</span><br><span class="line"></span><br><span class="line"><span class="comment">### docker commit</span></span><br><span class="line"></span><br><span class="line">`docker commit <span class="number">4</span>aab3ce3cb76 jamtur01/apache2`</span><br><span class="line"></span><br><span class="line">首先-m选项用来指定新创建的镜像的提交信息。同时还指定了--a选项，用来列出该镜像的作者信息。接着指定了想要提交的容器的ID。最后的jamtur01/apache2指定了镜像的用户名和仓库名，并为该镜像增加了一个webserver标签。</span><br><span class="line"></span><br><span class="line">`docker commit -m<span class="string">"A new custom image"</span> -a<span class="string">"James Turnbull"</span> <span class="number">4</span>aab3ce3cb76 jamtur01/apache2:webserver`</span><br><span class="line"></span><br><span class="line"><span class="comment">### DockerFile</span></span><br></pre></td></tr></table></figure>
-<h1>Version: 0.0.1</h1>
-<p>FROM ubuntu:14.04　<br>
-MAINTAINER James Turnbull <a href="mailto:%22james@example.com" target="_blank" rel="noopener">&quot;james@example.com</a>&quot;　<br>
-RUN apt-get update &amp;&amp; apt-get install -y nginx　<br>
-RUN echo ‘Hi, I am in your container’ \　<br>
-　　 &gt;/usr/share/nginx/html/index.html　<br>
-EXPOSE 80</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Docker大体上按照如下流程执行Dockerfile中的指令。</span><br><span class="line"></span><br><span class="line">- Docker从基础镜像运行一个容器。</span><br><span class="line">- 执行一条指令，对容器做出修改</span><br><span class="line">- 执行类似docker commit的操作，提交一个新的镜像层。</span><br><span class="line">- Docker再基于刚提交的镜像运行一个新容器。</span><br><span class="line">- 执行Dockerfile中的下一条指令，直到所有指令都执行完毕。</span><br><span class="line"></span><br><span class="line">每条RUN指令都会创建一个新的镜像层，如果该指令执行成功，就会将此镜像层提交，之后继续执行Dockerfile中的下一条指令。</span><br><span class="line"></span><br><span class="line">默认情况下，RUN指令会在shell里使用命令包装器`/bin/sh -c`来执行。如果是在一个不支持shell的平台上运行或者不希望在shell中运行（比如避免shell字符串篡改），也可以使用exec格式的RUN指令，在这种方式中，我们使用一个数组来指定要运行的命令和传递给该命令的每个参数</span><br><span class="line"></span><br><span class="line">`RUN [ &quot;apt-get&quot;, &quot; install&quot;, &quot;-y&quot;, &quot;nginx&quot; ]`</span><br><span class="line"></span><br><span class="line">#### docker build</span><br><span class="line"></span><br><span class="line">-t 选项为新镜像设置了仓库和名称</span><br><span class="line"></span><br><span class="line">`docker build -t=&quot;jamtur01/static_web&quot; .`</span><br><span class="line"></span><br><span class="line">也可以在构建镜像的过程中为镜像设置一个标签，其使用方法为“镜像名:标签”</span><br><span class="line"></span><br><span class="line">`docker build -t=&quot;jamtur01/static_web:v1&quot; .`</span><br><span class="line"></span><br><span class="line">上面命令中最后的`.`告诉Docker到本地目录中去找Dockerfile文件。也可以指定一个Git仓库的源地址来指定Dockerfile的位置</span><br><span class="line"></span><br><span class="line">`docker build -t=&quot;jamtur01/static_web:v1&quot; git@github.com:jamtur01/docker-static_web`</span><br><span class="line"></span><br><span class="line">&gt; 自Docker 1.5.0开始，也可以通过-f标志指定一个区别于标准Dockerfile的构建源的位置。例如，`docker build -t &quot;jamtur01/static_web&quot; -f path/to/file`，这个文件可以不必命名为Dockerfile，但是必须要位于构建上下文之中。</span><br><span class="line"></span><br><span class="line">&gt; 如果在构建上下文的根目录下存在以`.dockerignore`命名的文件的话，那么该文件内容会被按行进行分割，每一行都是一条文件过滤匹配模式。这非常像`.gitignore`文件，该文件用来设置哪些文件不会被当作构建上下文的一部分，因此可以防止它们被上传到Docker守护进程中去。该文件中模式的匹配规则采用了Go语言中的filepath</span><br><span class="line"></span><br><span class="line">一个指令失败时，可以用docker run命令来基于这次构建到目前为止已经成功的最后一步创建一个容器ID，在容器中再次运行构建命令</span><br><span class="line"></span><br><span class="line">`docker run -t -i 997485f46ec4 /bin/bash`</span><br><span class="line"></span><br><span class="line">#### Dockerfile和构建缓存</span><br><span class="line"></span><br><span class="line">&gt; 由于每一步的构建过程都会将结果提交为镜像，所以Docker通常会将之前的镜像层看作缓存。然而，有些时候需要确保构建过程不会使用缓存，可以使用`docker build`的`--no-cache`标志</span><br><span class="line"></span><br><span class="line">构建缓存带来的一个好处就是，我们可以实现简单的Dockerfile模板</span><br></pre></td></tr></table></figure>
-<p>FROM ubuntu:14.04　<br>
-MAINTAINER James Turnbull <a href="mailto:%22james@example.com" target="_blank" rel="noopener">&quot;james@example.com</a>&quot;　<br>
-ENV REFRESHED_AT 2014-07-01　<br>
-RUN apt-get -qq update</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">上面使用了一条新出现的指令ENV来在镜像中设置环境变量，通过ENV指令来设置了一个名为REFRESHED_AT的环境变量，这个环境变量用来表明该镜像模板最后的更新时间。最后，使用了RUN指令来运行`apt-get -qq update`命令。该指令运行时将会刷新APT包的缓存，用来确保我们能将要安装的每个软件包都更新到最新版本。</span><br><span class="line"></span><br><span class="line">#### docker history</span><br><span class="line"></span><br><span class="line">想深入探求镜像是如何构建出来的，可以使用`docker history`命令</span><br><span class="line"></span><br><span class="line">`docker history 22d47c8cb6e5`</span><br><span class="line"></span><br><span class="line">#### docker port</span><br><span class="line"></span><br><span class="line">以下命令中我们指定了想要查看映射情况的容器的ID和容器的端口号，这里是80。</span><br><span class="line"></span><br><span class="line">`docker port 6751b94bb5c0 80`</span><br><span class="line"></span><br><span class="line">运行容器是直接绑定特定端口，这条命令会将容器中的80端口绑定到宿主机的8080端口上：</span><br><span class="line"></span><br><span class="line">`docker run -d -p 8080:80 --name static_web jamtur01/static_web nginx -g &quot;daemon off;&quot;`</span><br><span class="line"></span><br><span class="line">这里，我们将容器内的80端口绑定到了本地宿主机的127.0.0.1这个IP的8080端口上：</span><br><span class="line"></span><br><span class="line">`docker run -d -p 127.0.0.1:8080:80 --name static_web jamtur01/static_web nginx -g &quot;daemon off;&quot;`</span><br><span class="line"></span><br><span class="line">Docker还提供了一个更简单的方式，即`-P`参数，该参数可以用来对外公开在Dockerfile中通过`EXPOSE`指令公开的所有端口</span><br><span class="line"></span><br><span class="line">#### Dockerfile指令</span><br><span class="line"></span><br><span class="line">1. CMD</span><br><span class="line">    </span><br><span class="line">    CMD指令用于指定一个容器启动时要运行的命令。这有点儿类似于RUN指令，只是RUN指令是指定镜像被构建时要运行的命令，而CMD是指定容器被启动时要运行的命令。</span><br><span class="line">    </span><br><span class="line">    `docker run -i -t jamtur01/static_web /bin/true` 等价于Dockerfile中使用`CMD [&quot;/bin/true&quot;]`</span><br><span class="line">    </span><br><span class="line">    最后，还需牢记，使用docker run命令可以覆盖CMD指令。如果我们在Dockerfile里指定了CMD指令，而同时在docker run命令行中也指定了要运行的命令，命令行中指定的命令会覆盖Dockerfile中的CMD指令。</span><br><span class="line">    </span><br><span class="line">    &gt; 在Dockerfile中只能指定一条CMD指令。如果指定了多条CMD指令，也只有最后一条CMD指令会被使用。如果想在启动容器时运行多个进程或者多条命令，可以考虑使用类似Supervisor这样的服务管理工具。</span><br><span class="line">    </span><br><span class="line">2. ENTRYPOINT</span><br><span class="line">    </span><br><span class="line">    ENTRYPOINT指令与CMD指令非常类似，而ENTRYPOINT指令提供的命令则不容易在启动容器时被覆盖。实际上，docker run命令行中指定的任何参数都会被当做参数再次传递给ENTRYPOINT指令中指定的命令。</span><br><span class="line">    </span><br><span class="line">    `ENTRYPOINT [&quot;/usr/sbin/nginx&quot;, &quot;-g&quot;, &quot;daemon off;&quot;]`</span><br><span class="line">    </span><br><span class="line">    &gt; 如果确实需要，用户也可以在运行时通过docker run的--entrypoint标志覆盖ENTRYPOINT指令。</span><br><span class="line">    </span><br><span class="line">3. WORKDIR</span><br><span class="line"></span><br><span class="line">    WORKDIR指令用来在从镜像创建一个新容器时，在容器内部设置一个工作目录，ENTRYPOINT和/或CMD指定的程序会在这个目录下执行。</span><br></pre></td></tr></table></figure>
-<pre><code>WORKDIR /opt/webapp/db　
-RUN bundle install　
-WORKDIR /opt/webapp　
-ENTRYPOINT [ &quot;rackup&quot; ]
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">    </span><br><span class="line">    这里，我们将工作目录切换为/opt/webapp/db后运行了bundle install命令，之后又将工作目录设置为/opt/webapp，最后设置了ENTRYPOINT指令来启动rackup命令。</span><br><span class="line">    </span><br><span class="line">    可以通过`-w`标志在运行时覆盖工作目录，该命令会将容器内的工作目录设置为`/var/log`：</span><br><span class="line">    </span><br><span class="line">    `sudo docker run -ti -w /var/log ubuntu pwd`</span><br><span class="line">    </span><br><span class="line">4. ENV</span><br><span class="line"></span><br><span class="line">    ENV指令用来在镜像构建过程中设置环境变量</span><br><span class="line">    </span><br><span class="line">    `ENV RVM_PATH /home/rvm/`</span><br><span class="line">    </span><br><span class="line">    这个新的环境变量可以在后续的任何RUN指令中使用，这就如同在命令前面指定了环境变量前缀一样</span><br><span class="line">    </span><br><span class="line">    `RUN gem install unicorn`</span><br><span class="line">    </span><br><span class="line">    该指令会以以下方式执行：</span><br><span class="line">    </span><br><span class="line">    `RVM_PATH=/home/rvm/ gem install unicorn`</span><br><span class="line">    </span><br><span class="line">    在这里我们设定了一个新的环境变量TARGET_DIR，并在WORKDIR中使用了它的值。因此实际上WORKDIR指令的值会被设为`/opt/app`：</span><br></pre></td></tr></table></figure>
-
-ENV TARGET_DIR /opt/app
-</code></pre>
-<p>WORKDIR $TARGET_DIR<br>
-	<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">    </span><br><span class="line">    也可以使用docker run命令行的-e标志来传递环境变量，这些变量将只会在运行时有效</span><br><span class="line">    </span><br><span class="line">    `docker run -ti -e &quot;WEB_PORT=8080&quot; ubuntu env`</span><br><span class="line">    </span><br><span class="line">5. USER</span><br><span class="line"></span><br><span class="line">    USER指令用来指定该镜像会以什么样的用户去运行，我们可以指定用户名或UID以及组或GID，甚至是两者的组合</span><br></pre></td></tr></table></figure></p>
-<pre><code>USER user
-USER user:group
-USER uid
-USER uid:gid
-USER user:gid
-USER uid:group
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">    也可以在docker run命令中通过-u标志来覆盖该指令指定的值。</span><br><span class="line">    </span><br><span class="line">    &gt; 如果不通过USER指令指定用户，默认用户为root。</span><br><span class="line">    </span><br><span class="line">6. VOLUME</span><br><span class="line"></span><br><span class="line">    VOLUME指令用来向基于镜像创建的容器添加卷。一个卷是可以存在于一个或者多个容器内的特定的目录，这个目录可以绕过联合文件系统，并提供如下共享数据或者对数据进行持久化的功能。</span><br><span class="line">    </span><br><span class="line">    - 卷可以在容器间共享和重用。</span><br><span class="line">    - 一个容器可以不是必须和其他容器共享卷。</span><br><span class="line">    - 对卷的修改是立时生效的。</span><br><span class="line">    - 对卷的修改不会对更新镜像产生影响。</span><br><span class="line">    - 卷会一直存在直到没有任何容器再使用它。</span><br><span class="line"></span><br><span class="line">    `VOLUME [&quot;/opt/project&quot;]`</span><br><span class="line">    </span><br><span class="line">    这条指令将会为基于此镜像创建的任何容器创建一个名为/opt/project的挂载点。</span><br><span class="line">    </span><br><span class="line">    &gt; `docker cp`是和VOLUME指令相关并且也是很实用的命令。该命令允许从容器复制文件和复制文件到容器上。</span><br><span class="line">    </span><br><span class="line">7. ADD</span><br><span class="line"></span><br><span class="line">    ADD指令用来将构建环境下的文件和目录复制到镜像中。比如，在安装一个应用程序时。ADD指令需要源文件位置和目的文件位置两个参数。</span><br><span class="line">    </span><br><span class="line">    `ADD software.lic /opt/application/software.lic`</span><br><span class="line">    </span><br><span class="line">    这里的ADD指令将会将构建目录下的`software.lic`文件复制到镜像中的`/opt/application/software.lic`。指向源文件的位置参数可以是一个URL，或者构建上下文或环境中文件名或者目录。不能对构建目录或者上下文之外的文件进行ADD操作。</span><br><span class="line">    </span><br><span class="line">    在ADD文件时，Docker通过目的地址参数末尾的字符来判断文件源是目录还是文件。如果目标地址以/结尾，那么Docker就认为源位置指向的是一个目录。如果目的地址不是以/结尾，那么Docker就认为源位置指向的是文件。</span><br><span class="line">    </span><br><span class="line">    最后，如果目的位置不存在的话，Docker将会为我们创建这个全路径，包括路径中的任何目录。新创建的文件和目录的模式为0755，并且UID和GID都是0。</span><br><span class="line">    </span><br><span class="line">    &gt; ADD指令会使得构建缓存变得无效，这一点也非常重要。如果通过ADD指令向镜像添加一个文件或者目录，那么这将使Dockerfile中的后续指令都不能继续使用之前的构建缓存。</span><br><span class="line">    </span><br><span class="line">8. COPY</span><br><span class="line"></span><br><span class="line">    COPY指令非常类似于ADD，它们根本的不同是COPY只关心在构建上下文中复制本地文件，而不会去做文件提取（extraction）和解压（decompression）的工作。</span><br><span class="line">    </span><br><span class="line">    `COPY conf.d/ /etc/apache2/`</span><br><span class="line">    </span><br><span class="line">    文件源路径必须是一个与当前构建环境相对的文件或者目录，本地文件都放到和Dockerfile同一个目录下。不能复制该目录之外的任何文件，因为构建环境将会上传到Docker守护进程，而复制是在Docker守护进程中进行的。任何位于构建环境之外的东西都是不可用的。COPY指令的目的位置则必须是容器内部的一个绝对路径。</span><br><span class="line">    </span><br><span class="line">    如果目的位置不存在，Docker将会自动创建所有需要的目录结构，就像mkdir -p命令那样</span><br><span class="line">    </span><br><span class="line">9. LABEL</span><br><span class="line"></span><br><span class="line">    LABEL指令用于为Docker镜像添加元数据。元数据以键值对的形式展现。</span><br></pre></td></tr></table></figure>
-
-LABEL version=&quot;1.0&quot;
-LABEL location=&quot;New York&quot; type=&quot;Data Center&quot; role=&quot;Web Server&quot;
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">    </span><br><span class="line">    LABEL指令以`label=&quot;value&quot;`ß	的形式出现。可以在每一条指令中指定一个元数据，或者指定多个元数据，不同的元数据之间用空格分隔。推荐将所有的元数据都放到一条LABEL指令中，以防止不同的元数据指令创建过多镜像层。可以通过`docker inspect`命令来查看Docker镜像中的标签信息。</span><br><span class="line">    </span><br><span class="line">10. STOPSIGNAL</span><br><span class="line"></span><br><span class="line">    STOPSIGNAL指令用来设置停止容器时发送什么系统调用信号给容器。这个信号必须是内核系统调用表中合法的数，如9，或者SIGNAME格式中的信号名称，如SIGKILL。</span><br><span class="line">    </span><br><span class="line">11. ARG</span><br><span class="line"></span><br><span class="line">    ARG指令用来定义可以在docker build命令运行时传递给构建运行时的变量，我们只需要在构建时使用--build-arg标志即可。用户只能在构建时指定在Dockerfile文件中定义过的参数。</span><br></pre></td></tr></table></figure>
-
-ARG build
-ARG webapp_user=user
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">    </span><br><span class="line">    上面例子中第二条ARG指令设置了一个默认值，如果构建时没有为该参数指定值，就会使用这个默认值。</span><br><span class="line"></span><br><span class="line">    `docker build --build-arg build=1234 -t jamtur01/webapp .`</span><br><span class="line">    </span><br><span class="line">    要想使用这些预定义的变量，只需要给docker build命令传递--build-arg &lt;variable&gt;=&lt;value&gt;标志就可以了。</span><br><span class="line">    </span><br><span class="line">12. ONBUILD</span><br><span class="line"></span><br><span class="line">    ONBUILD指令能为镜像添加触发器（trigger）。当一个镜像被用做其他镜像的基础镜像时（比如用户的镜像需要从某未准备好的位置添加源代码，或者用户需要执行特定于构建镜像的环境的构建脚本），该镜像中的触发器将会被执行。</span><br><span class="line">    </span><br><span class="line">    触发器会在构建过程中插入新指令，我们可以认为这些指令是紧跟在FROM之后指定的。触发器可以是任何构建指令</span><br></pre></td></tr></table></figure>
-
-ONBUILD ADD . /app/src　
-ONBUILD RUN cd /app/src &amp;&amp; make
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">上面的代码将会在创建的镜像中加入ONBUILD触发器，ONBUILD指令可以在镜像上运行docker inspect命令来查看</span><br><span class="line"></span><br><span class="line">比如，我们为Apache2镜像构建一个全新的Dockerfile，该镜像名为jamtur01/ apache2</span><br></pre></td></tr></table></figure>
-
-FROM ubuntu:14.04　
-MAINTAINER James Turnbull &quot;james@example.com&quot;　
-RUN apt-get update &amp;&amp; apt-get install -y apache2　
-ENV APACHE_RUN_USER www-data　
-ENV APACHE_RUN_GROUP www-data　
-ENV APACHE_LOG_DIR /var/log/apache2　
-ONBUILD ADD . /var/www/　
-EXPOSE 80　
-ENTRYPOINT [&quot;/usr/sbin/apache2&quot;]　
-CMD [&quot;-D&quot;, &quot;FOREGROUND&quot;]
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">    </span><br><span class="line">    在新构建的镜像中包含一条ONBUILD指令，该指令会使用ADD指令将构建环境所在的目录下的内容全部添加到镜像中的/var/www/目录下。我们可以轻而易举地将这个Dockerfile作为一个通用的Web应用程序的模板，可以基于这个模板来构建Web应用程序。</span><br><span class="line">    </span><br><span class="line">    ONBUILD触发器会按照在父镜像中指定的顺序执行，并且只能被继承一次（也就是说只能在子镜像中执行，而不会在孙子镜像中执行）。如果我们再基于jamtur01/webapp构建一个镜像，则新镜像是jamtur01/apache2的孙子镜像，因此在该镜像的构建过程中，ONBUILD触发器是不会被执行的。</span><br><span class="line">    </span><br><span class="line">    &gt; 这里有好几条指令是不能用在ONBUILD指令中的，包括FROM、MAINTAINER和ONBUILD本身。之所以这么规定是为了防止在 Dockerfile构建过程中产生递归调用的问题。</span><br><span class="line">    </span><br><span class="line">#### docker push</span><br><span class="line"></span><br><span class="line">`docker push jamtur01/static_web`</span><br><span class="line"></span><br><span class="line">#### docker rmi</span><br><span class="line"></span><br><span class="line">指定一个镜像名列表来删除多个镜像</span><br><span class="line"></span><br><span class="line">`docker rmi jamtur01/apache2 jamtur01/puppetmaster`</span><br></pre></td></tr></table></figure>
-</code></pre>
-<p>docker rmi <code>docker images -a -q</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### 运行自己的Docker Registry</span><br><span class="line"></span><br><span class="line">从容器运行Registry</span><br><span class="line"></span><br><span class="line">`docker run -p 5000:5000 registry:2`</span><br><span class="line"></span><br><span class="line">该命令将会启动一个运行Registry应用2.0版本的容器，并将5000端口绑定到本地宿主机。</span><br><span class="line"></span><br><span class="line">为了指定新的Registry目的地址，需要在镜像名前加上主机名和端口前缀。</span><br><span class="line"></span><br><span class="line">`docker tag 22d47c8cb6e5 docker.example.com:5000/jamtur01/static_web`</span><br><span class="line"></span><br><span class="line">为镜像打完标签之后，就能通过docker push命令将它推送到新的Registry中去了</span><br><span class="line"></span><br><span class="line">`docker push docker.example.com:5000/jamtur01/static_web`</span><br><span class="line"></span><br><span class="line">`sudo docker run -t -i docker.example.com:5000/jamtur01/static_web /bin/bash`</span><br><span class="line"></span><br><span class="line">#### docker network</span><br><span class="line"></span><br><span class="line">Docker Networking允许用户创建自己的网络，容器可以通过这个网上互相通信。</span><br><span class="line"></span><br><span class="line">`docker network create app`</span><br><span class="line"></span><br><span class="line">这里用docker network命令创建了一个桥接网络，命名为app，这个命令返回新创建的网络的网络ID。</span><br><span class="line"></span><br><span class="line">然后可以用docker network inspect命令查看新创建的这个网络</span><br><span class="line"></span><br><span class="line">`docker network inspect app`</span><br><span class="line"></span><br><span class="line">可以使用`docker network ls`命令列出当前系统中的所有网络</span><br><span class="line"></span><br><span class="line">可以使用`docker network rm`命令删除一个Docker网络</span><br><span class="line"></span><br><span class="line">也可以将正在运行的容器通过docker network connect命令添加到已有的网络中。因此，我们可以将已经存在的容器添加到app网络中。假设已经存在的容器名为db2，这个容器里也运行着Redis，让我们将这个容器添加到app网络中去</span><br><span class="line"></span><br><span class="line">`docker network connect app db2`</span><br><span class="line"></span><br><span class="line">`docker network disconnect app db2`</span><br><span class="line"></span><br><span class="line">#### --volumes-from</span><br><span class="line"></span><br><span class="line">卷是在一个或多个容器中特殊指定的目录，卷会绕过联合文件系统，为持久化数据和共享数据提供几个有用的特性。</span><br><span class="line"></span><br><span class="line">- 卷可以在容器间共享和重用。</span><br><span class="line">- 共享卷时不一定要运行相应的容器。</span><br><span class="line">- 对卷的修改会直接在卷上反映出来。</span><br><span class="line">- 更新镜像时不会包含对卷的修改。</span><br><span class="line">- 卷会一直存在，直到没有容器使用它们。</span><br><span class="line"></span><br><span class="line">我们启动了一个叫作james_blog的新容器，把本地的james_blog目录作为/data/卷挂载到容器里。</span><br><span class="line"></span><br><span class="line">`docker run -v /home/james/james_blog:/data/ --name james_blog jamtur01/jekyll`</span><br><span class="line"></span><br><span class="line">如果想在另一个容器里使用/var/www/html/卷里编译好的网站，可以创建一个新的链接到这个卷的容器</span><br><span class="line"></span><br><span class="line">`docker run -d -P --volumes-from james_blog jamtur01/apache`</span><br><span class="line"></span><br><span class="line">#### 备份卷</span><br><span class="line"></span><br><span class="line">这里我们运行了一个已有的Ubuntu容器，并把james_blog的卷挂载到该容器里。这会在该容器里创建`/var/www/html`目录。然后我们使用-v标志把当前目录（通过$(pwd)命令获得）挂载到容器的`/backup`目录。</span><br></pre></td></tr></table></figure>
-<p>docker run --rm --volumes-from james_blog <br>
--v $(pwd):/backup ubuntu <br>
-tar cvf /backup/james_blog_backup.tar /var/www/html</p>
-<pre><code>
-&gt; 我们还指定了--rm标志，这个标志对于只用一次的容器，或者说用完即扔的容器，很有用。这个标志会在容器的进程运行完毕后，自动删除容器。对于只用一次的容器来说，这是一种很方便的清理方法。</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker inspect --format &apos;&#123;&#123;.Name&#125;&#125; &#123;&#123;.State.Running&#125;&#125;&apos; bob_the_container1 bob_the_container2</span><br></pre></td></tr></table></figure>
+<h2 id="docker仓库和镜像"><a class="header-anchor" href="#docker仓库和镜像"></a>docker仓库和镜像</h2>
+<h3 id="docker-pull"><a class="header-anchor" href="#docker-pull"></a>docker pull</h3>
+<p><code>docker pull fedora:20</code></p>
+<h3 id="docker-search"><a class="header-anchor" href="#docker-search"></a>docker search</h3>
+<p>通过docker search命令来查找所有Docker Hub上公共的可用镜像</p>
+<p><code>docker search fedora</code></p>
+<h3 id="docker-commit"><a class="header-anchor" href="#docker-commit"></a>docker commit</h3>
+<p><code>docker commit 4aab3ce3cb76 jamtur01/apache2</code></p>
+<p>首先-m选项用来指定新创建的镜像的提交信息。同时还指定了–a选项，用来列出该镜像的作者信息。接着指定了想要提交的容器的ID。最后的jamtur01/apache2指定了镜像的用户名和仓库名，并为该镜像增加了一个webserver标签。</p>
+<p><code>docker commit -m&quot;A new custom image&quot; -a&quot;James Turnbull&quot; 4aab3ce3cb76 jamtur01/apache2:webserver</code></p>
+<h3 id="dockerfile"><a class="header-anchor" href="#dockerfile"></a>DockerFile</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># Version: 0.0.1　</span><br><span class="line">FROM ubuntu:14.04　</span><br><span class="line">MAINTAINER James Turnbull &quot;james@example.com&quot;　</span><br><span class="line">RUN apt-get update &amp;&amp; apt-get install -y nginx　</span><br><span class="line">RUN echo &apos;Hi, I am in your container&apos; \　</span><br><span class="line">　　 &gt;/usr/share/nginx/html/index.html　</span><br><span class="line">EXPOSE 80</span><br></pre></td></tr></table></figure>
+<p>Docker大体上按照如下流程执行Dockerfile中的指令。</p>
+<ul>
+<li>Docker从基础镜像运行一个容器。</li>
+<li>执行一条指令，对容器做出修改</li>
+<li>执行类似docker commit的操作，提交一个新的镜像层。</li>
+<li>Docker再基于刚提交的镜像运行一个新容器。</li>
+<li>执行Dockerfile中的下一条指令，直到所有指令都执行完毕。</li>
+</ul>
+<p>每条RUN指令都会创建一个新的镜像层，如果该指令执行成功，就会将此镜像层提交，之后继续执行Dockerfile中的下一条指令。</p>
+<p>默认情况下，RUN指令会在shell里使用命令包装器<code>/bin/sh -c</code>来执行。如果是在一个不支持shell的平台上运行或者不希望在shell中运行（比如避免shell字符串篡改），也可以使用exec格式的RUN指令，在这种方式中，我们使用一个数组来指定要运行的命令和传递给该命令的每个参数</p>
+<p><code>RUN [ &quot;apt-get&quot;, &quot; install&quot;, &quot;-y&quot;, &quot;nginx&quot; ]</code></p>
+<h4 id="docker-build"><a class="header-anchor" href="#docker-build"></a>docker build</h4>
+<p>-t 选项为新镜像设置了仓库和名称</p>
+<p><code>docker build -t=&quot;jamtur01/static_web&quot; .</code></p>
+<p>也可以在构建镜像的过程中为镜像设置一个标签，其使用方法为“镜像名:标签”</p>
+<p><code>docker build -t=&quot;jamtur01/static_web:v1&quot; .</code></p>
+<p>上面命令中最后的<code>.</code>告诉Docker到本地目录中去找Dockerfile文件。也可以指定一个Git仓库的源地址来指定Dockerfile的位置</p>
+<p><code>docker build -t=&quot;jamtur01/static_web:v1&quot; git@github.com:jamtur01/docker-static_web</code></p>
+<blockquote>
+<p>自Docker 1.5.0开始，也可以通过-f标志指定一个区别于标准Dockerfile的构建源的位置。例如，<code>docker build -t &quot;jamtur01/static_web&quot; -f path/to/file</code>，这个文件可以不必命名为Dockerfile，但是必须要位于构建上下文之中。</p>
+</blockquote>
+<blockquote>
+<p>如果在构建上下文的根目录下存在以<code>.dockerignore</code>命名的文件的话，那么该文件内容会被按行进行分割，每一行都是一条文件过滤匹配模式。这非常像<code>.gitignore</code>文件，该文件用来设置哪些文件不会被当作构建上下文的一部分，因此可以防止它们被上传到Docker守护进程中去。该文件中模式的匹配规则采用了Go语言中的filepath</p>
+</blockquote>
+<p>一个指令失败时，可以用docker run命令来基于这次构建到目前为止已经成功的最后一步创建一个容器ID，在容器中再次运行构建命令</p>
+<p><code>docker run -t -i 997485f46ec4 /bin/bash</code></p>
+<h4 id="dockerfile和构建缓存"><a class="header-anchor" href="#dockerfile和构建缓存"></a>Dockerfile和构建缓存</h4>
+<blockquote>
+<p>由于每一步的构建过程都会将结果提交为镜像，所以Docker通常会将之前的镜像层看作缓存。然而，有些时候需要确保构建过程不会使用缓存，可以使用<code>docker build</code>的<code>--no-cache</code>标志</p>
+</blockquote>
+<p>构建缓存带来的一个好处就是，我们可以实现简单的Dockerfile模板</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">FROM ubuntu:14.04　</span><br><span class="line">MAINTAINER James Turnbull &quot;james@example.com&quot;　</span><br><span class="line">ENV REFRESHED_AT 2014-07-01　</span><br><span class="line">RUN apt-get -qq update</span><br></pre></td></tr></table></figure>
+<p>上面使用了一条新出现的指令ENV来在镜像中设置环境变量，通过ENV指令来设置了一个名为REFRESHED_AT的环境变量，这个环境变量用来表明该镜像模板最后的更新时间。最后，使用了RUN指令来运行<code>apt-get -qq update</code>命令。该指令运行时将会刷新APT包的缓存，用来确保我们能将要安装的每个软件包都更新到最新版本。</p>
+<h4 id="docker-history"><a class="header-anchor" href="#docker-history"></a>docker history</h4>
+<p>想深入探求镜像是如何构建出来的，可以使用<code>docker history</code>命令</p>
+<p><code>docker history 22d47c8cb6e5</code></p>
+<h4 id="docker-port"><a class="header-anchor" href="#docker-port"></a>docker port</h4>
+<p>以下命令中我们指定了想要查看映射情况的容器的ID和容器的端口号，这里是80。</p>
+<p><code>docker port 6751b94bb5c0 80</code></p>
+<p>运行容器是直接绑定特定端口，这条命令会将容器中的80端口绑定到宿主机的8080端口上：</p>
+<p><code>docker run -d -p 8080:80 --name static_web jamtur01/static_web nginx -g &quot;daemon off;&quot;</code></p>
+<p>这里，我们将容器内的80端口绑定到了本地宿主机的127.0.0.1这个IP的8080端口上：</p>
+<p><code>docker run -d -p 127.0.0.1:8080:80 --name static_web jamtur01/static_web nginx -g &quot;daemon off;&quot;</code></p>
+<p>Docker还提供了一个更简单的方式，即<code>-P</code>参数，该参数可以用来对外公开在Dockerfile中通过<code>EXPOSE</code>指令公开的所有端口</p>
+<h4 id="dockerfile指令"><a class="header-anchor" href="#dockerfile指令"></a>Dockerfile指令</h4>
+<ol>
+<li>
+<p>CMD</p>
+<p>CMD指令用于指定一个容器启动时要运行的命令。这有点儿类似于RUN指令，只是RUN指令是指定镜像被构建时要运行的命令，而CMD是指定容器被启动时要运行的命令。</p>
+<p><code>docker run -i -t jamtur01/static_web /bin/true</code> 等价于Dockerfile中使用<code>CMD [&quot;/bin/true&quot;]</code></p>
+<p>最后，还需牢记，使用docker run命令可以覆盖CMD指令。如果我们在Dockerfile里指定了CMD指令，而同时在docker run命令行中也指定了要运行的命令，命令行中指定的命令会覆盖Dockerfile中的CMD指令。</p>
+<blockquote>
+<p>在Dockerfile中只能指定一条CMD指令。如果指定了多条CMD指令，也只有最后一条CMD指令会被使用。如果想在启动容器时运行多个进程或者多条命令，可以考虑使用类似Supervisor这样的服务管理工具。</p>
+</blockquote>
+</li>
+<li>
+<p>ENTRYPOINT</p>
+<p>ENTRYPOINT指令与CMD指令非常类似，而ENTRYPOINT指令提供的命令则不容易在启动容器时被覆盖。实际上，docker run命令行中指定的任何参数都会被当做参数再次传递给ENTRYPOINT指令中指定的命令。</p>
+<p><code>ENTRYPOINT [&quot;/usr/sbin/nginx&quot;, &quot;-g&quot;, &quot;daemon off;&quot;]</code></p>
+<blockquote>
+<p>如果确实需要，用户也可以在运行时通过docker run的–entrypoint标志覆盖ENTRYPOINT指令。</p>
+</blockquote>
+</li>
+<li>
+<p>WORKDIR</p>
+<p>WORKDIR指令用来在从镜像创建一个新容器时，在容器内部设置一个工作目录，ENTRYPOINT和/或CMD指定的程序会在这个目录下执行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">WORKDIR /opt/webapp/db　</span><br><span class="line">RUN bundle install　</span><br><span class="line">WORKDIR /opt/webapp　</span><br><span class="line">ENTRYPOINT [ &quot;rackup&quot; ]</span><br></pre></td></tr></table></figure>
+<p>这里，我们将工作目录切换为/opt/webapp/db后运行了bundle install命令，之后又将工作目录设置为/opt/webapp，最后设置了ENTRYPOINT指令来启动rackup命令。</p>
+<p>可以通过<code>-w</code>标志在运行时覆盖工作目录，该命令会将容器内的工作目录设置为<code>/var/log</code>：</p>
+<p><code>sudo docker run -ti -w /var/log ubuntu pwd</code></p>
+</li>
+<li>
+<p>ENV</p>
+<p>ENV指令用来在镜像构建过程中设置环境变量</p>
+<p><code>ENV RVM_PATH /home/rvm/</code></p>
+<p>这个新的环境变量可以在后续的任何RUN指令中使用，这就如同在命令前面指定了环境变量前缀一样</p>
+<p><code>RUN gem install unicorn</code></p>
+<p>该指令会以以下方式执行：</p>
+<p><code>RVM_PATH=/home/rvm/ gem install unicorn</code></p>
+<p>在这里我们设定了一个新的环境变量TARGET_DIR，并在WORKDIR中使用了它的值。因此实际上WORKDIR指令的值会被设为<code>/opt/app</code>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">    ENV TARGET_DIR /opt/app</span><br><span class="line">WORKDIR $TARGET_DIR</span><br></pre></td></tr></table></figure>
+<p>也可以使用docker run命令行的-e标志来传递环境变量，这些变量将只会在运行时有效</p>
+<p><code>docker run -ti -e &quot;WEB_PORT=8080&quot; ubuntu env</code></p>
+</li>
+<li>
+<p>USER</p>
+<p>USER指令用来指定该镜像会以什么样的用户去运行，我们可以指定用户名或UID以及组或GID，甚至是两者的组合</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">USER user</span><br><span class="line">USER user:group</span><br><span class="line">USER uid</span><br><span class="line">USER uid:gid</span><br><span class="line">USER user:gid</span><br><span class="line">USER uid:group</span><br></pre></td></tr></table></figure>
+<p>也可以在docker run命令中通过-u标志来覆盖该指令指定的值。</p>
+<blockquote>
+<p>如果不通过USER指令指定用户，默认用户为root。</p>
+</blockquote>
+</li>
+<li>
+<p>VOLUME</p>
+<p>VOLUME指令用来向基于镜像创建的容器添加卷。一个卷是可以存在于一个或者多个容器内的特定的目录，这个目录可以绕过联合文件系统，并提供如下共享数据或者对数据进行持久化的功能。</p>
+<ul>
+<li>卷可以在容器间共享和重用。</li>
+<li>一个容器可以不是必须和其他容器共享卷。</li>
+<li>对卷的修改是立时生效的。</li>
+<li>对卷的修改不会对更新镜像产生影响。</li>
+<li>卷会一直存在直到没有任何容器再使用它。</li>
+</ul>
+<p><code>VOLUME [&quot;/opt/project&quot;]</code></p>
+<p>这条指令将会为基于此镜像创建的任何容器创建一个名为/opt/project的挂载点。</p>
+<blockquote>
+<p><code>docker cp</code>是和VOLUME指令相关并且也是很实用的命令。该命令允许从容器复制文件和复制文件到容器上。</p>
+</blockquote>
+</li>
+<li>
+<p>ADD</p>
+<p>ADD指令用来将构建环境下的文件和目录复制到镜像中。比如，在安装一个应用程序时。ADD指令需要源文件位置和目的文件位置两个参数。</p>
+<p><code>ADD software.lic /opt/application/software.lic</code></p>
+<p>这里的ADD指令将会将构建目录下的<code>software.lic</code>文件复制到镜像中的<code>/opt/application/software.lic</code>。指向源文件的位置参数可以是一个URL，或者构建上下文或环境中文件名或者目录。不能对构建目录或者上下文之外的文件进行ADD操作。</p>
+<p>在ADD文件时，Docker通过目的地址参数末尾的字符来判断文件源是目录还是文件。如果目标地址以/结尾，那么Docker就认为源位置指向的是一个目录。如果目的地址不是以/结尾，那么Docker就认为源位置指向的是文件。</p>
+<p>最后，如果目的位置不存在的话，Docker将会为我们创建这个全路径，包括路径中的任何目录。新创建的文件和目录的模式为0755，并且UID和GID都是0。</p>
+<blockquote>
+<p>ADD指令会使得构建缓存变得无效，这一点也非常重要。如果通过ADD指令向镜像添加一个文件或者目录，那么这将使Dockerfile中的后续指令都不能继续使用之前的构建缓存。</p>
+</blockquote>
+</li>
+<li>
+<p>COPY</p>
+<p>COPY指令非常类似于ADD，它们根本的不同是COPY只关心在构建上下文中复制本地文件，而不会去做文件提取（extraction）和解压（decompression）的工作。</p>
+<p><code>COPY conf.d/ /etc/apache2/</code></p>
+<p>文件源路径必须是一个与当前构建环境相对的文件或者目录，本地文件都放到和Dockerfile同一个目录下。不能复制该目录之外的任何文件，因为构建环境将会上传到Docker守护进程，而复制是在Docker守护进程中进行的。任何位于构建环境之外的东西都是不可用的。COPY指令的目的位置则必须是容器内部的一个绝对路径。</p>
+<p>如果目的位置不存在，Docker将会自动创建所有需要的目录结构，就像mkdir -p命令那样</p>
+</li>
+<li>
+<p>LABEL</p>
+<p>LABEL指令用于为Docker镜像添加元数据。元数据以键值对的形式展现。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">LABEL version=&quot;1.0&quot;</span><br><span class="line">LABEL location=&quot;New York&quot; type=&quot;Data Center&quot; role=&quot;Web Server&quot;</span><br></pre></td></tr></table></figure>
+<p>LABEL指令以<code>label=&quot;value&quot;</code>的形式出现。可以在每一条指令中指定一个元数据，或者指定多个元数据，不同的元数据之间用空格分隔。推荐将所有的元数据都放到一条LABEL指令中，以防止不同的元数据指令创建过多镜像层。可以通过<code>docker inspect</code>命令来查看Docker镜像中的标签信息。</p>
+</li>
+<li>
+<p>STOPSIGNAL</p>
+<p>STOPSIGNAL指令用来设置停止容器时发送什么系统调用信号给容器。这个信号必须是内核系统调用表中合法的数，如9，或者SIGNAME格式中的信号名称，如SIGKILL。</p>
+</li>
+<li>
+<p>ARG</p>
+<p>ARG指令用来定义可以在docker build命令运行时传递给构建运行时的变量，我们只需要在构建时使用–build-arg标志即可。用户只能在构建时指定在Dockerfile文件中定义过的参数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ARG build</span><br><span class="line">ARG webapp_user=user</span><br></pre></td></tr></table></figure>
+<p>上面例子中第二条ARG指令设置了一个默认值，如果构建时没有为该参数指定值，就会使用这个默认值。</p>
+<p><code>docker build --build-arg build=1234 -t jamtur01/webapp .</code></p>
+<p>要想使用这些预定义的变量，只需要给docker build命令传递–build-arg <variable>=<value>标志就可以了。</value></variable></p>
+</li>
+<li>
+<p>ONBUILD</p>
+<p>ONBUILD指令能为镜像添加触发器（trigger）。当一个镜像被用做其他镜像的基础镜像时（比如用户的镜像需要从某未准备好的位置添加源代码，或者用户需要执行特定于构建镜像的环境的构建脚本），该镜像中的触发器将会被执行。</p>
+<p>触发器会在构建过程中插入新指令，我们可以认为这些指令是紧跟在FROM之后指定的。触发器可以是任何构建指令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ONBUILD ADD . /app/src　</span><br><span class="line">ONBUILD RUN cd /app/src &amp;&amp; make</span><br></pre></td></tr></table></figure>
+<p>上面的代码将会在创建的镜像中加入ONBUILD触发器，ONBUILD指令可以在镜像上运行docker inspect命令来查看</p>
+<p>比如，我们为Apache2镜像构建一个全新的Dockerfile，该镜像名为jamtur01/ apache2</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">FROM ubuntu:14.04　</span><br><span class="line">MAINTAINER James Turnbull &quot;james@example.com&quot;　</span><br><span class="line">RUN apt-get update &amp;&amp; apt-get install -y apache2　</span><br><span class="line">ENV APACHE_RUN_USER www-data　</span><br><span class="line">ENV APACHE_RUN_GROUP www-data　</span><br><span class="line">ENV APACHE_LOG_DIR /var/log/apache2　</span><br><span class="line">ONBUILD ADD . /var/www/　</span><br><span class="line">EXPOSE 80　</span><br><span class="line">ENTRYPOINT [&quot;/usr/sbin/apache2&quot;]　</span><br><span class="line">CMD [&quot;-D&quot;, &quot;FOREGROUND&quot;]</span><br></pre></td></tr></table></figure>
+<p>在新构建的镜像中包含一条ONBUILD指令，该指令会使用ADD指令将构建环境所在的目录下的内容全部添加到镜像中的/var/www/目录下。我们可以轻而易举地将这个Dockerfile作为一个通用的Web应用程序的模板，可以基于这个模板来构建Web应用程序。</p>
+<p>ONBUILD触发器会按照在父镜像中指定的顺序执行，并且只能被继承一次（也就是说只能在子镜像中执行，而不会在孙子镜像中执行）。如果我们再基于jamtur01/webapp构建一个镜像，则新镜像是jamtur01/apache2的孙子镜像，因此在该镜像的构建过程中，ONBUILD触发器是不会被执行的。</p>
+<blockquote>
+<p>这里有好几条指令是不能用在ONBUILD指令中的，包括FROM、MAINTAINER和ONBUILD本身。之所以这么规定是为了防止在 Dockerfile构建过程中产生递归调用的问题。</p>
+</blockquote>
+</li>
+</ol>
+<h4 id="docker-push"><a class="header-anchor" href="#docker-push"></a>docker push</h4>
+<p><code>docker push jamtur01/static_web</code></p>
+<h4 id="docker-rmi"><a class="header-anchor" href="#docker-rmi"></a>docker rmi</h4>
+<p>指定一个镜像名列表来删除多个镜像</p>
+<p><code>docker rmi jamtur01/apache2 jamtur01/puppetmaster</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi `docker images -a -q`</span><br></pre></td></tr></table></figure>
+<h4 id="运行自己的docker-registry"><a class="header-anchor" href="#运行自己的docker-registry"></a>运行自己的Docker Registry</h4>
+<p>从容器运行Registry</p>
+<p><code>docker run -p 5000:5000 registry:2</code></p>
+<p>该命令将会启动一个运行Registry应用2.0版本的容器，并将5000端口绑定到本地宿主机。</p>
+<p>为了指定新的Registry目的地址，需要在镜像名前加上主机名和端口前缀。</p>
+<p><code>docker tag 22d47c8cb6e5 docker.example.com:5000/jamtur01/static_web</code></p>
+<p>为镜像打完标签之后，就能通过docker push命令将它推送到新的Registry中去了</p>
+<p><code>docker push docker.example.com:5000/jamtur01/static_web</code></p>
+<p><code>sudo docker run -t -i docker.example.com:5000/jamtur01/static_web /bin/bash</code></p>
+<h4 id="docker-network"><a class="header-anchor" href="#docker-network"></a>docker network</h4>
+<p>Docker Networking允许用户创建自己的网络，容器可以通过这个网上互相通信。</p>
+<p><code>docker network create app</code></p>
+<p>这里用docker network命令创建了一个桥接网络，命名为app，这个命令返回新创建的网络的网络ID。</p>
+<p>然后可以用docker network inspect命令查看新创建的这个网络</p>
+<p><code>docker network inspect app</code></p>
+<p>可以使用<code>docker network ls</code>命令列出当前系统中的所有网络</p>
+<p>可以使用<code>docker network rm</code>命令删除一个Docker网络</p>
+<p>也可以将正在运行的容器通过docker network connect命令添加到已有的网络中。因此，我们可以将已经存在的容器添加到app网络中。假设已经存在的容器名为db2，这个容器里也运行着Redis，让我们将这个容器添加到app网络中去</p>
+<p><code>docker network connect app db2</code></p>
+<p><code>docker network disconnect app db2</code></p>
+<h4 id="volumes-from"><a class="header-anchor" href="#volumes-from"></a>–volumes-from</h4>
+<p>卷是在一个或多个容器中特殊指定的目录，卷会绕过联合文件系统，为持久化数据和共享数据提供几个有用的特性。</p>
+<ul>
+<li>卷可以在容器间共享和重用。</li>
+<li>共享卷时不一定要运行相应的容器。</li>
+<li>对卷的修改会直接在卷上反映出来。</li>
+<li>更新镜像时不会包含对卷的修改。</li>
+<li>卷会一直存在，直到没有容器使用它们。</li>
+</ul>
+<p>我们启动了一个叫作james_blog的新容器，把本地的james_blog目录作为/data/卷挂载到容器里。</p>
+<p><code>docker run -v /home/james/james_blog:/data/ --name james_blog jamtur01/jekyll</code></p>
+<p>如果想在另一个容器里使用/var/www/html/卷里编译好的网站，可以创建一个新的链接到这个卷的容器</p>
+<p><code>docker run -d -P --volumes-from james_blog jamtur01/apache</code></p>
+<h4 id="备份卷"><a class="header-anchor" href="#备份卷"></a>备份卷</h4>
+<p>这里我们运行了一个已有的Ubuntu容器，并把james_blog的卷挂载到该容器里。这会在该容器里创建<code>/var/www/html</code>目录。然后我们使用-v标志把当前目录（通过$(pwd)命令获得）挂载到容器的<code>/backup</code>目录。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker run --rm --volumes-from james_blog \</span><br><span class="line">-v $(pwd):/backup ubuntu \</span><br><span class="line">tar cvf /backup/james_blog_backup.tar /var/www/html</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>我们还指定了–rm标志，这个标志对于只用一次的容器，或者说用完即扔的容器，很有用。这个标志会在容器的进程运行完毕后，自动删除容器。对于只用一次的容器来说，这是一种很方便的清理方法。</p>
+</blockquote>
 
         
     </section>
