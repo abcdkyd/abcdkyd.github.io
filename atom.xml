@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://abcdkyd.github.io/"/>
-  <updated>2019-07-23T03:48:36.197Z</updated>
+  <updated>2019-07-04T01:41:35.854Z</updated>
   <id>https://abcdkyd.github.io/</id>
   
   <author>
@@ -15,34 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>Navicat破解方法</title>
-    <link href="https://abcdkyd.github.io/2019/07/23/Navicat%E7%A0%B4%E8%A7%A3%E6%96%B9%E6%B3%95/"/>
-    <id>https://abcdkyd.github.io/2019/07/23/Navicat破解方法/</id>
-    <published>2019-07-23T03:47:09.000Z</published>
-    <updated>2019-07-23T03:48:36.197Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="navicat破解方法"><a class="header-anchor" href="#navicat破解方法"></a>Navicat破解方法</h3><ol><li>下载官方试用版本</li><li>生成自己的RSA公钥私钥对，注意密钥是2048位的，PKCS#8格式，在线工具 <a href="http://web.chacuo.net/netrsakeypair" target="_blank" rel="noopener">http://web.chacuo.net/netrsakeypair</a></li><li>替换应用包内容目录中rpk文件的公钥</li><li>Mac版序列号密钥<ul><li>中文版64位密钥序列号： NAVH-T4PX-WT8W-QBL5</li><li>英文版64位密钥序列号： NAVG-UJ8Z-EVAP-JAUW</li></ul></li><li>解密激活请求码，生成激活码<ol><li>打开应用，断网！！！，点击注册，输入密钥 NAVH-T4PX-WT8W-QBL5，然后手动激活</li><li>复制离线激活请求码，使用第一步提供的私钥解密请求码</li><li>加密激活码明文，使用第一步提供的私钥加密激活码明文</li></ol></li></ol><blockquote><ul><li>在线RSA私钥解密 <a href="http://tool.chacuo.net/cryptrsaprikey" target="_blank" rel="noopener">http://tool.chacuo.net/cryptrsaprikey</a></li><li>Mac版激活码明文格式如下：{“K”:“NAVHT4PXWT8WQBL5”, “N”:“52pojie”, “O”:“<a href="http://52pojie.cn" target="_blank" rel="noopener">52pojie.cn</a>”, “DI”:“ODQ2Yjg2ZDBjMTEzMjhh”, “T”:1516939200}</li></ul></blockquote><p><code>{&quot;K&quot;:&quot;NAVHT4PXWT8WQBL5&quot;, &quot;N&quot;:&quot;vin&quot;, &quot;O&quot;:&quot;vin&quot;, &quot;DI&quot;:&quot;ZmYyZWU2NTFjMWFhOTlm&quot;, &quot;T&quot;:1517236988}</code></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;navicat破解方法&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#navicat破解方法&quot;&gt;&lt;/a&gt;Navicat破解方法&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;下载官方试用版本&lt;/li&gt;
-&lt;li&gt;生成自己的RSA公钥私钥对，注意密钥是2048位的，
-      
-    
-    </summary>
-    
-      <category term="笔记" scheme="https://abcdkyd.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="Navicat" scheme="https://abcdkyd.github.io/tags/Navicat/"/>
-    
-  </entry>
   
   <entry>
     <title>MAC解压pkg文件</title>
@@ -454,6 +426,34 @@
     
       <category term="环境配置" scheme="https://abcdkyd.github.io/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
     
+    
+  </entry>
+  
+  <entry>
+    <title>Navicat破解方法</title>
+    <link href="https://abcdkyd.github.io/2018/01/29/Navicat%E7%A0%B4%E8%A7%A3%E6%96%B9%E6%B3%95/"/>
+    <id>https://abcdkyd.github.io/2018/01/29/Navicat破解方法/</id>
+    <published>2018-01-29T14:55:09.000Z</published>
+    <updated>2019-07-23T04:10:52.228Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="navicat破解方法"><a class="header-anchor" href="#navicat破解方法"></a>Navicat破解方法</h3><ol><li>下载官方试用版本</li><li>生成自己的RSA公钥私钥对，注意密钥是2048位的，PKCS#8格式，在线工具 <a href="http://web.chacuo.net/netrsakeypair" target="_blank" rel="noopener">http://web.chacuo.net/netrsakeypair</a></li><li>替换应用包内容目录中rpk文件的公钥</li><li>Mac版序列号密钥<ul><li>中文版64位密钥序列号： NAVH-T4PX-WT8W-QBL5</li><li>英文版64位密钥序列号： NAVG-UJ8Z-EVAP-JAUW</li></ul></li><li>解密激活请求码，生成激活码<ol><li>打开应用，断网！！！，点击注册，输入密钥 NAVH-T4PX-WT8W-QBL5，然后手动激活</li><li>复制离线激活请求码，使用第一步提供的私钥解密请求码</li><li>加密激活码明文，使用第一步提供的私钥加密激活码明文</li></ol></li></ol><blockquote><ul><li>在线RSA私钥解密 <a href="http://tool.chacuo.net/cryptrsaprikey" target="_blank" rel="noopener">http://tool.chacuo.net/cryptrsaprikey</a></li><li>Mac版激活码明文格式如下：{“K”:“NAVHT4PXWT8WQBL5”, “N”:“52pojie”, “O”:“<a href="http://52pojie.cn" target="_blank" rel="noopener">52pojie.cn</a>”, “DI”:“ODQ2Yjg2ZDBjMTEzMjhh”, “T”:1516939200}</li></ul></blockquote><p><code>{&quot;K&quot;:&quot;NAVHT4PXWT8WQBL5&quot;, &quot;N&quot;:&quot;vin&quot;, &quot;O&quot;:&quot;vin&quot;, &quot;DI&quot;:&quot;ZmYyZWU2NTFjMWFhOTlm&quot;, &quot;T&quot;:1517236988}</code></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;navicat破解方法&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#navicat破解方法&quot;&gt;&lt;/a&gt;Navicat破解方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;下载官方试用版本&lt;/li&gt;
+&lt;li&gt;生成自己的RSA公钥私钥对，注意密钥是2048位的，
+      
+    
+    </summary>
+    
+      <category term="笔记" scheme="https://abcdkyd.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Navicat" scheme="https://abcdkyd.github.io/tags/Navicat/"/>
     
   </entry>
   

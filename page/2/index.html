@@ -119,45 +119,6 @@
     <header class="article-header">
         
         <h1 itemprop="name">
-            <a href="/2018/12/14/切换php版本/">mac下php版本切换</a>
-        </h1>
-        
-        <div class="article-meta clearfix">
-            <a class="article-date" href="https://abcdkyd.github.io/page/2/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2018-12-14T13:11:41.000Z" itemprop="datePublished">2018-12-14</time>
-</a>
-
-            
-<div class="article-tag-list">
-    <i class="icon-tag"></i>
-    <a class="article-tag-link" href="/tags/php/">php</a>
-</div>
-
-
-        </div>
-    </header>
-    
-    <section class="article-body markdown-body">
-        
-        <h4 id="brew安装php-version"><a class="header-anchor" href="#brew安装php-version"></a>brew安装php-version</h4>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># brew install php56</span><br><span class="line"># brew install php70</span><br><span class="line"># brew install php-version</span><br><span class="line"># source $(brew --prefix php-version)/php-version.sh</span><br><span class="line"></span><br><span class="line"># php-version</span><br><span class="line"># php-version 5.6.5</span><br></pre></td></tr></table></figure>
-<h4 id="php开机启动"><a class="header-anchor" href="#php开机启动"></a>php开机启动</h4>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># mkdir -p ~/Library/LaunchAgents</span><br><span class="line"># cp /usr/local/opt/php56/homebrew.mxcl.php56.plist ~/Library/LaunchAgents/</span><br><span class="line"># launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.php56.plist</span><br><span class="line"># launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php56.plist</span><br></pre></td></tr></table></figure>
-<h4 id="切换本机php版本"><a class="header-anchor" href="#切换本机php版本"></a>切换本机php版本</h4>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// 先确认phpinfo里面的php版本，先卸载5.6的plist，在加载7.1的plist</span><br><span class="line"># launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php56.plist</span><br><span class="line"># launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php71.plist</span><br></pre></td></tr></table></figure>
-        
-    </section>
-</article>
-
-
-    <article class="article" itemscope itemprop="blogPost">
-    
-    <header class="article-header">
-        
-        <h1 itemprop="name">
             <a href="/2018/06/15/sql字段拼接查询/">拼接多个字段的值</a>
         </h1>
         
@@ -379,6 +340,66 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># brew install mysql</span><br><span class="line"></span><br><span class="line">// 配置命令</span><br><span class="line"># mysql_install_db --verbose --user=`whoami` --basedir=&quot;$(brew --prefix mysql)&quot; --datadir=/usr/local/var/mysql</span><br><span class="line"># mysql_install_db --verbose --user=`whoami` --basedir=&quot;$(brew --prefix mysql)&quot; --datadir=/usr/local/var/mysql --tmpdir=/tmp</span><br><span class="line"></span><br><span class="line">// 启动</span><br><span class="line"># ps -ef | grep mysql</span><br><span class="line"># /usr/local/Cellar/mysql/5.7.12/bin/mysqld</span><br><span class="line"># which mysqld</span><br><span class="line"></span><br><span class="line">// 开机启动</span><br><span class="line"># mkdir -p ~/Library/LaunchAgents/</span><br><span class="line"># cp /usr/local/Cellar/mysql/5.7.12/homebrew.mxcl.mysql.plist ~/Library/LaunchAgents/</span><br><span class="line"># launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist</span><br><span class="line"></span><br><span class="line">// 停止服务</span><br><span class="line"># launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist</span><br></pre></td></tr></table></figure>
 <h4 id="4-安装-php56-和-php-fpm"><a class="header-anchor" href="#4-安装-php56-和-php-fpm"></a>4.安装 PHP56 和 PHP-fpm</h4>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"># brew install php56 --with-imap --with-tidy --with-debug --with-pgsql --with-mysql --with-fpm</span><br><span class="line"># brew install php70 --with-imap --with-tidy --with-debug --with-pgsql --with-mysql --with-fpm</span><br><span class="line"></span><br><span class="line"># export PATH=&quot;$(brew --prefix php56)/bin:$PATH&quot;</span><br><span class="line"></span><br><span class="line">// php－fpm开机启动 能在安装信息找到</span><br><span class="line"># mkdir -p ~/Library/LaunchAgents</span><br><span class="line"># cp /usr/local/opt/php56/homebrew.mxcl.php56.plist ~/Library/LaunchAgents/</span><br><span class="line"># launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.php56.plist</span><br><span class="line"></span><br><span class="line">// php版本切换</span><br><span class="line"># brew install php-version</span><br><span class="line"># source $(brew --prefix php-version)/php-version.sh</span><br><span class="line"># php-version		//查看版本</span><br><span class="line"># php-version 5.6.5		//切换版本</span><br><span class="line"></span><br><span class="line">// php扩展</span><br><span class="line"></span><br><span class="line"># brew install php56-apcu php56-intl php56-redis php56-uuid php56-zookeeper </span><br><span class="line">    php56-thrift php56-solr php56-ssh2 php56-gmagick php56-kafka php56-libevent </span><br><span class="line">    php56-imagick php56-msgpack php56-geoip php56-mcrypt php56-swoole </span><br><span class="line">    php56-scrypt php56-xdebug php56-yaf php56-yaml php56-xhprof </span><br><span class="line">    php56-memcache php56-memcached php56-gearman</span><br></pre></td></tr></table></figure>
+        
+    </section>
+</article>
+
+
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            <a href="/2018/01/29/Navicat破解方法/">Navicat破解方法</a>
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="https://abcdkyd.github.io/page/2/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2018-01-29T14:55:09.000Z" itemprop="datePublished">2018-01-29</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/Navicat/">Navicat</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h3 id="navicat破解方法"><a class="header-anchor" href="#navicat破解方法"></a>Navicat破解方法</h3>
+<ol>
+<li>下载官方试用版本</li>
+<li>生成自己的RSA公钥私钥对，注意密钥是2048位的，PKCS#8格式，在线工具 <a href="http://web.chacuo.net/netrsakeypair" target="_blank" rel="noopener">http://web.chacuo.net/netrsakeypair</a></li>
+<li>替换应用包内容目录中rpk文件的公钥</li>
+<li>Mac版序列号密钥
+<ul>
+<li>中文版64位密钥序列号： NAVH-T4PX-WT8W-QBL5</li>
+<li>英文版64位密钥序列号： NAVG-UJ8Z-EVAP-JAUW</li>
+</ul>
+</li>
+<li>解密激活请求码，生成激活码
+<ol>
+<li>打开应用，断网！！！，点击注册，输入密钥 NAVH-T4PX-WT8W-QBL5，然后手动激活</li>
+<li>复制离线激活请求码，使用第一步提供的私钥解密请求码</li>
+<li>加密激活码明文，使用第一步提供的私钥加密激活码明文</li>
+</ol>
+</li>
+</ol>
+<blockquote>
+<ul>
+<li>在线RSA私钥解密 <a href="http://tool.chacuo.net/cryptrsaprikey" target="_blank" rel="noopener">http://tool.chacuo.net/cryptrsaprikey</a></li>
+<li>Mac版激活码明文格式如下：{“K”:“NAVHT4PXWT8WQBL5”, “N”:“52pojie”, “O”:“<a href="http://52pojie.cn" target="_blank" rel="noopener">52pojie.cn</a>”, “DI”:“ODQ2Yjg2ZDBjMTEzMjhh”, “T”:1516939200}</li>
+</ul>
+</blockquote>
+<p><code>{&quot;K&quot;:&quot;NAVHT4PXWT8WQBL5&quot;, &quot;N&quot;:&quot;vin&quot;, &quot;O&quot;:&quot;vin&quot;, &quot;DI&quot;:&quot;ZmYyZWU2NTFjMWFhOTlm&quot;, &quot;T&quot;:1517236988}</code></p>
+
         
     </section>
 </article>
