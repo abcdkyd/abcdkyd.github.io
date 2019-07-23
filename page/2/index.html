@@ -119,6 +119,45 @@
     <header class="article-header">
         
         <h1 itemprop="name">
+            <a href="/2018/12/14/切换php版本/">mac下php版本切换</a>
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="https://abcdkyd.github.io/page/2/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2018-12-14T13:11:41.000Z" itemprop="datePublished">2018-12-14</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/php/">php</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h4 id="brew安装php-version"><a class="header-anchor" href="#brew安装php-version"></a>brew安装php-version</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># brew install php56</span><br><span class="line"># brew install php70</span><br><span class="line"># brew install php-version</span><br><span class="line"># source $(brew --prefix php-version)/php-version.sh</span><br><span class="line"></span><br><span class="line"># php-version</span><br><span class="line"># php-version 5.6.5</span><br></pre></td></tr></table></figure>
+<h4 id="php开机启动"><a class="header-anchor" href="#php开机启动"></a>php开机启动</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># mkdir -p ~/Library/LaunchAgents</span><br><span class="line"># cp /usr/local/opt/php56/homebrew.mxcl.php56.plist ~/Library/LaunchAgents/</span><br><span class="line"># launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.php56.plist</span><br><span class="line"># launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php56.plist</span><br></pre></td></tr></table></figure>
+<h4 id="切换本机php版本"><a class="header-anchor" href="#切换本机php版本"></a>切换本机php版本</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// 先确认phpinfo里面的php版本，先卸载5.6的plist，在加载7.1的plist</span><br><span class="line"># launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php56.plist</span><br><span class="line"># launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php71.plist</span><br></pre></td></tr></table></figure>
+        
+    </section>
+</article>
+
+
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
             <a href="/2018/06/15/sql字段拼接查询/">拼接多个字段的值</a>
         </h1>
         
@@ -156,6 +195,54 @@
         
         <p class="article-more-link">
             <a href="/2018/06/15/sql字段拼接查询/#more">
+                <span class="vm">阅读更多</span>
+                <i class="icon-arrow-double-right vm"></i>    
+            </a>
+        </p>
+        
+        
+    </section>
+</article>
+
+
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            <a href="/2018/06/15/postgres编写存储过程/">PostgreSQL pl/pgsql 编写存储过程</a>
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="https://abcdkyd.github.io/page/2/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2018-06-14T16:49:43.000Z" itemprop="datePublished">2018-06-15</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/PostgreSQL/">PostgreSQL</a>, <a class="article-tag-link" href="/tags/存储过程/">存储过程</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h3 id="基本结构"><a class="header-anchor" href="#基本结构"></a>基本结构</h3>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">or</span> <span class="keyword">replace</span> <span class="keyword">function</span> somefunc() </span><br><span class="line"><span class="keyword">returns</span> <span class="built_in">varchar</span> <span class="keyword">as</span> </span><br><span class="line">$$</span><br><span class="line"><span class="keyword">declare</span></span><br><span class="line">   <span class="keyword">name</span> <span class="built_in">varchar</span> := <span class="string">'wangzhen'</span>;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">   <span class="keyword">return</span> <span class="keyword">name</span>;</span><br><span class="line"><span class="keyword">end</span>   </span><br><span class="line">$$ <span class="keyword">language</span> plpgsql;</span><br></pre></td></tr></table></figure>
+<h3 id="作用"><a class="header-anchor" href="#作用"></a>$$作用</h3>
+<ul>
+<li>
+<p>函数代码在function中实际上为一个字符串，代码1和代码2等价，但代码中字符串的单引号需要写两个进行转义。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 代码1</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">or</span> <span class="keyword">replace</span> <span class="keyword">function</span> somefunc() </span><br><span class="line"><span class="keyword">returns</span> <span class="built_in">varchar</span> <span class="keyword">as</span> </span><br><span class="line">$$</span><br><span class="line"><span class="keyword">declare</span></span><br><span class="line">   <span class="keyword">name</span> <span class="built_in">varchar</span> := <span class="string">'wangzhen'</span>;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">   <span class="keyword">return</span> <span class="keyword">name</span>;</span><br><span class="line"><span class="keyword">end</span>   </span><br><span class="line">$$ <span class="keyword">language</span> plpgsql;</span><br></pre></td></tr></table></figure>
+        
+        <p class="article-more-link">
+            <a href="/2018/06/15/postgres编写存储过程/#more">
                 <span class="vm">阅读更多</span>
                 <i class="icon-arrow-double-right vm"></i>    
             </a>
@@ -236,7 +323,7 @@
     <header class="article-header">
         
         <h1 itemprop="name">
-            <a href="/2018/06/15/postgres编写存储过程/">PostgreSQL pl/pgsql 编写存储过程</a>
+            <a href="/2018/05/31/配置lnmp/">lnmp环境搭建</a>
         </h1>
         
         <div class="article-meta clearfix">
@@ -244,13 +331,79 @@
     
     <i class="icon-calendar"></i>
     
-    <time datetime="2018-06-14T16:49:43.000Z" itemprop="datePublished">2018-06-15</time>
+    <time datetime="2018-05-31T14:09:43.000Z" itemprop="datePublished">2018-05-31</time>
+</a>
+
+            
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h3 id="centos6-5"><a class="header-anchor" href="#centos6-5"></a>CentOS6.5</h3>
+<h4 id="1-查看环境"><a class="header-anchor" href="#1-查看环境"></a>1.查看环境</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># cat /etc/redhat-release</span><br></pre></td></tr></table></figure>
+<h4 id="2-关掉防火墙"><a class="header-anchor" href="#2-关掉防火墙"></a>2.关掉防火墙</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># chkconfig iptables off</span><br></pre></td></tr></table></figure>
+<h4 id="3-配置centos-6-0-第三方yum源"><a class="header-anchor" href="#3-配置centos-6-0-第三方yum源"></a>3.配置CentOS 6.0 第三方yum源</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># wget http://www.atomicorp.com/installers/atomic</span><br><span class="line"># sh ./atomic</span><br><span class="line"># yum check-update</span><br></pre></td></tr></table></figure>
+<h4 id="4-安装开发包和库文件"><a class="header-anchor" href="#4-安装开发包和库文件"></a>4.安装开发包和库文件</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># yum -y install ntp make openssl openssl-devel pcre pcre-devel libpng libpng-devel libjpeg-6b libjpeg-devel-6b freetype freetype-devel gd gd-devel zlib zlib-devel gcc gcc-c++ libXpm libXpm-devel ncurses ncurses-devel libmcrypt libmcrypt-devel libxml2 libxml2-devel imake autoconf automake screen sysstat compat-libstdc++-33 curl curl-devel</span><br></pre></td></tr></table></figure>
+<h4 id="5-卸载已安装的apache-mysql-php"><a class="header-anchor" href="#5-卸载已安装的apache-mysql-php"></a>5.卸载已安装的apache、mysql、php</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># yum remove httpd</span><br><span class="line"># yum remove mysql</span><br><span class="line"># yum remove php</span><br></pre></td></tr></table></figure>
+<h4 id="6-安装nginx"><a class="header-anchor" href="#6-安装nginx"></a>6.安装nginx</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># yum install nginx</span><br><span class="line"># service nginx start</span><br><span class="line"># chkconfig --levels 235 nginx on</span><br><span class="line">//设2、3、5级别开机启动</span><br></pre></td></tr></table></figure>
+<h4 id="7-安装mysql"><a class="header-anchor" href="#7-安装mysql"></a>7.安装mysql</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># yum install mysql mysql-server mysql-devel</span><br><span class="line"># service mysqld start</span><br><span class="line"># chkconfig --levels 235 mysqld on</span><br><span class="line"></span><br><span class="line">登陆MySQL删除空用户，修改root密码</span><br><span class="line">mysql&gt;select user,host,password from mysql.user;</span><br><span class="line"> </span><br><span class="line">mysql&gt;drop user &apos;&apos;@localhost;</span><br><span class="line"> </span><br><span class="line">mysql&gt;update mysql.user set password = PASSWORD(&apos;*********&apos;) where user=&apos;root&apos;;</span><br><span class="line"> </span><br><span class="line">mysql&gt;flush privileges;</span><br></pre></td></tr></table></figure>
+<h4 id="8-安装php"><a class="header-anchor" href="#8-安装php"></a>8.安装php</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># yum install php lighttpd-fastcgi php-cli php-mysql php-gd php-imap php-ldap php-odbc php-pear php-xml php-xmlrpc php-mbstring php-mcrypt php-mssql php-snmp php-soap</span><br><span class="line"></span><br><span class="line"># yum install php-tidy php-common php-devel php-fpm php-mysql</span><br><span class="line"># service php-fpm start</span><br><span class="line"># chkconfig --levels 235 php-fpm on</span><br></pre></td></tr></table></figure>
+<h4 id="9-配置nginx支持php"><a class="header-anchor" href="#9-配置nginx支持php"></a>9.配置nginx支持php</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">在 /etc/nginx 下添加文件夹vhost，修改nginx.conf，在最后添加 “include vhost/*.conf;”</span><br><span class="line"></span><br><span class="line">在vhost里面添加新增的配置</span><br><span class="line"></span><br><span class="line">test.conf 如下：</span><br><span class="line">server &#123;</span><br><span class="line">    listen 80;</span><br><span class="line">    server_name test.local;</span><br><span class="line">    </span><br><span class="line">    charset utf-8;</span><br><span class="line">    access_log /usr/local/var/log/nginx/test.local.access.log;</span><br><span class="line">    error_log /usr/local/var/log/nginx/test.local.error.log;</span><br><span class="line">    </span><br><span class="line">    root /Users/vin/Code/test;</span><br><span class="line">    </span><br><span class="line">    location / &#123;</span><br><span class="line">         autoindex on;</span><br><span class="line">     autoindex_exact_size off;</span><br><span class="line">     autoindex_localtime on;</span><br><span class="line">     try_files $uri $uri/ /index.php?$args;</span><br><span class="line">     index index.html index.htm index.php;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    location ~ \.php$ &#123;</span><br><span class="line">         fastcgi_pass 127.0.0.1:9000;</span><br><span class="line">         fastcgi_index index.php;</span><br><span class="line">         fastcgi_param SCRIPT_FILENAME /Users/vin/Code/test$fastcgi_script_name;</span><br><span class="line">         include fastcgi_params;</span><br><span class="line">         try_files $uri =404;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="10-重启nginx-php-fpm"><a class="header-anchor" href="#10-重启nginx-php-fpm"></a>10.重启nginx php-fpm</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># service nginx restart</span><br><span class="line"># service php-fpm restart</span><br></pre></td></tr></table></figure>
+<h3 id="ubuntu"><a class="header-anchor" href="#ubuntu"></a>Ubuntu</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># sudo apt-get update // 更新apt-get</span><br></pre></td></tr></table></figure>
+<h4 id="1-nginx"><a class="header-anchor" href="#1-nginx"></a>1.Nginx</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"># sudo apt-get install nginx</span><br><span class="line">// 启动nginx</span><br><span class="line"># sudo /etc/init.d/nginx start </span><br><span class="line"># sudo service nginx start</span><br><span class="line"></span><br><span class="line">// 用socket进行通讯</span><br><span class="line">location ~ \.php$ &#123;</span><br><span class="line">    include snippets/fastcgi-php.conf;</span><br><span class="line">    # With php7.0-cgi alone:</span><br><span class="line">    # fastcgi_pass 127.0.0.1:9000;</span><br><span class="line">    # With php7.0-fpm:</span><br><span class="line">    fastcgi_pass unix:/run/php/php7.1-fpm.sock;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 然后再修改 PHP-FPM的配置文件 /etc/php/7.1/fpm/pool.d </span><br><span class="line">;  与 Nginx监听同一个 sock</span><br><span class="line">listen = /run/php/php7.1-fpm.sock</span><br></pre></td></tr></table></figure>
+<h4 id="2-安装-php-7-1-与-php7-1-fpm"><a class="header-anchor" href="#2-安装-php-7-1-与-php7-1-fpm"></a>2.安装 PHP 7.1 与 PHP7.1-FPM</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># sudo apt-add-repository ppa:ondrej/php   //使用PPA ppa:ondrej/php 库</span><br><span class="line"># sudo apt-get update</span><br><span class="line"># sudo apt-get install php7.1 php7.1-fpm</span><br><span class="line"></span><br><span class="line">// php必备模块</span><br><span class="line"># apt-get install php7.1-curl php7.1-xml php7.1-mcrypt php7.1-json php7.1-gd php7.1-mbstring</span><br></pre></td></tr></table></figure>
+<h4 id="3-安装mysql"><a class="header-anchor" href="#3-安装mysql"></a>3.安装Mysql</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># sudo apt-get –y install MySQL-server mysql-client php7.1-mysql</span><br></pre></td></tr></table></figure>
+<h3 id="mac"><a class="header-anchor" href="#mac"></a>Mac</h3>
+<h4 id="1-安装homebrew"><a class="header-anchor" href="#1-安装homebrew"></a>1.安装Homebrew</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 需要客户端安装ruby</span><br><span class="line"># ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</span><br></pre></td></tr></table></figure>
+<h4 id="2-安装-nginx-服务器"><a class="header-anchor" href="#2-安装-nginx-服务器"></a>2.安装 Nginx 服务器</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"># brew install nginx</span><br><span class="line"></span><br><span class="line">// 需要安装其他版本的nginx可以用以下命令来修改内容</span><br><span class="line"># brew edit nginx</span><br><span class="line"></span><br><span class="line">// 启动 nginx服务</span><br><span class="line"># sudo nginx</span><br><span class="line"></span><br><span class="line">// 重新加载配置|重启|停止|退出 nginx</span><br><span class="line"># nginx -s reload|reopen|stop|quit</span><br><span class="line"></span><br><span class="line">// 测试配置是否有语法错误</span><br><span class="line"># nginx -t</span><br><span class="line"></span><br><span class="line">// 指定某个配置文件启动</span><br><span class="line"># nginx -c /usr/local/etc/nginx/nginx.conf</span><br><span class="line"></span><br><span class="line">// 开机自启动nginx服务设置</span><br><span class="line"># mkdir -p ~/Library/LaunchAgents</span><br><span class="line"># cp /usr/local/Cellar/nginx/1.10.0/homebrew.mxcl.nginx.plist ~/Library/LaunchAgents/</span><br><span class="line"># launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist</span><br><span class="line"></span><br><span class="line">// 权限</span><br><span class="line"># sudo chown root:wheel /usr/local/Cellar/nginx/1.10.0/sbin/nginx</span><br><span class="line"># sudo chmod u+s /usr/local/Cellar/nginx/1.10.0/sbin/nginx</span><br></pre></td></tr></table></figure>
+<h4 id="3-安装和配置-mysql-服务器"><a class="header-anchor" href="#3-安装和配置-mysql-服务器"></a>3.安装和配置 MySQL 服务器</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># brew install mysql</span><br><span class="line"></span><br><span class="line">// 配置命令</span><br><span class="line"># mysql_install_db --verbose --user=`whoami` --basedir=&quot;$(brew --prefix mysql)&quot; --datadir=/usr/local/var/mysql</span><br><span class="line"># mysql_install_db --verbose --user=`whoami` --basedir=&quot;$(brew --prefix mysql)&quot; --datadir=/usr/local/var/mysql --tmpdir=/tmp</span><br><span class="line"></span><br><span class="line">// 启动</span><br><span class="line"># ps -ef | grep mysql</span><br><span class="line"># /usr/local/Cellar/mysql/5.7.12/bin/mysqld</span><br><span class="line"># which mysqld</span><br><span class="line"></span><br><span class="line">// 开机启动</span><br><span class="line"># mkdir -p ~/Library/LaunchAgents/</span><br><span class="line"># cp /usr/local/Cellar/mysql/5.7.12/homebrew.mxcl.mysql.plist ~/Library/LaunchAgents/</span><br><span class="line"># launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist</span><br><span class="line"></span><br><span class="line">// 停止服务</span><br><span class="line"># launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist</span><br></pre></td></tr></table></figure>
+<h4 id="4-安装-php56-和-php-fpm"><a class="header-anchor" href="#4-安装-php56-和-php-fpm"></a>4.安装 PHP56 和 PHP-fpm</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"># brew install php56 --with-imap --with-tidy --with-debug --with-pgsql --with-mysql --with-fpm</span><br><span class="line"># brew install php70 --with-imap --with-tidy --with-debug --with-pgsql --with-mysql --with-fpm</span><br><span class="line"></span><br><span class="line"># export PATH=&quot;$(brew --prefix php56)/bin:$PATH&quot;</span><br><span class="line"></span><br><span class="line">// php－fpm开机启动 能在安装信息找到</span><br><span class="line"># mkdir -p ~/Library/LaunchAgents</span><br><span class="line"># cp /usr/local/opt/php56/homebrew.mxcl.php56.plist ~/Library/LaunchAgents/</span><br><span class="line"># launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.php56.plist</span><br><span class="line"></span><br><span class="line">// php版本切换</span><br><span class="line"># brew install php-version</span><br><span class="line"># source $(brew --prefix php-version)/php-version.sh</span><br><span class="line"># php-version		//查看版本</span><br><span class="line"># php-version 5.6.5		//切换版本</span><br><span class="line"></span><br><span class="line">// php扩展</span><br><span class="line"></span><br><span class="line"># brew install php56-apcu php56-intl php56-redis php56-uuid php56-zookeeper </span><br><span class="line">    php56-thrift php56-solr php56-ssh2 php56-gmagick php56-kafka php56-libevent </span><br><span class="line">    php56-imagick php56-msgpack php56-geoip php56-mcrypt php56-swoole </span><br><span class="line">    php56-scrypt php56-xdebug php56-yaf php56-yaml php56-xhprof </span><br><span class="line">    php56-memcache php56-memcached php56-gearman</span><br></pre></td></tr></table></figure>
+        
+    </section>
+</article>
+
+
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            <a href="/2017/06/14/ssh+git建立代码库/">ssh+git建立代码库</a>
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="https://abcdkyd.github.io/page/2/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2017-06-14T03:47:09.000Z" itemprop="datePublished">2017-06-14</time>
 </a>
 
             
 <div class="article-tag-list">
     <i class="icon-tag"></i>
-    <a class="article-tag-link" href="/tags/PostgreSQL/">PostgreSQL</a>, <a class="article-tag-link" href="/tags/存储过程/">存储过程</a>
+    <a class="article-tag-link" href="/tags/git/">git</a>
 </div>
 
 
@@ -259,21 +412,15 @@
     
     <section class="article-body markdown-body">
         
-        <h3 id="基本结构"><a class="header-anchor" href="#基本结构"></a>基本结构</h3>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">or</span> <span class="keyword">replace</span> <span class="keyword">function</span> somefunc() </span><br><span class="line"><span class="keyword">returns</span> <span class="built_in">varchar</span> <span class="keyword">as</span> </span><br><span class="line">$$</span><br><span class="line"><span class="keyword">declare</span></span><br><span class="line">   <span class="keyword">name</span> <span class="built_in">varchar</span> := <span class="string">'wangzhen'</span>;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">   <span class="keyword">return</span> <span class="keyword">name</span>;</span><br><span class="line"><span class="keyword">end</span>   </span><br><span class="line">$$ <span class="keyword">language</span> plpgsql;</span><br></pre></td></tr></table></figure>
-<h3 id="作用"><a class="header-anchor" href="#作用"></a>$$作用</h3>
-<ul>
-<li>
-<p>函数代码在function中实际上为一个字符串，代码1和代码2等价，但代码中字符串的单引号需要写两个进行转义。</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 代码1</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">or</span> <span class="keyword">replace</span> <span class="keyword">function</span> somefunc() </span><br><span class="line"><span class="keyword">returns</span> <span class="built_in">varchar</span> <span class="keyword">as</span> </span><br><span class="line">$$</span><br><span class="line"><span class="keyword">declare</span></span><br><span class="line">   <span class="keyword">name</span> <span class="built_in">varchar</span> := <span class="string">'wangzhen'</span>;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">   <span class="keyword">return</span> <span class="keyword">name</span>;</span><br><span class="line"><span class="keyword">end</span>   </span><br><span class="line">$$ <span class="keyword">language</span> plpgsql;</span><br></pre></td></tr></table></figure>
-        
-        <p class="article-more-link">
-            <a href="/2018/06/15/postgres编写存储过程/#more">
-                <span class="vm">阅读更多</span>
-                <i class="icon-arrow-double-right vm"></i>    
-            </a>
-        </p>
-        
+        <h3 id="1-生成ssh密钥"><a class="header-anchor" href="#1-生成ssh密钥"></a>1.生成ssh密钥</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># ssh-keygen -t rsa [-f test -C &quot;test key&quot;]</span><br><span class="line"></span><br><span class="line">-b：指定密钥长度； </span><br><span class="line">-e：读取openssh的私钥或者公钥文件； </span><br><span class="line">-C：添加注释； </span><br><span class="line">-f：指定用来保存密钥的文件名； </span><br><span class="line">-i：读取未加密的ssh-v2兼容的私钥/公钥文件，然后在标准输出设备上显示openssh兼容的私钥/公钥； </span><br><span class="line">-l：显示公钥文件的指纹数据； </span><br><span class="line">-N：提供一个新密语； </span><br><span class="line">-P：提供（旧）密语；</span><br><span class="line">-q：静默模式； </span><br><span class="line">-t：指定要创建的密钥类型。</span><br></pre></td></tr></table></figure>
+<p>密钥生成在<code>.ssh</code>文件夹里面，id_rsa为私钥，id_rsa.pub为公钥</p>
+<h3 id="2-生成裸git库"><a class="header-anchor" href="#2-生成裸git库"></a>2.生成裸git库</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># sudo git init --bare sample.git</span><br></pre></td></tr></table></figure>
+<h3 id="3-配置-ssh"><a class="header-anchor" href="#3-配置-ssh"></a>3.配置.ssh</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">//服务器新建用户git，并配置权限</span><br><span class="line"># sudo adduser git</span><br><span class="line"># sudo chown -R git:git sample.git</span><br><span class="line">//修改/etc/passwd</span><br><span class="line">git:x:1001:1001:,,,:/home/git:/bin/bash</span><br><span class="line">git:x:1001:1001:,,,:/home/git:/usr/bin/git-shell</span><br><span class="line"></span><br><span class="line">把公钥 id_rsa.pub 内容追加到 .ssh/authorized_keys 文件里面</span><br><span class="line">vi 或者 ssh-copy-id -i ~/.ssh/id_rsa.pub &quot;-p 22 root@192.168.0.1&quot;</span><br><span class="line"></span><br><span class="line">// 配置config</span><br><span class="line">Host vin</span><br><span class="line">User vin</span><br><span class="line">Hostname 192.168.1.105</span><br><span class="line">Port 22</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/id_rsa</span><br><span class="line"></span><br><span class="line">Host pubgit</span><br><span class="line">User pubgit</span><br><span class="line">Hostname 192.168.1.101</span><br><span class="line">Port 22</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/id_rsa</span><br><span class="line"></span><br><span class="line">Host git-page</span><br><span class="line">User git</span><br><span class="line">Hostname www.github.com</span><br><span class="line">Port 22</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/id_rsa</span><br><span class="line"></span><br><span class="line">注意：</span><br><span class="line">要保证.ssh和authorized_keys都只有用户自己有写权限。否则验证无效。</span><br></pre></td></tr></table></figure>
+<h4 id="4-连接服务器"><a class="header-anchor" href="#4-连接服务器"></a>4.连接服务器</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># ssh vin</span><br><span class="line"># git clone ssh://pubgit/home/pubgit/Code/uzise/uzise.git</span><br><span class="line"># git clone ssh://root@192.168.0.1:22/home/pubgit/Code/uzise/uzise.git</span><br></pre></td></tr></table></figure>
         
     </section>
 </article>

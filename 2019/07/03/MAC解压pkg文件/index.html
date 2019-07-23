@@ -109,6 +109,7 @@
         <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xar -xf Setup.pkg</span><br><span class="line">cat ./Payload | cpio -i</span><br></pre></td></tr></table></figure>
 <h3 id="cpio用法"><a class="header-anchor" href="#cpio用法"></a>cpio用法</h3>
 <p>cpio 指令可以将文件复制到 存档包（archives），也可以从存档包（archives）复制出文件。缺省情况下，cpio从标准输入读取输入数据，向标准输出写入输出数据。</p>
+<a id="more"></a>
 <p>归档包（archives）是一种包含其他文件和有关信息的文件。 有关信息包括：</p>
 <ol>
 <li>文件名,</li>
@@ -127,7 +128,6 @@
 <li>POSIX.1 tar。</li>
 </ol>
 <p>默认情况下，cpio创建二进制格式存档，以便与旧的cpio程序兼容。从档案中提取时，cpio会自动识别正在读取的归档类型，并可以读取在具有不同字节顺序的计算机上创建的归档。</p>
-<a id="more"></a>
 <p>cpio 有三种操作模式，某些选项只能用在对应的操作模式上;</p>
 <h4 id="copy-out-模式"><a class="header-anchor" href="#copy-out-模式"></a>Copy-out 模式</h4>
 <blockquote>
