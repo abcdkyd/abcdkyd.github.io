@@ -160,7 +160,13 @@
 <p><code>make &amp;&amp; make install</code>，如果出现<code>error: Cannot find OpenSSL's &lt;evp.h&gt;</code>，可以尝试加上 <code>--with-openssl-dir=/usr/local/opt/openssl@1.1</code></p>
 </li>
 <li>
-<p>配置php.ini，添加so文件到ini</p>
+<p>将生成的so文件复制到目录 <code>/usr/local/opt/php@7.2/lib/php/20170718/</code></p>
+</li>
+<li>
+<p>在php配置目录<code>/usr/local/etc/php/7.2/conf.d</code>，添加ini配置文件加入扩展配置</p>
+</li>
+<li>
+<p>重启php<code>brew services restart php@7.2</code></p>
 </li>
 </ol>
 </li>
