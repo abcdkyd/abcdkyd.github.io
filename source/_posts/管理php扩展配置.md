@@ -55,5 +55,7 @@ __`phpinfo`__ 中 `Scan this dir for additional .ini files` 配置参数是php�
 	3. 执行phpize `phpize`
 	4. 执行./configure `./configure --with-php-config=/usr/bin/php-config`
 	5. `make && make install`，如果出现`error: Cannot find OpenSSL's <evp.h>`，可以尝试加上 `--with-openssl-dir=/usr/local/opt/openssl@1.1`
-	6. 配置php.ini，添加so文件到ini
+	6. 将生成的so文件复制到目录 `/usr/local/opt/php@7.2/lib/php/20170718/`
+	7. 在php配置目录`/usr/local/etc/php/7.2/conf.d`，添加ini配置文件加入扩展配置
+	8. 重启php`brew services restart php@7.2`
 		
