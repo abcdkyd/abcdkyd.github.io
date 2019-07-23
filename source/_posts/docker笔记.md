@@ -103,7 +103,9 @@ docker inspect命令会对容器进行详细的检查，然后返回其配置信
 
 可以用-f或者--format标志来选定查看结果，根据json层级关系选取
 
-```docker inspect --format '{{.Name}} {{.State.Running}}' bob_the_container1 bob_the_container2```
+```
+docker inspect --format '{{.Name}} {{.State.Running}}' bob_the_container1 bob_the_container2
+```
 
 ## docker仓库和镜像
 
@@ -240,10 +242,10 @@ Docker还提供了一个更简单的方式，即`-P`参数，该参数可以用�
 	WORKDIR /opt/webapp　
 	ENTRYPOINT [ "rackup" ]
 	```
-	
-	这里，我们将工作目录切换为/opt/webapp/db后运行了bundle install命令，之后又将工作目录设置为/opt/webapp，最后设置了ENTRYPOINT指令来启动rackup命令。
-	
-	可以通过`-w`标志在运行时覆盖工作目录，该命令会将容器内的工作目录设置为`/var/log`：
+
+    这里，我们将工作目录切换为/opt/webapp/db后运行了bundle install命令，之后又将工作目录设置为/opt/webapp，最后设置了ENTRYPOINT指令来启动rackup命令。
+
+    可以通过`-w`标志在运行时覆盖工作目录，该命令会将容器内的工作目录设置为`/var/log`：
 	
 	`sudo docker run -ti -w /var/log ubuntu pwd`
 	
@@ -267,9 +269,9 @@ Docker还提供了一个更简单的方式，即`-P`参数，该参数可以用�
 	ENV TARGET_DIR /opt/app
 WORKDIR $TARGET_DIR
 	```
-	
+
 	也可以使用docker run命令行的-e标志来传递环境变量，这些变量将只会在运行时有效
-	
+
 	`docker run -ti -e "WEB_PORT=8080" ubuntu env`
 	
 5. USER
@@ -337,43 +339,43 @@ WORKDIR $TARGET_DIR
 	LABEL version="1.0"
 	LABEL location="New York" type="Data Center" role="Web Server"
 	```
-	
-	LABEL指令以`label="value"`ß	的形式出现。可以在每一条指令中指定一个元数据，或者指定多个元数据，不同的元数据之间用空格分隔。推荐将所有的元数据都放到一条LABEL指令中，以防止不同的元数据指令创建过多镜像层。可以通过`docker inspect`命令来查看Docker镜像中的标签信息。
-	
+
+	LABEL指令以`label="value"`的形式出现。可以在每一条指令中指定一个元数据，或者指定多个元数据，不同的元数据之间用空格分隔。推荐将所有的元数据都放到一条LABEL指令中，以防止不同的元数据指令创建过多镜像层。可以通过`docker inspect`命令来查看Docker镜像中的标签信息。
+
 10. STOPSIGNAL
 
 	STOPSIGNAL指令用来设置停止容器时发送什么系统调用信号给容器。这个信号必须是内核系统调用表中合法的数，如9，或者SIGNAME格式中的信号名称，如SIGKILL。
-	
+
 11. ARG
 
 	ARG指令用来定义可以在docker build命令运行时传递给构建运行时的变量，我们只需要在构建时使用--build-arg标志即可。用户只能在构建时指定在Dockerfile文件中定义过的参数。
-	
+
 	```
 	ARG build
 	ARG webapp_user=user
 	```
-	
+
 	上面例子中第二条ARG指令设置了一个默认值，如果构建时没有为该参数指定值，就会使用这个默认值。
 
 	`docker build --build-arg build=1234 -t jamtur01/webapp .`
-	
+
 	要想使用这些预定义的变量，只需要给docker build命令传递--build-arg <variable>=<value>标志就可以了。
-	
+
 12. ONBUILD
 
 	ONBUILD指令能为镜像添加触发器（trigger）。当一个镜像被用做其他镜像的基础镜像时（比如用户的镜像需要从某未准备好的位置添加源代码，或者用户需要执行特定于构建镜像的环境的构建脚本），该镜像中的触发器将会被执行。
-	
+
 	触发器会在构建过程中插入新指令，我们可以认为这些指令是紧跟在FROM之后指定的。触发器可以是任何构建指令
-	
+
 	```
 	ONBUILD ADD . /app/src　
 	ONBUILD RUN cd /app/src && make
 	```
-	
+
 	上面的代码将会在创建的镜像中加入ONBUILD触发器，ONBUILD指令可以在镜像上运行docker inspect命令来查看
-	
+
 	比如，我们为Apache2镜像构建一个全新的Dockerfile，该镜像名为jamtur01/ apache2
-	
+
 	```
 	FROM ubuntu:14.04　
 	MAINTAINER James Turnbull "james@example.com"　
@@ -386,13 +388,13 @@ WORKDIR $TARGET_DIR
 	ENTRYPOINT ["/usr/sbin/apache2"]　
 	CMD ["-D", "FOREGROUND"]
 	```
-	
+
 	在新构建的镜像中包含一条ONBUILD指令，该指令会使用ADD指令将构建环境所在的目录下的内容全部添加到镜像中的/var/www/目录下。我们可以轻而易举地将这个Dockerfile作为一个通用的Web应用程序的模板，可以基于这个模板来构建Web应用程序。
-	
+
 	ONBUILD触发器会按照在父镜像中指定的顺序执行，并且只能被继承一次（也就是说只能在子镜像中执行，而不会在孙子镜像中执行）。如果我们再基于jamtur01/webapp构建一个镜像，则新镜像是jamtur01/apache2的孙子镜像，因此在该镜像的构建过程中，ONBUILD触发器是不会被执行的。
-	
+
 	> 这里有好几条指令是不能用在ONBUILD指令中的，包括FROM、MAINTAINER和ONBUILD本身。之所以这么规定是为了防止在 Dockerfile构建过程中产生递归调用的问题。
-	
+
 #### docker push
 
 `docker push jamtur01/static_web`
