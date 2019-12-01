@@ -266,11 +266,11 @@ Docker还提供了一个更简单的方式，即`-P`参数，该参数可以用�
 	在这里我们设定了一个新的环境变量TARGET_DIR，并在WORKDIR中使用了它的值。因此实际上WORKDIR指令的值会被设为`/opt/app`：
 	
 	```
-	ENV TARGET_DIR /opt/app
-WORKDIR $TARGET_DIR
+    ENV TARGET_DIR /opt/app
+    WORKDIR $TARGET_DIR
 	```
 
-	也可以使用docker run命令行的-e标志来传递环境变量，这些变量将只会在运行时有效
+	也可以使用docker run命令行的`-e`标志来传递环境变量，这些变量将只会在运行时有效
 
 	`docker run -ti -e "WEB_PORT=8080" ubuntu env`
 	
@@ -315,7 +315,7 @@ WORKDIR $TARGET_DIR
 	
 	这里的ADD指令将会将构建目录下的`software.lic`文件复制到镜像中的`/opt/application/software.lic`。指向源文件的位置参数可以是一个URL，或者构建上下文或环境中文件名或者目录。不能对构建目录或者上下文之外的文件进行ADD操作。
 	
-	在ADD文件时，Docker通过目的地址参数末尾的字符来判断文件源是目录还是文件。如果目标地址以/结尾，那么Docker就认为源位置指向的是一个目录。如果目的地址不是以/结尾，那么Docker就认为源位置指向的是文件。
+	在ADD文件时，Docker通过目的地址参数末尾的字符来判断文件源是目录还是文件。如果目标地址以`/`结尾，那么Docker就认为源位置指向的是一个目录。如果目的地址不是以`/`结尾，那么Docker就认为源位置指向的是文件。
 	
 	最后，如果目的位置不存在的话，Docker将会为我们创建这个全路径，包括路径中的任何目录。新创建的文件和目录的模式为0755，并且UID和GID都是0。
 	

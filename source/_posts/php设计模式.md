@@ -312,10 +312,10 @@ $allAarons = $user->getUserByFirstName('aaron');
 #### 关系说明
 
 1. MyObject是具有现有功能性的基类。这个类包含名为items的公共数组和名为show ItemsFormatted()的公共方法。
-2. showltemsFormatted()方法负责接受items数组，并且使用预定义的功能性格式化该数组后提交输出。
+2. showItemsFormatted()方法负责接受items数组，并且使用预定义的功能性格式化该数组后提交输出。
 3. MyObjectDecorator类包含MyObject 的一个私有实例和两个公共方法: MyoObjec-Decorator()和decorateItems()。
-4. MyobjcDecoratol )方法代表构造函数，它接受^个MyObjcet 类型参数并将其存储在内部。
-5. dortetfer )方法可修改Myobjcet 实例的tems数组。
+4. MyObjectDecorator()方法代表构造函数，它接受一个MyObject 类型参数并将其存储在内部。
+5. decorate()方法可修改Myobject实例的items数组。
 
 #### 代码示例
 
@@ -507,3 +507,207 @@ $allAarons = $user->getUserByFirstName('aaron');
 	    }
 	}
 	```
+	
+### 委托模式
+
+> 通过分配或委托至其他对象，委托设计模式能够去除核心对象中的判断和复制的功能
+
+委托设计模式致力于从核心对象中去除复杂性。此时我们并不设计极大依赖于通过评估条件语句而执行特定功能性的对象，基于委托模式的对象能够将判决委托给不同的对象。
+
+当一个对象包含复杂但独立的、必须基于判决执行的功能性的若干部分时，最佳的做法是使用基于委托设计模式的对象。
+
+#### 关系说明
+
+1. 基类 Myobject 知道会使用基于委托设计模式的对象。这个类包含私有字符字符delegateType 以及 MydelegateObject 的私有实例 internalDelegate
+2. setDelegateTyp() 方法接收一个名为type的参数，这个参数被存储在 delegateType字符串中。
+3. createDelegateObject()方法会创建委托对象的一个实例，并且根据 delegateType变量为实例命名。随后，通过将该实例指派给 internalDelegate，这个方法将其存储在内部。
+4. runDelegateAction() 方法负责运行 internalDetegate 对象的action()方法
+5. MydelegateObject 包含负责特定动作的逻辑。MyObject 运行 action() 方法实现具体的功能。
+
+#### 代码示例
+
+```php
+
+class newPlayList
+{
+    private $_songs;
+    private $_typeObject;
+
+    public function __construct($type)
+    {
+        $this->_songs = [];
+        $object = "{$type}PlayListDelegate";
+        $this->_typeObject = new $object;
+    }
+
+    public function addSong($location, $title)
+    {
+        $this->_songs[] = ['location' => $location, 'title' => $title];
+    }
+
+    public function getPlayList()
+    {
+        $playList = $this->_typeObject->getPlayList($this->_songs);
+        return $playList;
+    }
+}
+
+class m3uPlayListDelegate
+{
+    public function getPlayList($songs)
+    {
+        $m3u = "#EXTM3U\n\n";
+
+        foreach ($songs as $song) {
+            $m3u .= "#EXTINF:-1,{$song['title']}\n";
+            $m3u .= "{$song['location']}\n";
+        }
+        return $m3u;
+    }
+}
+
+class plsPlayListDelegate
+{
+    public function getPlayList($songs)
+    {
+        $pls = "[playlist]\nNumberOfEntries=" . count($songs) . "\n\n";
+
+        foreach ($songs as $key => $song) {
+            $counter = $key + 1;
+            $pls .= "File{$counter}={$song['location']}\n";
+            $pls .= "Title{$counter}={$song['title']}\n";
+            $pls .= "Length{$counter}=-1\n";
+        }
+        return $pls;
+    }
+}
+
+$type = 'pls';
+$playList = new newPlayList($type);
+$content = $playList->getPlayList();
+
+```
+
+### 外观模式
+
+> 通过在必需的逻辑和方法的集合前创建简单的外观接口，外观设计模式隐藏了来自调用对象的复杂性。
+
+外观设计模式的目标是：控制外部错综复杂的关系，并且提供简单的接口以利用上述组件的能力。外观设计模式的独特性在于被设计为将多个互相联系的组件组合或连接入简单可用的接口内。使用基于外观设计模式的对象另一个原因是接口第三方解决方案。
+
+为了隐藏复杂的、执行业务进程某个步骤所需的方法和逻辑组，就应当使用基于外观设计模式的类。
+
+#### 关系说明
+
+1. MyObject类包含一个名为 doSomethingRequiresAandB() 的公共方法，该方法只是MyObject 类执行中的一个步骤。doSomethingRequiresAandB() 方法创建对象 LogicFacade 的一个新实例，该实例调用对于MyObject来说足够抽象的、名称为 callRequiredLogic() 的公共方法。
+
+2. LogicFacade 类内部的 callRequiredLogic() 方法随后负责创建 LogicObjectA 的一个实例以及调用 doSomethingA() 方法，此外还负责创建 LogicObjectB 的一个实例以及调用 doSomethingB() 方法。
+
+3. 上述所有动作都通过LogicFacade类向回传递，从而使它们能够被 MyObject 使用。
+
+
+#### 代码示例
+
+```php
+class CD
+{
+    public $tracks = [];
+    public $band = '';
+    public $title = '';
+
+    public function __construct($title, $band, $tracks)
+    {
+        $this->title = $title;
+        $this->band = $band;
+        $this->tracks = $tracks;
+    }
+}
+
+class CDUpperCase
+{
+    public static function makeString(CD $cd, $type)
+    {
+        $cd->$type = strtoupper($cd->$type);
+    }
+
+    public static function makeArray(CD $cd, $type)
+    {
+        $cd->$type = array_map('strtoupper', $cd->$type);
+    }
+}
+
+class CDMakeXML
+{
+    public static function create(CD $cd)
+    {
+        $doc = new DomDocument();
+
+        $root = $doc->createElement('CD');
+        $root = $doc->appendChild($root);
+
+        $title = $doc->createElement('TITLE', $cd->title);
+        $title = $root->appendChild($title);
+
+        $band = $doc->createElement('BAND', $cd->title);
+        $band = $root->appendChild($band);
+
+        $tracks = $doc->createElement('TRACKS', $cd->title);
+        $tracks = $root->appendChild($tracks);
+
+        foreach ($cd->tracks as $t) {
+            $track = $doc->createElement('TRACK', $t);
+            $track = $tracks->appendChild($track);
+        }
+
+        return $doc->saveXML();
+    }
+}
+
+class WebServiceFacade
+{
+    public static function makeXMLCall(CD $cd)
+    {
+        CDUpperCase::makeString($cd, 'title');
+        CDUpperCase::makeString($cd, 'band');
+        CDUpperCase::makeArray($cd, 'tracks');
+
+        $xml = CDMakeXML::create($cd);
+
+        return $xml;
+    }
+}
+
+$cd = new CD('Waste of a Rib', 'Never Again', ['Brrr', 'Goodbye']);
+print WebServiceFacade::makeXMLCall($cd);
+```
+
+### 工厂模式
+
+> 工厂设计模式提供获取某个对象的新实例的一个接口，同时使调用代码避免确定实际实例化基类的步骤
+
+工厂设计模式可以实现不同对象的创建。另外，还可以处理若干项的集合，在这种情况下，对象集合包含相同的基对象，但是每个对象都具有不同的特征，库存系统是使用工厂类管理对象集合的一个优秀实例。
+
+#### 关系说明
+
+1. 现存的两个基类是 MyobjectTypeA 和 MyobjectTypeB 这两个类都具有名为 doSome Thing() 的公共方法，该方法采用自己独特的方式执行具体对象的逻辑。两个基类的公共接口和返回类型是完全相同的。
+
+2. MyobjectFactory 类用于创建上述任意一个基类的实例并将其返回至代码流。它具有一个名为 createObject() 的公共方法，该方法接受参数type，这有助于判断应当创建哪一个基类的实例。随后， createObject() 方法会返回被请求类型类的一个实例。
+
+#### 代码示例
+
+```php
+class CDFactory
+{
+    public static function create($type)
+    {
+        $class = strtolower($type) . "CD";
+        return new $class;
+    }
+}
+
+$type = 'enhanced';
+$cd = CDFactory::create($type);
+```
+
+### 解释器模式
+
+> 
