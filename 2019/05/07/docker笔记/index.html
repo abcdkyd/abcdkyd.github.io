@@ -247,8 +247,8 @@
 <p>该指令会以以下方式执行：</p>
 <p><code>RVM_PATH=/home/rvm/ gem install unicorn</code></p>
 <p>在这里我们设定了一个新的环境变量TARGET_DIR，并在WORKDIR中使用了它的值。因此实际上WORKDIR指令的值会被设为<code>/opt/app</code>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">    ENV TARGET_DIR /opt/app</span><br><span class="line">WORKDIR $TARGET_DIR</span><br></pre></td></tr></table></figure>
-<p>也可以使用docker run命令行的-e标志来传递环境变量，这些变量将只会在运行时有效</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ENV TARGET_DIR /opt/app</span><br><span class="line">WORKDIR $TARGET_DIR</span><br></pre></td></tr></table></figure>
+<p>也可以使用docker run命令行的<code>-e</code>标志来传递环境变量，这些变量将只会在运行时有效</p>
 <p><code>docker run -ti -e &quot;WEB_PORT=8080&quot; ubuntu env</code></p>
 </li>
 <li>
@@ -281,7 +281,7 @@
 <p>ADD指令用来将构建环境下的文件和目录复制到镜像中。比如，在安装一个应用程序时。ADD指令需要源文件位置和目的文件位置两个参数。</p>
 <p><code>ADD software.lic /opt/application/software.lic</code></p>
 <p>这里的ADD指令将会将构建目录下的<code>software.lic</code>文件复制到镜像中的<code>/opt/application/software.lic</code>。指向源文件的位置参数可以是一个URL，或者构建上下文或环境中文件名或者目录。不能对构建目录或者上下文之外的文件进行ADD操作。</p>
-<p>在ADD文件时，Docker通过目的地址参数末尾的字符来判断文件源是目录还是文件。如果目标地址以/结尾，那么Docker就认为源位置指向的是一个目录。如果目的地址不是以/结尾，那么Docker就认为源位置指向的是文件。</p>
+<p>在ADD文件时，Docker通过目的地址参数末尾的字符来判断文件源是目录还是文件。如果目标地址以<code>/</code>结尾，那么Docker就认为源位置指向的是一个目录。如果目的地址不是以<code>/</code>结尾，那么Docker就认为源位置指向的是文件。</p>
 <p>最后，如果目的位置不存在的话，Docker将会为我们创建这个全路径，包括路径中的任何目录。新创建的文件和目录的模式为0755，并且UID和GID都是0。</p>
 <blockquote>
 <p>ADD指令会使得构建缓存变得无效，这一点也非常重要。如果通过ADD指令向镜像添加一个文件或者目录，那么这将使Dockerfile中的后续指令都不能继续使用之前的构建缓存。</p>

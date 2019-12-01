@@ -119,6 +119,105 @@
     <header class="article-header">
         
         <h1 itemprop="name">
+            <a href="/2018/12/14/管理php扩展配置/">添加php额外配置，引入php扩展</a>
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="https://abcdkyd.github.io/page/2/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2018-12-14T13:11:41.000Z" itemprop="datePublished">2018-12-14</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/php/">php</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <p><strong><code>phpinfo</code></strong> 中 <code>Scan this dir for additional .ini files</code> 配置参数是php扩展配置路径。</p>
+<p>你可以在该路径下，配置文件结尾为<code>.ini</code>的文件作为你的额外配置参数。</p>
+<p>我们可以利用它来更好的管理我们php的扩展的相关配置：</p>
+<p>引用pdo_pgsql扩展<br>
+<code>extension=&quot;/usr/local/opt/php71-pdo-pgsql/pdo_pgsql.so&quot;</code></p>
+<h3 id="php扩展安装"><a class="header-anchor" href="#php扩展安装"></a>PHP扩展安装</h3>
+<ol>
+<li>
+<p>brew、yum或者apt-get安装</p>
+</li>
+<li>
+<p>使用pecl安装</p>
+<p><strong>mac安装pecl</strong></p>
+<ol>
+<li>
+<p>下载pecl <code>curl -O https://pear.php.net/go-pear.phar</code></p>
+</li>
+<li>
+<p>安装pecl</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">php -d detect_unicode=0 go-pear.phar</span><br><span class="line"></span><br><span class="line">执行以上命令后会进行安装过程，会有一些配置选项：</span><br><span class="line">输入 1，将安装根目录修改为 /usr/local/pear； </span><br><span class="line">输入 4，将命令安装到 /usr/local/bin 目录； </span><br><span class="line">回车两次，其他让其默认，安装完成</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>检测是否安装成功 <code>pear version</code></p>
+</li>
+</ol>
+<p><strong>pecl安装扩展</strong></p>
+<ol>
+<li><code>pecl install mongodb</code></li>
+<li>配置php.ini，通过运行 php --ini查找php.ini文件位置，然后在文件中添加<code>extension=memcached.so</code></li>
+</ol>
+</li>
+<li>
+<p>phpize安装</p>
+<blockquote>
+<p>phpize运行可能需要安装autoconf：<code>brew install autoconf</code></p>
+</blockquote>
+<ol>
+<li>
+<p>下载PHP扩展包：<a href="http://pecl.php.net/package-search.php" target="_blank" rel="noopener">pecl库搜索</a></p>
+</li>
+<li>
+<p>解压缩并进入扩展包目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -xzvvf redis-4.0.0.tgz</span><br><span class="line">cd redis-4.0.0</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>执行phpize <code>phpize</code></p>
+</li>
+<li>
+<p>执行./configure <code>./configure --with-php-config=/usr/bin/php-config</code></p>
+</li>
+<li>
+<p><code>make &amp;&amp; make install</code>，如果出现<code>error: Cannot find OpenSSL's &lt;evp.h&gt;</code>，可以尝试加上 <code>--with-openssl-dir=/usr/local/opt/openssl@1.1</code></p>
+</li>
+<li>
+<p>将生成的so文件复制到目录 <code>/usr/local/opt/php@7.2/lib/php/20170718/</code></p>
+</li>
+<li>
+<p>在php配置目录<code>/usr/local/etc/php/7.2/conf.d</code>，添加ini配置文件加入扩展配置</p>
+</li>
+<li>
+<p>重启php<code>brew services restart php@7.2</code></p>
+</li>
+</ol>
+</li>
+</ol>
+
+        
+    </section>
+</article>
+
+
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
             <a href="/2018/06/15/sql字段拼接查询/">拼接多个字段的值</a>
         </h1>
         
@@ -156,6 +255,54 @@
         
         <p class="article-more-link">
             <a href="/2018/06/15/sql字段拼接查询/#more">
+                <span class="vm">阅读更多</span>
+                <i class="icon-arrow-double-right vm"></i>    
+            </a>
+        </p>
+        
+        
+    </section>
+</article>
+
+
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            <a href="/2018/06/15/postgres编写存储过程/">PostgreSQL pl/pgsql 编写存储过程</a>
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="https://abcdkyd.github.io/page/2/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2018-06-14T16:49:43.000Z" itemprop="datePublished">2018-06-15</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/PostgreSQL/">PostgreSQL</a>, <a class="article-tag-link" href="/tags/存储过程/">存储过程</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h3 id="基本结构"><a class="header-anchor" href="#基本结构"></a>基本结构</h3>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">or</span> <span class="keyword">replace</span> <span class="keyword">function</span> somefunc() </span><br><span class="line"><span class="keyword">returns</span> <span class="built_in">varchar</span> <span class="keyword">as</span> </span><br><span class="line">$$</span><br><span class="line"><span class="keyword">declare</span></span><br><span class="line">   <span class="keyword">name</span> <span class="built_in">varchar</span> := <span class="string">'wangzhen'</span>;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">   <span class="keyword">return</span> <span class="keyword">name</span>;</span><br><span class="line"><span class="keyword">end</span>   </span><br><span class="line">$$ <span class="keyword">language</span> plpgsql;</span><br></pre></td></tr></table></figure>
+<h3 id="作用"><a class="header-anchor" href="#作用"></a>$$作用</h3>
+<ul>
+<li>
+<p>函数代码在function中实际上为一个字符串，代码1和代码2等价，但代码中字符串的单引号需要写两个进行转义。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 代码1</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">or</span> <span class="keyword">replace</span> <span class="keyword">function</span> somefunc() </span><br><span class="line"><span class="keyword">returns</span> <span class="built_in">varchar</span> <span class="keyword">as</span> </span><br><span class="line">$$</span><br><span class="line"><span class="keyword">declare</span></span><br><span class="line">   <span class="keyword">name</span> <span class="built_in">varchar</span> := <span class="string">'wangzhen'</span>;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">   <span class="keyword">return</span> <span class="keyword">name</span>;</span><br><span class="line"><span class="keyword">end</span>   </span><br><span class="line">$$ <span class="keyword">language</span> plpgsql;</span><br></pre></td></tr></table></figure>
+        
+        <p class="article-more-link">
+            <a href="/2018/06/15/postgres编写存储过程/#more">
                 <span class="vm">阅读更多</span>
                 <i class="icon-arrow-double-right vm"></i>    
             </a>
@@ -221,54 +368,6 @@
         
         <p class="article-more-link">
             <a href="/2018/06/15/创建虚拟列/#more">
-                <span class="vm">阅读更多</span>
-                <i class="icon-arrow-double-right vm"></i>    
-            </a>
-        </p>
-        
-        
-    </section>
-</article>
-
-
-    <article class="article" itemscope itemprop="blogPost">
-    
-    <header class="article-header">
-        
-        <h1 itemprop="name">
-            <a href="/2018/06/15/postgres编写存储过程/">PostgreSQL pl/pgsql 编写存储过程</a>
-        </h1>
-        
-        <div class="article-meta clearfix">
-            <a class="article-date" href="https://abcdkyd.github.io/page/2/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2018-06-14T16:49:43.000Z" itemprop="datePublished">2018-06-15</time>
-</a>
-
-            
-<div class="article-tag-list">
-    <i class="icon-tag"></i>
-    <a class="article-tag-link" href="/tags/PostgreSQL/">PostgreSQL</a>, <a class="article-tag-link" href="/tags/存储过程/">存储过程</a>
-</div>
-
-
-        </div>
-    </header>
-    
-    <section class="article-body markdown-body">
-        
-        <h3 id="基本结构"><a class="header-anchor" href="#基本结构"></a>基本结构</h3>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">or</span> <span class="keyword">replace</span> <span class="keyword">function</span> somefunc() </span><br><span class="line"><span class="keyword">returns</span> <span class="built_in">varchar</span> <span class="keyword">as</span> </span><br><span class="line">$$</span><br><span class="line"><span class="keyword">declare</span></span><br><span class="line">   <span class="keyword">name</span> <span class="built_in">varchar</span> := <span class="string">'wangzhen'</span>;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">   <span class="keyword">return</span> <span class="keyword">name</span>;</span><br><span class="line"><span class="keyword">end</span>   </span><br><span class="line">$$ <span class="keyword">language</span> plpgsql;</span><br></pre></td></tr></table></figure>
-<h3 id="作用"><a class="header-anchor" href="#作用"></a>$$作用</h3>
-<ul>
-<li>
-<p>函数代码在function中实际上为一个字符串，代码1和代码2等价，但代码中字符串的单引号需要写两个进行转义。</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 代码1</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">or</span> <span class="keyword">replace</span> <span class="keyword">function</span> somefunc() </span><br><span class="line"><span class="keyword">returns</span> <span class="built_in">varchar</span> <span class="keyword">as</span> </span><br><span class="line">$$</span><br><span class="line"><span class="keyword">declare</span></span><br><span class="line">   <span class="keyword">name</span> <span class="built_in">varchar</span> := <span class="string">'wangzhen'</span>;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">   <span class="keyword">return</span> <span class="keyword">name</span>;</span><br><span class="line"><span class="keyword">end</span>   </span><br><span class="line">$$ <span class="keyword">language</span> plpgsql;</span><br></pre></td></tr></table></figure>
-        
-        <p class="article-more-link">
-            <a href="/2018/06/15/postgres编写存储过程/#more">
                 <span class="vm">阅读更多</span>
                 <i class="icon-arrow-double-right vm"></i>    
             </a>
@@ -594,45 +693,10 @@
 </article>
 
 
-    <article class="article" itemscope itemprop="blogPost">
-    
-    <header class="article-header">
-        
-        <h1 itemprop="name">
-            <a href="/2017/03/27/hello-world/">Hello World</a>
-        </h1>
-        
-        <div class="article-meta clearfix">
-            <a class="article-date" href="https://abcdkyd.github.io/page/2/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2017-03-27T08:56:28.000Z" itemprop="datePublished">2017-03-27</time>
-</a>
-
-            
-<div class="article-tag-list">
-    <i class="icon-tag"></i>
-    <a class="article-tag-link" href="/tags/about/">about</a>
-</div>
-
-
-        </div>
-    </header>
-    
-    <section class="article-body markdown-body">
-        
-        <p>建这个博客的目的是为了记录一些学习的笔记，如果有什么意见或建议，欢迎联系我。</p>
-
-        
-    </section>
-</article>
-
-
 
 
 <nav class="page-nav">
-    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
 </nav>
 
 
