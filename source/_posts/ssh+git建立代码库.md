@@ -2,7 +2,7 @@
 title: ssh+git 建立代码库
 date: 2017-06-14 11:47:09
 tags: Git
-categories: 环境配置
+categories: 环境部署
 ---
 
 ### 1.生成ssh密钥

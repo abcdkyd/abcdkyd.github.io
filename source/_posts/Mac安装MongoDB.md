@@ -4,7 +4,7 @@ date: 2019-04-07 11:30:44
 tags: 
     - MongoDB
     - Mac
-categories: 数据库
+categories: 环境部署
 ---
 
 #### 下载安装

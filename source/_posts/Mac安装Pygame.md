@@ -5,7 +5,7 @@ tags:
     - Python
     - Pygame
     - Mac
-categories: 环境配置
+categories: 环境部署
 ---
 
 1. 安装pygame依赖包：`brew install hg sdl sdl_image sdl_ttf`，如果想启动更高级的功能，如在游戏中包含声音，可安装下面的两个额外的库：`brew install sdl_mixer portmidi`

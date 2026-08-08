@@ -4,7 +4,7 @@ date: 2018-12-14 21:11:41
 tags: 
     - PHP
     - Mac
-categories: 环境配置
+categories: 环境部署
 ---
 
 #### brew安装php-version

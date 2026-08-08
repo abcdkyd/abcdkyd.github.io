@@ -2,7 +2,7 @@
 title: 使用vscode开发go
 date: 2019-02-14 16:56:28
 tags: Golang
-categories: 环境配置
+categories: 环境部署
 ---
 
 ### 首先配置GOPATH

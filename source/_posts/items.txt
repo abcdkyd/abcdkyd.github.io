@@ -8,11 +8,12 @@ Docker
 Markdown
 MongoDB
 Mac
+Hexo
 
 
 categories:
 笔记
-环境配置
+环境部署
 内容整理
 数据库
 

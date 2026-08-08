@@ -2,7 +2,7 @@
 title: 管理PHP扩展配置
 date: 2018-12-14 21:11:41
 tags: PHP
-categories: 环境配置
+categories: 环境部署
 ---
 
 __`phpinfo`__ 中 `Scan this dir for additional .ini files` 配置参数是php扩展配置路径。

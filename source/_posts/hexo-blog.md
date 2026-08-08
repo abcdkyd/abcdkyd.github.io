@@ -1,8 +1,8 @@
 ---
-title: hexo+github 创建个人博客
+title: Hexo+Github 创建个人博客
 date: 2017-04-03 16:34:43
-tags: hexo
-categories: 效率
+tags: Hexo
+categories: 环境部署
 ---
 
 大概流程

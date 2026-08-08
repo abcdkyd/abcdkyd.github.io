@@ -2,7 +2,7 @@
 title: lnmp环境搭建
 date: 2018-05-31 22:09:43
 tags: 
-categories: 环境配置
+categories: 环境部署
 ---
 
 ### CentOS6.5
