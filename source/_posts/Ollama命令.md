@@ -18,7 +18,7 @@ Ollama 的特点在于它不仅仅提供了现成的模型和工具集，还提�
 ## Ollama相关命令
 
 可以输入命令 `ollama --help` 查看包含的命令
-
+<!-- more -->
 完整实例：
 | 命令 (Command) | 说明 (Description) | 示例 (Example) |
 | --- | --- | --- |
