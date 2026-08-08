@@ -9,7 +9,7 @@ categories: 环境配置
 
 #### 1.查看环境
 
-``` 
+```
 # cat /etc/redhat-release 
 ```
 

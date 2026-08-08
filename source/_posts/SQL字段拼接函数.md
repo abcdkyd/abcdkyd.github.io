@@ -1,8 +1,8 @@
 ---
-title: 拼接多个字段的值
+title: SQL字段拼接函数
 date: 2018-06-15 01:48:48
 tags: 
-    - 字符串函数
+    - SQL函数
 categories: 数据库
 ---
 
@@ -46,7 +46,7 @@ select stuff((select '|'+studentName from student for xml path ('')),1,1,'');
 	`for xml path`有的人可能知道有的人可能不知道，其实它就是将查询结果集以XML形式展现，有了它我们可以简化我们的查询语句实现一些以前可能需要借助函数活存储过程来完成的工作。
    
   
-## posgreSQL
+## PosgreSQL
 
 - 多字段值根据连接符拼接 `concat_ws(':',col_1,col_2)`
 - 单字段值根据连接符拼接 `string_agg(col_1,' \r\n ')`
