@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Ollama命令 | Jxie的个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Ollama简介Ollama 是一个开源的大型语言模型（LLM）平台，旨在让用户能够轻松地在本地运行、管理和与大型语言模型进行交互。 Ollama 提供了一个简单的方式来加载和使用各种预训练的语言模型，支持文本生成、翻译、代码编写、问答等多种自然语言处理任务。 Ollama 的特点在于它不仅仅提供了现成的模型和工具集，还提供了方便的界面和 API，使得从文本生成、对话系统到语义分析等任务都能快速实">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ollama命令">
+<meta property="og:url" content="https://abcdkyd.github.io/2026/08/06/Ollama%E5%91%BD%E4%BB%A4/index.html">
+<meta property="og:site_name" content="Jxie的个人博客">
+<meta property="og:description" content="Ollama简介Ollama 是一个开源的大型语言模型（LLM）平台，旨在让用户能够轻松地在本地运行、管理和与大型语言模型进行交互。 Ollama 提供了一个简单的方式来加载和使用各种预训练的语言模型，支持文本生成、翻译、代码编写、问答等多种自然语言处理任务。 Ollama 的特点在于它不仅仅提供了现成的模型和工具集，还提供了方便的界面和 API，使得从文本生成、对话系统到语义分析等任务都能快速实">
+<meta property="og:locale">
+<meta property="article:published_time" content="2026-08-06T13:14:27.000Z">
+<meta property="article:modified_time" content="2026-08-06T13:15:07.303Z">
+<meta property="article:author" content="Jxie">
+<meta property="article:tag" content="Ollama">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Jxie的个人博客" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Jxie的个人博客</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">每天进步一点</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Suche"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://abcdkyd.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Ollama命令" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/08/06/Ollama%E5%91%BD%E4%BB%A4/" class="article-date">
+  <time class="dt-published" datetime="2026-08-06T13:14:27.000Z" itemprop="datePublished">2026-08-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Ollama命令
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="Ollama简介"><a href="#Ollama简介" class="headerlink" title="Ollama简介"></a>Ollama简介</h2><p>Ollama 是一个开源的大型语言模型（LLM）平台，旨在让用户能够轻松地在本地运行、管理和与大型语言模型进行交互。</p>
+<p>Ollama 提供了一个简单的方式来加载和使用各种预训练的语言模型，支持文本生成、翻译、代码编写、问答等多种自然语言处理任务。</p>
+<p>Ollama 的特点在于它不仅仅提供了现成的模型和工具集，还提供了方便的界面和 API，使得从文本生成、对话系统到语义分析等任务都能快速实现。</p>
+<h2 id="Ollama相关命令"><a href="#Ollama相关命令" class="headerlink" title="Ollama相关命令"></a>Ollama相关命令</h2><p>可以输入命令 <code>ollama --help</code> 查看包含的命令</p>
+<p>完整实例：</p>
+<table>
+<thead>
+<tr>
+<th>命令 (Command)</th>
+<th>说明 (Description)</th>
+<th>示例 (Example)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong><code>ollama serve</code></strong></td>
+<td><strong>启动服务</strong>。启动 Ollama 的 API 服务，端口默认是11434（通常后台自动运行）。</td>
+<td><code>ollama serve</code></td>
+</tr>
+<tr>
+<td><strong><code>ollama create</code></strong></td>
+<td><strong>创建模型</strong>。根据 Modelfile 创建自定义模型（高级）。</td>
+<td><code>ollama create my-bot -f ./Modelfile</code></td>
+</tr>
+<tr>
+<td><strong><code>ollama show</code></strong></td>
+<td><strong>显示信息</strong>。查看模型的元数据、参数或 Modelfile。</td>
+<td><code>ollama show --modelfile llama3</code></td>
+</tr>
+<tr>
+<td><strong><code>ollama run</code></strong></td>
+<td><strong>运行模型</strong>。如果不存在则自动拉取。</td>
+<td><code>ollama run llama3</code></td>
+</tr>
+<tr>
+<td><strong><code>ollama stop</code></strong></td>
+<td><strong>停止模型</strong>。停止运行中的模型。</td>
+<td><code>ollama stop llama3</code></td>
+</tr>
+<tr>
+<td><strong><code>ollama pull</code></strong></td>
+<td><strong>拉取模型</strong>。从库中下载模型但不运行。</td>
+<td><code>ollama pull mistral</code></td>
+</tr>
+<tr>
+<td><strong><code>ollama push</code></strong></td>
+<td><strong>推送模型</strong>。将你自定义的模型上传到 ollama。</td>
+<td><code>ollama push my-username/my-model</code></td>
+</tr>
+<tr>
+<td><strong><code>ollama list（或ls)</code></strong></td>
+<td><strong>列出模型</strong>。显示本地所有已下载的模型。</td>
+<td><code>ollama list（或ls)</code></td>
+</tr>
+<tr>
+<td><strong><code>ollama ps</code></strong></td>
+<td><strong>查看进程</strong>。显示当前正在运行的模型及显存占用。</td>
+<td><code>ollama ps</code></td>
+</tr>
+<tr>
+<td><strong><code>ollama cp</code></strong></td>
+<td><strong>复制模型</strong>。将现有模型复制为新名称（用于测试）。</td>
+<td><code>ollama cp llama3 my-model</code></td>
+</tr>
+<tr>
+<td><strong><code>ollama rm</code></strong></td>
+<td><strong>删除模型</strong>。移除本地模型释放空间。</td>
+<td><code>ollama rm llama3</code></td>
+</tr>
+<tr>
+<td><strong><code>ollama launch</code></strong></td>
+<td><strong>关联工具</strong>。负责把各类编码工具（Claude Code、Codex、OpenCode、Moltbot 或任意其他 CLI 工具）与 Ollama 模型连接所需的一切设置。</td>
+<td><code>ollama launch claude</code></td>
+</tr>
+<tr>
+<td><strong><code>ollama help</code></strong></td>
+<td><strong>帮助</strong>。查看任何命令的帮助信息。</td>
+<td><code>ollama help run</code></td>
+</tr>
+</tbody></table>
+<h2 id="Ollama对话指令"><a href="#Ollama对话指令" class="headerlink" title="Ollama对话指令"></a>Ollama对话指令</h2><p>在Ollama终端中提供了一系列指令，可以用来调整和控制对话模型，可以输入 <code>/?</code> 查看指令</p>
+<p>完整实例：</p>
+<table>
+<thead>
+<tr>
+<th>命令 (Command)</th>
+<th>说明 (Description)</th>
+<th>示例 (Example)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong><code>/bye</code></strong></td>
+<td>退出当前控制台对话，快捷键: ctrl + d</td>
+<td><code>/bye</code></td>
+</tr>
+<tr>
+<td><strong><code>/show</code></strong></td>
+<td>查看当前模型详细信息</td>
+<td>&#96;&#x2F;show info</td>
+</tr>
+<tr>
+<td><strong><code>/set</code></strong></td>
+<td>设置当前模型会话参数</td>
+<td>&#96;&#x2F;set parameter</td>
+</tr>
+<tr>
+<td><strong><code>/load</code></strong></td>
+<td>在对话过程中动态切换模型</td>
+<td><code>/load deepseekp-coder</code></td>
+</tr>
+<tr>
+<td><strong><code>/save</code></strong></td>
+<td>把当前对话模型存储成一个新的模型</td>
+<td><code>/save test</code></td>
+</tr>
+<tr>
+<td><strong><code>/clear</code></strong></td>
+<td>清除对话上下文内容</td>
+<td><code>/clear</code></td>
+</tr>
+<tr>
+<td><strong><code>/? shortcuts</code></strong></td>
+<td>查询快捷键</td>
+<td><code>/? shortcuts</code></td>
+</tr>
+<tr>
+<td><strong><code>&quot;&quot;&quot;</code></strong></td>
+<td>多行输入指令</td>
+<td><code>&quot;&quot;&quot;你好&lt;br/&gt;你是什么模型？&quot;&quot;&quot;</code></td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://abcdkyd.github.io/2026/08/06/Ollama%E5%91%BD%E4%BB%A4/" data-id="cuidDF6QLQrUMf7K1bPz3dze5" data-title="Ollama命令" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ollama/" rel="tag">Ollama</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/07/03/Mac%E8%A7%A3%E5%8E%8Bpkg%E6%96%87%E4%BB%B6/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title">Mac解压pkg文件</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Kategorien</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%86%85%E5%AE%B9%E6%95%B4%E7%90%86/">内容整理</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%88%E7%8E%87/">效率</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">环境配置</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/" rel="tag">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Golang/" rel="tag">Golang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/" rel="tag">Mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MongoDB/" rel="tag">MongoDB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ollama/" rel="tag">Ollama</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/" rel="tag">PHP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PostgreSQL/" rel="tag">PostgreSQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pygame/" rel="tag">Pygame</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL%E5%87%BD%E6%95%B0/" rel="tag">SQL函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL%E8%A7%A6%E5%8F%91%E5%99%A8/" rel="tag">SQL触发器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/about/" rel="tag">about</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pgcrypto/" rel="tag">pgcrypto</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/" rel="tag">存储过程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Golang/" style="font-size: 10px;">Golang</a> <a href="/tags/Mac/" style="font-size: 20px;">Mac</a> <a href="/tags/Markdown/" style="font-size: 13.33px;">Markdown</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/Ollama/" style="font-size: 10px;">Ollama</a> <a href="/tags/PHP/" style="font-size: 20px;">PHP</a> <a href="/tags/PostgreSQL/" style="font-size: 16.67px;">PostgreSQL</a> <a href="/tags/Pygame/" style="font-size: 10px;">Pygame</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/SQL%E5%87%BD%E6%95%B0/" style="font-size: 10px;">SQL函数</a> <a href="/tags/SQL%E8%A7%A6%E5%8F%91%E5%99%A8/" style="font-size: 10px;">SQL触发器</a> <a href="/tags/about/" style="font-size: 10px;">about</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/pgcrypto/" style="font-size: 10px;">pgcrypto</a> <a href="/tags/%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/" style="font-size: 10px;">存储过程</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 10px;">设计模式</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 10px;">面试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/08/">August 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/08/06/Ollama%E5%91%BD%E4%BB%A4/">Ollama命令</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/03/Mac%E8%A7%A3%E5%8E%8Bpkg%E6%96%87%E4%BB%B6/">Mac解压pkg文件</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/07/Docker%E7%AC%94%E8%AE%B0/">Docker笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/27/Mac%E5%AE%89%E8%A3%85Pygame/">Mac安装Pygame</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/07/Mac%E5%AE%89%E8%A3%85MongoDB/">Mac安装MongoDB</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 Jxie<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

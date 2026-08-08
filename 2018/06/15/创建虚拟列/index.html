@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>PostgreSQL pgcrypto模块加密解密函数 | Jxie的个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="pgcrypto 模块 加密后返回二进制的数据   加密解密函数  encrypt(data bytea, key bytea, type text) returns bytea  decrypt(data bytea, key bytea, type text) returns bytea  例子：  encrypt(data, &#39;fooz&#39;, &#39;bf-cbc&#x2F;pad:p">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PostgreSQL pgcrypto模块加密解密函数">
+<meta property="og:url" content="https://abcdkyd.github.io/2018/06/15/%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E5%88%97/index.html">
+<meta property="og:site_name" content="Jxie的个人博客">
+<meta property="og:description" content="pgcrypto 模块 加密后返回二进制的数据   加密解密函数  encrypt(data bytea, key bytea, type text) returns bytea  decrypt(data bytea, key bytea, type text) returns bytea  例子：  encrypt(data, &#39;fooz&#39;, &#39;bf-cbc&#x2F;pad:p">
+<meta property="og:locale">
+<meta property="article:published_time" content="2018-06-14T16:49:43.000Z">
+<meta property="article:modified_time" content="2026-08-06T12:37:28.409Z">
+<meta property="article:author" content="Jxie">
+<meta property="article:tag" content="PostgreSQL">
+<meta property="article:tag" content="pgcrypto">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Jxie的个人博客" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Jxie的个人博客</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">每天进步一点</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Suche"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://abcdkyd.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-创建虚拟列" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2018/06/15/%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E5%88%97/" class="article-date">
+  <time class="dt-published" datetime="2018-06-14T16:49:43.000Z" itemprop="datePublished">2018-06-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      PostgreSQL pgcrypto模块加密解密函数
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="pgcrypto-模块"><a href="#pgcrypto-模块" class="headerlink" title="pgcrypto 模块"></a>pgcrypto 模块</h3><blockquote>
+<p>加密后返回二进制的数据</p>
+</blockquote>
+<ol>
+<li><p>加密解密函数</p>
+<p> <code>encrypt(data bytea, key bytea, type text) returns bytea</code></p>
+<p> <code>decrypt(data bytea, key bytea, type text) returns bytea</code></p>
+<p> 例子：</p>
+<p> <code>encrypt(data, &#39;fooz&#39;, &#39;bf-cbc/pad:pkcs&#39;)</code></p>
+<p> <code>encrypt(&#39;this is a message&#39;, &#39;key&#39;, &#39;aes-ecb&#39;)</code></p>
+<p> <code>decrypt(&#39;\x39c3c665757a0ff973b83fb98cc3d63f&#39;, &#39;key&#39;, &#39;aes-ecb&#39;)</code></p>
+</li>
+<li><p>类型转换</p>
+<blockquote>
+<p>pgcrypto模块加密出来的二进制数据，转换成base64后与PHP加密的结果。</p>
+</blockquote>
+<p> <code>encode(data bytea, type text) </code></p>
+<p> <code>decode(string text, type text) </code></p>
+<blockquote>
+<p>aes解密是自动识别 aes128, aes192, aes256，aes加密默认是aes128，暂时没发现怎么指定位数</p>
+</blockquote>
+ <span id="more"></span>
+
+ <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- PostgreSQL加密</span></span><br><span class="line"><span class="keyword">select</span> encrypt(<span class="string">&#x27;123456&#x27;</span>,<span class="string">&#x27;haha&#x27;</span>, <span class="string">&#x27;aes-ecb&#x27;</span>);</span><br><span class="line">          encrypt               </span><br><span class="line"><span class="comment">------------------------------------</span></span><br><span class="line"> \xd6d01c6ac3ff0353ff1ccf9204f149c5</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> encode(<span class="string">&#x27;\xd6d01c6ac3ff0353ff1ccf9204f149c5&#x27;</span>, <span class="string">&#x27;base64&#x27;</span>);</span><br><span class="line">          encode          </span><br><span class="line"><span class="comment">--------------------------</span></span><br><span class="line"> <span class="number">1</span>tAcasP<span class="operator">/</span>A1P<span class="operator">/</span>HM<span class="operator">+</span>SBPFJxQ<span class="operator">=</span><span class="operator">=</span></span><br></pre></td></tr></table></figure>
+ <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- PHP</span></span><br><span class="line">echo openssl_encrypt(<span class="string">&#x27;123456&#x27;</span>, <span class="string">&#x27;AES-128-ECB&#x27;</span>, <span class="string">&#x27;haha&#x27;</span>);</span><br><span class="line"><span class="number">1</span>tAcasP<span class="operator">/</span>A1P<span class="operator">/</span>HM<span class="operator">+</span>SBPFJxQ<span class="operator">=</span><span class="operator">=</span></span><br></pre></td></tr></table></figure>
+ <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- PostgreSQL解密</span></span><br><span class="line"><span class="keyword">select</span> decrypt(<span class="string">&#x27;\xd6d01c6ac3ff0353ff1ccf9204f149c5&#x27;</span>,<span class="string">&#x27;haha&#x27;</span>, <span class="string">&#x27;aes-ecb&#x27;</span>);</span><br><span class="line">    decrypt     </span><br><span class="line"><span class="comment">----------------</span></span><br><span class="line"> \x313233343536</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 转换为utf8</span></span><br><span class="line"><span class="keyword">select</span> convert_from(<span class="string">&#x27;\x313233343536&#x27;</span>, <span class="string">&#x27;SQL_ASCII&#x27;</span>);</span><br><span class="line">   convert_from </span><br><span class="line"><span class="comment">--------------</span></span><br><span class="line">   <span class="number">123456</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- bytea转字符串：</span></span><br><span class="line"><span class="keyword">select</span> encode(<span class="string">&#x27;\x00&#x27;</span>,<span class="string">&#x27;escape&#x27;</span>);</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="php-加密解密函数"><a href="#php-加密解密函数" class="headerlink" title="php 加密解密函数"></a>php 加密解密函数</h3><blockquote>
+<p>以指定的方式和 key 加密数据，返回原始或 base64 编码后的字符串。</p>
+</blockquote>
+<p>-<br>	<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">string</span> <span class="title function_ invoke__">openssl_encrypt</span> ( <span class="keyword">string</span> <span class="variable">$data</span> , <span class="keyword">string</span> <span class="variable">$method</span> , <span class="keyword">string</span> <span class="variable">$key</span> [, <span class="keyword">int</span> <span class="variable">$options</span> = <span class="number">0</span> [, <span class="keyword">string</span> <span class="variable">$iv</span> = <span class="string">&quot;&quot;</span> [, <span class="keyword">string</span> &amp;<span class="variable">$tag</span> = <span class="literal">NULL</span> [, <span class="keyword">string</span> <span class="variable">$aad</span> = <span class="string">&quot;&quot;</span> [, <span class="keyword">int</span> <span class="variable">$tag_length</span> = <span class="number">16</span> ]]]]] )</span><br></pre></td></tr></table></figure></p>
+<p>-<br>	<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">string</span> <span class="title function_ invoke__">openssl_decrypt</span> ( <span class="keyword">string</span> <span class="variable">$data</span> , <span class="keyword">string</span> <span class="variable">$method</span> , <span class="keyword">string</span> <span class="variable">$key</span> [, <span class="keyword">int</span> <span class="variable">$options</span> = <span class="number">0</span> [, <span class="keyword">string</span> <span class="variable">$iv</span> = <span class="string">&quot;&quot;</span> [, <span class="keyword">string</span> <span class="variable">$tag</span> = <span class="string">&quot;&quot;</span> [, <span class="keyword">string</span> <span class="variable">$aad</span> = <span class="string">&quot;&quot;</span> ]]]] )</span><br></pre></td></tr></table></figure></p>
+<p>例子：</p>
+<p><code>openssl_encrypt($data, &#39;AES-256-ECB&#39;, $key);</code></p>
+<p><code>openssl_decrypt($data, &#39;AES-256-ECB&#39;, $key);</code></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 解密函数</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">or</span> replace <span class="keyword">function</span> userInfoDecrypt(encrypted_data <span class="type">varchar</span>) <span class="keyword">returns</span> text <span class="keyword">as</span> </span><br><span class="line">$body$</span><br><span class="line"><span class="keyword">declare</span></span><br><span class="line">    key bytea :<span class="operator">=</span> <span class="string">&#x27;PVrW9sRqsT37cJhnqxgcHWvbCrsjcRRT&#x27;</span>;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">    <span class="keyword">return</span> convert_from(decrypt(decode(encrypted_data, <span class="string">&#x27;base64&#x27;</span>), key, <span class="string">&#x27;aes-ecb&#x27;</span>), <span class="string">&#x27;SQL_ASCII&#x27;</span>);</span><br><span class="line"><span class="keyword">end</span>;</span><br><span class="line">$body$ <span class="keyword">language</span> plpgsql;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://abcdkyd.github.io/2018/06/15/%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E5%88%97/" data-id="cuidvvCZ0vHee4VRoGauag7DQ" data-title="PostgreSQL pgcrypto模块加密解密函数" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PostgreSQL/" rel="tag">PostgreSQL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pgcrypto/" rel="tag">pgcrypto</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/06/15/PostgreSQL%E7%BC%96%E5%86%99%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Neuer</strong>
+      <div class="article-nav-title">
+        
+          PostgreSQL编写存储过程
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/05/31/lnmp%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title">lnmp环境搭建</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Kategorien</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%86%85%E5%AE%B9%E6%95%B4%E7%90%86/">内容整理</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%88%E7%8E%87/">效率</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">环境配置</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/" rel="tag">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Golang/" rel="tag">Golang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/" rel="tag">Mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MongoDB/" rel="tag">MongoDB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ollama/" rel="tag">Ollama</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/" rel="tag">PHP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PostgreSQL/" rel="tag">PostgreSQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pygame/" rel="tag">Pygame</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL%E5%87%BD%E6%95%B0/" rel="tag">SQL函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL%E8%A7%A6%E5%8F%91%E5%99%A8/" rel="tag">SQL触发器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/about/" rel="tag">about</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pgcrypto/" rel="tag">pgcrypto</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/" rel="tag">存储过程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Golang/" style="font-size: 10px;">Golang</a> <a href="/tags/Mac/" style="font-size: 20px;">Mac</a> <a href="/tags/Markdown/" style="font-size: 13.33px;">Markdown</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/Ollama/" style="font-size: 10px;">Ollama</a> <a href="/tags/PHP/" style="font-size: 20px;">PHP</a> <a href="/tags/PostgreSQL/" style="font-size: 16.67px;">PostgreSQL</a> <a href="/tags/Pygame/" style="font-size: 10px;">Pygame</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/SQL%E5%87%BD%E6%95%B0/" style="font-size: 10px;">SQL函数</a> <a href="/tags/SQL%E8%A7%A6%E5%8F%91%E5%99%A8/" style="font-size: 10px;">SQL触发器</a> <a href="/tags/about/" style="font-size: 10px;">about</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/pgcrypto/" style="font-size: 10px;">pgcrypto</a> <a href="/tags/%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/" style="font-size: 10px;">存储过程</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 10px;">设计模式</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 10px;">面试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/08/">August 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/08/06/Ollama%E5%91%BD%E4%BB%A4/">Ollama命令</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/03/Mac%E8%A7%A3%E5%8E%8Bpkg%E6%96%87%E4%BB%B6/">Mac解压pkg文件</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/07/Docker%E7%AC%94%E8%AE%B0/">Docker笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/27/Mac%E5%AE%89%E8%A3%85Pygame/">Mac安装Pygame</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/07/Mac%E5%AE%89%E8%A3%85MongoDB/">Mac安装MongoDB</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 Jxie<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
