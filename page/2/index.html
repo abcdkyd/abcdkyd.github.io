@@ -75,6 +75,54 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Mac下的PHP版本切换" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2018/12/14/Mac%E4%B8%8B%E7%9A%84PHP%E7%89%88%E6%9C%AC%E5%88%87%E6%8D%A2/" class="article-date">
+  <time class="dt-published" datetime="2018-12-14T13:11:41.000Z" itemprop="datePublished">2018-12-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/">环境部署</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2018/12/14/Mac%E4%B8%8B%E7%9A%84PHP%E7%89%88%E6%9C%AC%E5%88%87%E6%8D%A2/">Mac下的PHP版本切换</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h4 id="brew安装php-version"><a href="#brew安装php-version" class="headerlink" title="brew安装php-version"></a>brew安装php-version</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># brew install php56</span><br><span class="line"># brew install php70</span><br><span class="line"># brew install php-version</span><br><span class="line"># source $(brew --prefix php-version)/php-version.sh</span><br><span class="line"></span><br><span class="line"># php-version</span><br><span class="line"># php-version 5.6.5</span><br></pre></td></tr></table></figure>
+
+<h4 id="php开机启动"><a href="#php开机启动" class="headerlink" title="php开机启动"></a>php开机启动</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># mkdir -p ~/Library/LaunchAgents</span><br><span class="line"># cp /usr/local/opt/php56/homebrew.mxcl.php56.plist ~/Library/LaunchAgents/</span><br><span class="line"># launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.php56.plist</span><br><span class="line"># launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php56.plist</span><br></pre></td></tr></table></figure>
+
+<h4 id="切换本机php版本"><a href="#切换本机php版本" class="headerlink" title="切换本机php版本"></a>切换本机php版本</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// 先确认phpinfo里面的php版本，先卸载5.6的plist，在加载7.1的plist</span><br><span class="line"># launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php56.plist</span><br><span class="line"># launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php71.plist</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://abcdkyd.github.io/2018/12/14/Mac%E4%B8%8B%E7%9A%84PHP%E7%89%88%E6%9C%AC%E5%88%87%E6%8D%A2/" data-id="cuidh5vnLwpDLeG7Ws2boT6Oz" data-title="Mac下的PHP版本切换" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/" rel="tag">Mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/" rel="tag">PHP</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-管理PHP扩展配置" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2018/12/14/%E7%AE%A1%E7%90%86PHP%E6%89%A9%E5%B1%95%E9%85%8D%E7%BD%AE/" class="article-date">
@@ -152,7 +200,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://abcdkyd.github.io/2018/12/14/%E7%AE%A1%E7%90%86PHP%E6%89%A9%E5%B1%95%E9%85%8D%E7%BD%AE/" data-id="cuidf7VO7BrjNPtdRpVK5Tk10" data-title="管理PHP扩展配置" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="https://abcdkyd.github.io/2018/12/14/%E7%AE%A1%E7%90%86PHP%E6%89%A9%E5%B1%95%E9%85%8D%E7%BD%AE/" data-id="cuidQ_YvfgRE2ejOPO1ycFY3F" data-title="管理PHP扩展配置" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -209,7 +257,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://abcdkyd.github.io/2018/06/15/SQL%E5%AD%97%E6%AE%B5%E6%8B%BC%E6%8E%A5%E5%87%BD%E6%95%B0/" data-id="cuidlBixiVObZdIKO3yFi6UsX" data-title="SQL字段拼接函数" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="https://abcdkyd.github.io/2018/06/15/SQL%E5%AD%97%E6%AE%B5%E6%8B%BC%E6%8E%A5%E5%87%BD%E6%95%B0/" data-id="cuideOucVzGyCl0oNEcPR_mJG" data-title="SQL字段拼接函数" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -262,7 +310,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://abcdkyd.github.io/2018/06/15/PostgreSQL%E7%BC%96%E5%86%99%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/" data-id="cuiddcrEuC_1N7M1jtnnCtSP-" data-title="PostgreSQL编写存储过程" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="https://abcdkyd.github.io/2018/06/15/PostgreSQL%E7%BC%96%E5%86%99%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/" data-id="cuidtu9AI4fKOj3xdyMTwUK-8" data-title="PostgreSQL编写存储过程" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -331,7 +379,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://abcdkyd.github.io/2018/06/15/%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E5%88%97/" data-id="cuidRcHhEHATVO9-ty3xdUL9L" data-title="PostgreSQL pgcrypto模块加密解密函数" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="https://abcdkyd.github.io/2018/06/15/%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E5%88%97/" data-id="cuidLlgLCgYNYwKAAifj27LK9" data-title="PostgreSQL pgcrypto模块加密解密函数" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -410,7 +458,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://abcdkyd.github.io/2018/05/31/lnmp%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" data-id="cuid-CeWasC3ERQNnX23u-RYj" data-title="lnmp环境搭建" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="https://abcdkyd.github.io/2018/05/31/lnmp%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" data-id="cuids0LyqKbEnzCj_VYCY_Nfx" data-title="lnmp环境搭建" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -459,7 +507,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://abcdkyd.github.io/2017/06/14/ssh+git%E5%BB%BA%E7%AB%8B%E4%BB%A3%E7%A0%81%E5%BA%93/" data-id="cuidHi_G_Wn1cax4YW1NBkjAo" data-title="ssh+git 建立代码库" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="https://abcdkyd.github.io/2017/06/14/ssh+git%E5%BB%BA%E7%AB%8B%E4%BB%A3%E7%A0%81%E5%BA%93/" data-id="cuiddmsnxrmgvncvAszF-jGFT" data-title="ssh+git 建立代码库" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -513,7 +561,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://abcdkyd.github.io/2017/04/03/PHP%E9%9D%A2%E8%AF%95%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86/" data-id="cuidDFYInDqPc_77nrX6I_3BC" data-title="PHP面试基础整理" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="https://abcdkyd.github.io/2017/04/03/PHP%E9%9D%A2%E8%AF%95%E5%9F%BA%E7%A1%80%E6%95%B4%E7%90%86/" data-id="cuidjhFpIzglJMSUqDoLbaKLk" data-title="PHP面试基础整理" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -559,10 +607,10 @@
 <li>创建仓库，abcdkyd.github.io；</li>
 <li>创建两个分支：master 与 hexo；</li>
 <li>设置hexo为默认分支（因为我们只需要手动管理这个分支上的Hexo网站文件）；</li>
-<li>使用git clone <a href="mailto:&#x67;&#105;&#116;&#x40;&#103;&#x69;&#x74;&#x68;&#117;&#x62;&#46;&#99;&#111;&#109;">git@github.com</a>:abcdkyd&#x2F;abcdkyd.github.io.git拷贝仓库；</li>
+<li>使用git clone <a href="mailto:&#103;&#x69;&#x74;&#x40;&#x67;&#x69;&#116;&#104;&#117;&#98;&#46;&#99;&#111;&#x6d;">git@github.com</a>:abcdkyd&#x2F;abcdkyd.github.io.git拷贝仓库；</li>
 <li>在本地 abcdkyd.github.io 文件夹下通过Git bash依次执行npm install hexo-cli、hexo init、npm install 和 npm install hexo-deployer-git（此时当前分支应显示为hexo）;</li>
 <li>修改_config.yml中的deploy参数，分支应为master；</li>
-<li>使用git init 、git remote add origin <a href="mailto:&#x67;&#105;&#116;&#64;&#x67;&#105;&#116;&#104;&#x75;&#x62;&#46;&#99;&#x6f;&#x6d;">git@github.com</a>:sylujia&#x2F;sylujia.github.io.git以及git pull命令重新关联远端库。</li>
+<li>使用git init 、git remote add origin <a href="mailto:&#x67;&#x69;&#x74;&#64;&#103;&#105;&#116;&#104;&#117;&#98;&#x2e;&#x63;&#x6f;&#109;">git@github.com</a>:sylujia&#x2F;sylujia.github.io.git以及git pull命令重新关联远端库。</li>
 <li>使用git checkout hexo命令切换到hexo分支然后依次执行git add .、git commit -m “…”、git push origin hexo提交网站相关的文件；</li>
 <li>执行hexo generate -d生成网站并部署到GitHub上。</li>
 </ol>
@@ -575,7 +623,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://abcdkyd.github.io/2017/04/03/hexo-blog/" data-id="cuidZlxNvG5sle_CSThD0aSeh" data-title="Hexo+Github 创建个人博客" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="https://abcdkyd.github.io/2017/04/03/hexo-blog/" data-id="cuid-VbZAgxkLqzCWyILOic3X" data-title="Hexo+Github 创建个人博客" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -624,7 +672,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://abcdkyd.github.io/2017/03/28/Markdown%E7%AE%80%E5%8D%95%E8%AF%AD%E6%B3%95/" data-id="cuidijp25FbMhtvXFX_ES7Zur" data-title="Markdown简单语法" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="https://abcdkyd.github.io/2017/03/28/Markdown%E7%AE%80%E5%8D%95%E8%AF%AD%E6%B3%95/" data-id="cuidLvJh2WxdiG_77bM-lVUw9" data-title="Markdown简单语法" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -638,56 +686,11 @@
 
 
   
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2017/03/27/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2017-03-27T08:56:28.000Z" itemprop="datePublished">2017-03-27</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2017/03/27/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>  建这个博客的目的是为了记录一些学习的笔记，如果有什么意见或建议，欢迎联系我。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://abcdkyd.github.io/2017/03/27/hello-world/" data-id="cuid5FTsiRyl7D34LIyMql6GD" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/about/" rel="tag">about</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/">&laquo; zurück</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/">&laquo; zurück</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">weiter &raquo;</a>
   </nav>
 
 </section>
@@ -718,7 +721,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Golang/" style="font-size: 10px;">Golang</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Mac/" style="font-size: 20px;">Mac</a> <a href="/tags/Markdown/" style="font-size: 13.33px;">Markdown</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/Ollama/" style="font-size: 10px;">Ollama</a> <a href="/tags/PHP/" style="font-size: 20px;">PHP</a> <a href="/tags/PostgreSQL/" style="font-size: 16.67px;">PostgreSQL</a> <a href="/tags/Pygame/" style="font-size: 10px;">Pygame</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/SQL%E5%87%BD%E6%95%B0/" style="font-size: 10px;">SQL函数</a> <a href="/tags/SQL%E8%A7%A6%E5%8F%91%E5%99%A8/" style="font-size: 10px;">SQL触发器</a> <a href="/tags/about/" style="font-size: 10px;">about</a> <a href="/tags/pgcrypto/" style="font-size: 10px;">pgcrypto</a> <a href="/tags/%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/" style="font-size: 10px;">存储过程</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 10px;">设计模式</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 10px;">面试</a>
+      <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Golang/" style="font-size: 10px;">Golang</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Mac/" style="font-size: 20px;">Mac</a> <a href="/tags/Markdown/" style="font-size: 13.33px;">Markdown</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/Ollama/" style="font-size: 10px;">Ollama</a> <a href="/tags/PHP/" style="font-size: 20px;">PHP</a> <a href="/tags/PostgreSQL/" style="font-size: 16.67px;">PostgreSQL</a> <a href="/tags/Pygame/" style="font-size: 10px;">Pygame</a> <a href="/tags/Python/" style="font-size: 13.33px;">Python</a> <a href="/tags/SQL%E5%87%BD%E6%95%B0/" style="font-size: 10px;">SQL函数</a> <a href="/tags/SQL%E8%A7%A6%E5%8F%91%E5%99%A8/" style="font-size: 10px;">SQL触发器</a> <a href="/tags/about/" style="font-size: 10px;">about</a> <a href="/tags/pgcrypto/" style="font-size: 10px;">pgcrypto</a> <a href="/tags/%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/" style="font-size: 10px;">存储过程</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 10px;">设计模式</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 10px;">面试</a>
     </div>
   </div>
 
@@ -740,6 +743,10 @@
       <ul>
         
           <li>
+            <a href="/2026/08/08/Python%E5%8F%98%E9%87%8F/">Python变量</a>
+          </li>
+        
+          <li>
             <a href="/2026/08/06/Ollama%E5%91%BD%E4%BB%A4/">Ollama命令</a>
           </li>
         
@@ -753,10 +760,6 @@
         
           <li>
             <a href="/2019/04/27/Mac%E5%AE%89%E8%A3%85Pygame/">Mac安装Pygame</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/07/Mac%E5%AE%89%E8%A3%85MongoDB/">Mac安装MongoDB</a>
           </li>
         
       </ul>
