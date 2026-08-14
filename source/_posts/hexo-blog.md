@@ -1,7 +1,8 @@
 ---
 title: Hexo+Github 创建个人博客
 date: 2017-04-03 16:34:43
-tags: Hexo
+tags: 
+    - Hexo
 categories: 环境部署
 ---
 
