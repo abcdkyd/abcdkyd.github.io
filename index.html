@@ -1,748 +1,277 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  
-  <title>OKK的个人博客</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>OKK的个人博客 - 每天进步一点</title><meta name="author" content="OKK"><meta name="copyright" content="OKK"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
 <meta property="og:title" content="OKK的个人博客">
 <meta property="og:url" content="https://abcdkyd.github.io/index.html">
 <meta property="og:site_name" content="OKK的个人博客">
-<meta property="og:locale">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://abcdkyd.github.io/img/butterfly-icon.png">
 <meta property="article:author" content="OKK">
 <meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="OKK的个人博客" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
-  
-<link rel="stylesheet" href="/css/style.css">
-
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
-  
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
-
-<meta name="generator" content="Hexo 8.1.2"></head>
-
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">OKK的个人博客</a>
-      </h1>
+<meta name="twitter:image" content="https://abcdkyd.github.io/img/butterfly-icon.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "OKK的个人博客",
+  "alternateName": [
+    "每天进步一点",
+    "abcdkyd.github.io"
+  ],
+  "url": "https://abcdkyd.github.io/"
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://abcdkyd.github.io/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.7.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/all.min.css"><script>
+    (() => {
       
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">每天进步一点</a>
-        </h2>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-        
-          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
-        
-        <a class="nav-icon nav-search-btn" title="Suche"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://abcdkyd.github.io"></form>
-      </div>
-    </div>
-  </div>
-</header>
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        const data = { value }
 
-      <div class="outer">
-        <section id="main">
+        if (ttl != null) {
+          data.expiry = Date.now() + ttl * 86400000
+        }
+
+        localStorage.setItem(key, JSON.stringify(data))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return
+
+        try {
+          const data = JSON.parse(itemStr)
+
+          if (data.expiry && Date.now() > data.expiry) {
+            localStorage.removeItem(key)
+            return
+          }
+
+          return data.value
+        } catch {
+          localStorage.removeItem(key)
+        }
+      }
+    }
+
+    const scriptCache = new Map()
+    const cssCache = new Map()
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => {
+        if (scriptCache.has(url)) {
+          return scriptCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const script = document.createElement('script')
+
+          script.src = url
+          script.async = true
+
+          for (const key in attr) {
+            script.setAttribute(key, attr[key])
+          }
+
+          script.onload = resolve
+          script.onerror = reject
+
+          document.head.appendChild(script)
+        })
+
+        scriptCache.set(url, promise)
+
+        return promise
+      },
+      getCSS: (url, id) => {
+        if (cssCache.has(url)) {
+          return cssCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const link = document.createElement('link')
+
+          link.rel = 'stylesheet'
+          link.href = url
+
+          if (id) {
+            link.id = id
+          }
+
+          link.onload = resolve
+          link.onerror = reject
+
+          document.head.appendChild(link)
+        })
+
+        cssCache.set(url, promise)
+
+        return promise
+      },
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
   
-    <article id="post-Python中一切皆对象" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/08/12/Python%E4%B8%AD%E4%B8%80%E5%88%87%E7%9A%86%E5%AF%B9%E8%B1%A1/" class="article-date">
-  <time class="dt-published" datetime="2026-08-12T12:22:50.000Z" itemprop="datePublished">2026-08-12</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%86%85%E5%AE%B9%E6%95%B4%E7%90%86/">内容整理</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/08/12/Python%E4%B8%AD%E4%B8%80%E5%88%87%E7%9A%86%E5%AF%B9%E8%B1%A1/">Pythonz中一切皆对象</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>你大概在各种教程、面试题、知乎回答里都见过这句话：</p>
-<blockquote>
-<p>Python 中一切皆对象。</p>
-</blockquote>
-<p>而本章主要讲解的内容，包括下面几点：</p>
-<ul>
-<li><p>「对象」到底是个什么东西</p>
-</li>
-<li><p>为什么数字、字符串、函数、甚至 <code>print</code> 本身，都是对象</p>
-</li>
-<li><p>这句话给你写代码带来了什么实际好处</p>
-</li>
-<li><p>顺便看懂几个之前觉得「奇怪」的 Python 现象</p>
-</li>
-</ul>
-        
-          <p class="article-more-link">
-            <a href="/2026/08/12/Python%E4%B8%AD%E4%B8%80%E5%88%87%E7%9A%86%E5%AF%B9%E8%B1%A1/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://abcdkyd.github.io/2026/08/12/Python%E4%B8%AD%E4%B8%80%E5%88%87%E7%9A%86%E5%AF%B9%E8%B1%A1/" data-id="cuid14MaPuyPpBfmKBmjfuK3f" data-title="Pythonz中一切皆对象" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li></ul>
+      const metaThemeColor = document.querySelector('meta[name="theme-color"]')
+      const activateDarkMode = () => {
+        document.documentElement.dataset.theme = 'dark'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', 'undefined')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.dataset.theme = 'light'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', 'undefined')
+        }
+      }
 
-    </footer>
-  </div>
-  
-</article>
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
 
-
-
-  
-    <article id="post-Python变量" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/08/08/Python%E5%8F%98%E9%87%8F/" class="article-date">
-  <time class="dt-published" datetime="2026-08-08T01:19:07.000Z" itemprop="datePublished">2026-08-08</time>
-</a>
+      const theme = saveToLocal.get('theme')
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/08/08/Python%E5%8F%98%E9%87%8F/">Python变量</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>在Python中，<strong>变量</strong>是存储数据的容器，用来存储程序运行过程中需要使用的数据。</p>
-<p>数据类型决定了变量可以存储的数据种类。Python的变量无需声明类型，赋值后即可创建，且支持动态类型。</p>
-        
-          <p class="article-more-link">
-            <a href="/2026/08/08/Python%E5%8F%98%E9%87%8F/#more">Read More</a>
-          </p>
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
         
       
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://abcdkyd.github.io/2026/08/08/Python%E5%8F%98%E9%87%8F/" data-id="cuid42_ch3CfWrHhPSlkgH4v-" data-title="Python变量" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Ollama命令" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2026/08/06/Ollama%E5%91%BD%E4%BB%A4/" class="article-date">
-  <time class="dt-published" datetime="2026-08-06T13:14:27.000Z" itemprop="datePublished">2026-08-06</time>
-</a>
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2026/08/06/Ollama%E5%91%BD%E4%BB%A4/">Ollama命令</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="Ollama简介"><a href="#Ollama简介" class="headerlink" title="Ollama简介"></a>Ollama简介</h2><p>Ollama 是一个开源的大型语言模型（LLM）平台，旨在让用户能够轻松地在本地运行、管理和与大型语言模型进行交互。</p>
-<p>Ollama 提供了一个简单的方式来加载和使用各种预训练的语言模型，支持文本生成、翻译、代码编写、问答等多种自然语言处理任务。</p>
-<p>Ollama 的特点在于它不仅仅提供了现成的模型和工具集，还提供了方便的界面和 API，使得从文本生成、对话系统到语义分析等任务都能快速实现。</p>
-<h2 id="Ollama相关命令"><a href="#Ollama相关命令" class="headerlink" title="Ollama相关命令"></a>Ollama相关命令</h2><p>可以输入命令 <code>ollama --help</code> 查看包含的命令</p>
-        
-          <p class="article-more-link">
-            <a href="/2026/08/06/Ollama%E5%91%BD%E4%BB%A4/#more">Read More</a>
-          </p>
-        
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.json","preload":false,"top_n_per_article":3,"unescape":true,"pagination":{"enable":true,"hitsPerPage":6},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'OKK的个人博客',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'home'
+}</script><meta name="generator" content="Hexo 8.1.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">22</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">19</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">OKK的个人博客</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">OKK的个人博客</h1></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/08/12/Python%E4%B8%AD%E4%B8%80%E5%88%87%E7%9A%86%E5%AF%B9%E8%B1%A1/" title="Pythonz中一切皆对象">Pythonz中一切皆对象</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-08-12T12:22:50.000Z" title="发表于 2026-08-12 20:22:50">2026-08-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%86%85%E5%AE%B9%E6%95%B4%E7%90%86/">内容整理</a></span></div><div class="content">你大概在各种教程、面试题、知乎回答里都见过这句话：  Python 中一切皆对象。  而本章主要讲解的内容，包括下面几点：  「对象」到底是个什么东西  为什么数字、字符串、函数、甚至 print 本身，都是对象  这句话给你写代码带来了什么实际好处  顺便看懂几个之前觉得「奇怪」的 Python 现象    一、先看一个「奇怪」的现象打开你的终端，进入 Python 交互环境（在命令行输入 python 回车）： 12345┌─────────────────────────────────────────┐│$ python                                 ││Python 3.13.0                            ││&gt;&gt;&gt; _                                    │└─────────────────────────────────────────┘  然后敲下面这几行，一行一行来： 1234&gt;&gt;&gt; 1010&gt;&gt;&gt; type(1...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/08/08/Python%E5%8F%98%E9%87%8F/" title="Python变量">Python变量</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-08-08T01:19:07.000Z" title="发表于 2026-08-08 09:19:07">2026-08-08</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></span></div><div class="content">在Python中，变量是存储数据的容器，用来存储程序运行过程中需要使用的数据。 数据类型决定了变量可以存储的数据种类。Python的变量无需声明类型，赋值后即可创建，且支持动态类型。   命名规则和规范   规则    只能包含大小写字母、数字、下划线   不能以数字开头   严格区分大小写   不能使用Python内置关键字和预留关键字      规范 示例    推荐变量名使用小写字母 + 下划线（蛇形命名法） user_name、max_score   常量使用全大写 + 下划线 MAX_SIZE、PI   见名知意，避免无意义的单字母 用 student_count 而不是 n   变量的本质Python 中变量存储的其实是对象的引用（可以理解为指向数据的”标签”），也可以说变量是对内存及其地址的抽象。 变量的存储，采用了引用语义的方式，存储的只是一个变量的值所在的内存地址，而不是这个变量本身。 变量所需的存储空间大小一致，因为变量只是保存了一个引用。也被称为对象语义和指针语义。变量的每一次初始化，都开辟了一个新的空间，将新内容的地址赋值给变量 用 id() 函数可以查看...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/08/06/Ollama%E5%91%BD%E4%BB%A4/" title="Ollama命令">Ollama命令</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-08-06T13:14:27.000Z" title="发表于 2026-08-06 21:14:27">2026-08-06</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></span></div><div class="content">Ollama简介Ollama 是一个开源的大型语言模型（LLM）平台，旨在让用户能够轻松地在本地运行、管理和与大型语言模型进行交互。 Ollama 提供了一个简单的方式来加载和使用各种预训练的语言模型，支持文本生成、翻译、代码编写、问答等多种自然语言处理任务。 Ollama 的特点在于它不仅仅提供了现成的模型和工具集，还提供了方便的界面和 API，使得从文本生成、对话系统到语义分析等任务都能快速实现。 Ollama相关命令可以输入命令 ollama --help 查看包含的命令  完整实例：    命令 (Command) 说明 (Description) 示例 (Example)    ollama serve 启动服务。启动 Ollama 的 API 服务，端口默认是11434（通常后台自动运行）。 ollama serve   ollama create 创建模型。根据 Modelfile 创建自定义模型（高级）。 ollama create my-bot -f ./Modelfile   ollama show 显示信息。查看模型的元数据、参数或 Modelfile。 o...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2019/07/03/Mac%E8%A7%A3%E5%8E%8Bpkg%E6%96%87%E4%BB%B6/" title="Mac解压pkg文件">Mac解压pkg文件</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-07-03T05:55:41.000Z" title="发表于 2019-07-03 13:55:41">2019-07-03</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></span></div><div class="content">12xar -xf Setup.pkgcat ./Payload | cpio -i  cpio用法cpio 指令可以将文件复制到 存档包（archives），也可以从存档包（archives）复制出文件。缺省情况下，cpio从标准输入读取输入数据，向标准输出写入输出数据。  归档包（archives）是一种包含其他文件和有关信息的文件。 有关信息包括：  文件名, 属主, 时间戳(timestamp), 和访问权限。  cpio支持下列的归档格式:  binary, old ASCII, new ASCII, crc, HPUX binary, HPUX old ASCII, old tar, POSIX.1 tar。  默认情况下，cpio创建二进制格式存档，以便与旧的cpio程序兼容。从档案中提取时，cpio会自动识别正在读取的归档类型，并可以读取在具有不同字节顺序的计算机上创建的归档。 cpio 有三种操作模式，某些选项只能用在对应的操作模式上; Copy-out 模式 在copy-out模式下，cpio将文件复制到存档（archives）中。它从标准输入读取文件名列表（...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2019/05/07/Docker%E7%AC%94%E8%AE%B0/" title="Docker笔记">Docker笔记</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-05-07T02:44:01.000Z" title="发表于 2019-05-07 10:44:01">2019-05-07</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></span></div><div class="content">docker操作docker run-i 标志保证容器中STDIN是开启的 -t创建的容器分配一个伪tty终端 docker run --name bob_the_container -i -t ubuntu /bin/bash	创建守护式容器 docker run --name daemon_dave -d ubuntu /bin/sh -c &quot;while true; do echo hello world; sleep 1; done&quot; docker start | stop | restart | rm | rmi批量删除镜像或者容器删除全部标签为none的镜像 1docker rmi `docker images -a | awk &#x27;/^&lt;none&gt;/ &#123; print $3 &#125;&#x27;`  删除除某个容器ID外的其他容器 1docker rm `docker ps -a -q | awk &#x27;!/81df01422b69/&#x27;`  docker attach重新回到了容器的Bash提示符 d...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2019/04/27/Mac%E5%AE%89%E8%A3%85Pygame/" title="Mac安装Pygame">Mac安装Pygame</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-04-27T06:04:42.000Z" title="发表于 2019-04-27 14:04:42">2019-04-27</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/">环境部署</a></span></div><div class="content"> 安装pygame依赖包：brew install hg sdl sdl_image sdl_ttf，如果想启动更高级的功能，如在游戏中包含声音，可安装下面的两个额外的库：brew install sdl_mixer portmidi 安装Pygame：pip3 install --user hg+http://bitbucket.org/pygame/pygame，如果报错可以尝试：pip3 install pygame 验证 Pygame 是否安装成功，可以启动一个Python终端，输入：import pygame  </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2019/04/07/Mac%E5%AE%89%E8%A3%85MongoDB/" title="Mac安装MongoDB">Mac安装MongoDB</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-04-07T03:30:44.000Z" title="发表于 2019-04-07 11:30:44">2019-04-07</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/">环境部署</a></span></div><div class="content">下载安装 curl -O https://fastdl.mongodb.org/osx/mongodb-osx-ssl-x86_64-4.0.5.tgz 或者 官网下载tar包  解压 tar -zxvf mongodb-osx-ssl-x86_64-4.0.5.tgz 重命名 mv ./mongodb-osx-ssl-x86_64-4.0.5.tgz ./mongodb 移动到合适位置 sudo mv ./mongodb /usr/local/opt/ 在.bashrc文件添加 export PATH=/usr/local/opt/mongodb/bin:$PATH  brew安装 sudo brew install mongodb sudo brew install mongodb --with-openssl &#x2F;&#x2F; 要安装支持 TLS&#x2F;SSL 命令 sudo brew install mongodb --devel &#x2F;&#x2F; 安装最新开发版本    运行数据库 创建数据库目录和日志目录  sudo mkdir -p /usr/l...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2019/02/14/%E4%BD%BF%E7%94%A8vscode%E5%BC%80%E5%8F%91go/" title="使用vscode开发go">使用vscode开发go</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-02-14T08:56:28.000Z" title="发表于 2019-02-14 16:56:28">2019-02-14</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/">环境部署</a></span></div><div class="content">首先配置GOPATHGOPATH允许多个目录，当有多个目录时，请注意分隔符，多个目录的时候Windows是分号;，Linux系统是冒号:，当有多个GOPATH时默认将go get获取的包存放在第一个目录下，在开发的gopath中写代码，使用go工具(go install, go build) 会将二进制包安装到开发的gopath中 GOPATH目录约定有三个子目录  src存放源代码(比如：.go .c .h .s等) pkg编译时生成的中间文件（比如：.a） bin编译后生成的可执行文件（为了方便，可以把此目录加入到 $PATH 变量中，如果有多个gopath，那么使用${GOPATH//://bin:}/bin添加所有的bin目录）    使用vscode在官网下载vscode安装，然后安装Microsoft的go插件，由于网络原因，这时会提示你现在有好几个插件安装失败。 手动把插件安装上：  在$GOPATH的第一个目录下，建立目录：mkdir -p src/golang.org/x  进入上面新建的目录中，下载插件源码：git clone https://github.c...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2019/01/08/PostgreSQL%E8%A7%A6%E5%8F%91%E5%99%A8/" title="PostgreSQL触发器">PostgreSQL触发器</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2019-01-08T06:28:48.000Z" title="发表于 2019-01-08 14:28:48">2019-01-08</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></span></div><div class="content">触发器的创建语法12345678CREATE [CONSTRAINT] TRIGGER name &#123; BEFORE | AFTER | INSTEAD OF &#125; &#123; event [ OR ...] &#125; ON table_name[ FROM referenced_table_name ]&#123;[ NOT DEFERRABLE ][ DEFERRABLE ]&#123;[ INITIALLY IMMEDIATE ][ INITIALLY DEFERRED]&#125;&#125; [ FOR [ EACH ] &#123; ROW | STATEMENT &#125; ][ WHEN (condition) ]EXECUTE PROCEDURE function_name ( arguments )  触发器创建步骤先为触发器创建一个执行函数，返回类型为触发器类型，然后创建相应的触发器 1234567891011create or replace function trigger_loans_tmp_del() returns TRIG...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2018/12/29/PHP%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" title="PHP设计模式">PHP设计模式</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2018-12-29T14:26:48.000Z" title="发表于 2018-12-29 22:26:48">2018-12-29</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%86%85%E5%AE%B9%E6%95%B4%E7%90%86/">内容整理</a></span></div><div class="content">适配器模式 适配器设计模式只是将某个对象的接口适配为另外一个对象所期望的接口  当添加新功能时，功能要求采用不同的方式使用现有的对象，而不是采用远行设计的方式，可以采用适配器模式构建另一个对象的方案。 同时，适配器设计模式也是针对数据源改变的优秀解决方案，常见有改变数据库引擎和第三方提供数据格式变化 关系说明 MyObject类包含一个名为 methodA()的公共方法。OriginalConsumer类获取MyObject的一个实例，并且在执行其doSomthing()函数期间调用methodA() 引入NewConsumer类。这个类的doSomthing( )函数在执行期间期望调用MyObject实例的一个公共方法: methodB() 通过扩展MyObject类创建MyObjectAdapterForNewConsumer类。像NewConsumer期望的样，新创建的类会提供名为methodB()的公共方法。在这个简单的示例中，所有methodB()都会调用methodA()    代码示例 类适配器模式（类适配器使用的是继承）  12345678910111213141...</div></div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><a class="page-number" href="/page/3/#content-inner">3</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">OKK</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">22</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">19</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/abcdkyd"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Everything is ok.</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/08/12/Python%E4%B8%AD%E4%B8%80%E5%88%87%E7%9A%86%E5%AF%B9%E8%B1%A1/" title="Pythonz中一切皆对象">Pythonz中一切皆对象</a><time datetime="2026-08-12T12:22:50.000Z" title="发表于 2026-08-12 20:22:50">2026-08-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/08/08/Python%E5%8F%98%E9%87%8F/" title="Python变量">Python变量</a><time datetime="2026-08-08T01:19:07.000Z" title="发表于 2026-08-08 09:19:07">2026-08-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/08/06/Ollama%E5%91%BD%E4%BB%A4/" title="Ollama命令">Ollama命令</a><time datetime="2026-08-06T13:14:27.000Z" title="发表于 2026-08-06 21:14:27">2026-08-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2019/07/03/Mac%E8%A7%A3%E5%8E%8Bpkg%E6%96%87%E4%BB%B6/" title="Mac解压pkg文件">Mac解压pkg文件</a><time datetime="2019-07-03T05:55:41.000Z" title="发表于 2019-07-03 13:55:41">2019-07-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2019/05/07/Docker%E7%AC%94%E8%AE%B0/" title="Docker笔记">Docker笔记</a><time datetime="2019-05-07T02:44:01.000Z" title="发表于 2019-05-07 10:44:01">2019-05-07</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline"><i class="fas fa-folder-open"></i><span>分类</span></div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%86%85%E5%AE%B9%E6%95%B4%E7%90%86/"><span class="card-category-list-name">内容整理</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"><span class="card-category-list-name">数据库</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%97%A5%E5%B8%B8/"><span class="card-category-list-name">日常</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/"><span class="card-category-list-name">环境部署</span><span class="card-category-list-count">8</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/"><span class="card-category-list-name">笔记</span><span class="card-category-list-count">6</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/PostgreSQL/" style="font-size: 1.37em; color: #99a4b2">PostgreSQL</a> <a href="/tags/Pygame/" style="font-size: 1.1em; color: #999">Pygame</a> <a href="/tags/Docker/" style="font-size: 1.1em; color: #999">Docker</a> <a href="/tags/Mac/" style="font-size: 1.5em; color: #99a9bf">Mac</a> <a href="/tags/Markdown/" style="font-size: 1.23em; color: #999ea6">Markdown</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 1.1em; color: #999">面试</a> <a href="/tags/SQL%E5%87%BD%E6%95%B0/" style="font-size: 1.1em; color: #999">SQL函数</a> <a href="/tags/Hexo/" style="font-size: 1.1em; color: #999">Hexo</a> <a href="/tags/pgcrypto/" style="font-size: 1.1em; color: #999">pgcrypto</a> <a href="/tags/Git/" style="font-size: 1.1em; color: #999">Git</a> <a href="/tags/%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/" style="font-size: 1.1em; color: #999">存储过程</a> <a href="/tags/SQL%E8%A7%A6%E5%8F%91%E5%99%A8/" style="font-size: 1.1em; color: #999">SQL触发器</a> <a href="/tags/about/" style="font-size: 1.1em; color: #999">about</a> <a href="/tags/PHP/" style="font-size: 1.5em; color: #99a9bf">PHP</a> <a href="/tags/MongoDB/" style="font-size: 1.1em; color: #999">MongoDB</a> <a href="/tags/Golang/" style="font-size: 1.1em; color: #999">Golang</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 1.1em; color: #999">设计模式</a> <a href="/tags/Ollama/" style="font-size: 1.1em; color: #999">Ollama</a> <a href="/tags/Python/" style="font-size: 1.37em; color: #99a4b2">Python</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline"><i class="fas fa-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/"
+            title="查看更多">
+            <i class="fas fa-angle-right"></i>
+          </a></div>
+  
+    <ul class="card-archive-list">
       
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://abcdkyd.github.io/2026/08/06/Ollama%E5%91%BD%E4%BB%A4/" data-id="cuidn_1K5VFTEeUoi1caZGWQR" data-title="Ollama命令" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2026/08/">
+            <span class="card-archive-list-date">
+              八月 2026
+            </span>
+            <span class="card-archive-list-count">3</span>
+          </a>
+        </li>
       
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2019/07/">
+            <span class="card-archive-list-date">
+              七月 2019
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
       
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2019/05/">
+            <span class="card-archive-list-date">
+              五月 2019
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ollama/" rel="tag">Ollama</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Mac解压pkg文件" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2019/07/03/Mac%E8%A7%A3%E5%8E%8Bpkg%E6%96%87%E4%BB%B6/" class="article-date">
-  <time class="dt-published" datetime="2019-07-03T05:55:41.000Z" itemprop="datePublished">2019-07-03</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2019/07/03/Mac%E8%A7%A3%E5%8E%8Bpkg%E6%96%87%E4%BB%B6/">Mac解压pkg文件</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2019/04/">
+            <span class="card-archive-list-date">
+              四月 2019
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
       
-        <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xar -xf Setup.pkg</span><br><span class="line">cat ./Payload | cpio -i</span><br></pre></td></tr></table></figure>
-
-<h3 id="cpio用法"><a href="#cpio用法" class="headerlink" title="cpio用法"></a>cpio用法</h3><p>cpio 指令可以将文件复制到 存档包（archives），也可以从存档包（archives）复制出文件。缺省情况下，cpio从标准输入读取输入数据，向标准输出写入输出数据。</p>
-        
-          <p class="article-more-link">
-            <a href="/2019/07/03/Mac%E8%A7%A3%E5%8E%8Bpkg%E6%96%87%E4%BB%B6/#more">Read More</a>
-          </p>
-        
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2019/02/">
+            <span class="card-archive-list-date">
+              二月 2019
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
       
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://abcdkyd.github.io/2019/07/03/Mac%E8%A7%A3%E5%8E%8Bpkg%E6%96%87%E4%BB%B6/" data-id="cuidz9NqaUZfmpQ06weB3BDa_" data-title="Mac解压pkg文件" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2019/01/">
+            <span class="card-archive-list-date">
+              一月 2019
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
       
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2018/12/">
+            <span class="card-archive-list-date">
+              十二月 2018
+            </span>
+            <span class="card-archive-list-count">4</span>
+          </a>
+        </li>
       
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2018/06/">
+            <span class="card-archive-list-date">
+              六月 2018
+            </span>
+            <span class="card-archive-list-count">3</span>
+          </a>
+        </li>
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/" rel="tag">Mac</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Docker笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2019/05/07/Docker%E7%AC%94%E8%AE%B0/" class="article-date">
-  <time class="dt-published" datetime="2019-05-07T02:44:01.000Z" itemprop="datePublished">2019-05-07</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2019/05/07/Docker%E7%AC%94%E8%AE%B0/">Docker笔记</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="docker操作"><a href="#docker操作" class="headerlink" title="docker操作"></a>docker操作</h2><h3 id="docker-run"><a href="#docker-run" class="headerlink" title="docker run"></a>docker run</h3><p>-i 标志保证容器中STDIN是开启的 -t创建的容器分配一个伪tty终端</p>
-<p><code>docker run --name bob_the_container -i -t ubuntu /bin/bash</code><br>	<br>创建守护式容器</p>
-<p><code>docker run --name daemon_dave -d ubuntu /bin/sh -c &quot;while true; do echo hello world; sleep 1; done&quot;</code></p>
-<h3 id="docker-start-stop-restart-rm-rmi"><a href="#docker-start-stop-restart-rm-rmi" class="headerlink" title="docker start | stop | restart | rm | rmi"></a>docker start | stop | restart | rm | rmi</h3><h4 id="批量删除镜像或者容器"><a href="#批量删除镜像或者容器" class="headerlink" title="批量删除镜像或者容器"></a>批量删除镜像或者容器</h4><p>删除全部标签为none的镜像</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi `docker images -a | awk &#x27;/^&lt;none&gt;/ &#123; print $3 &#125;&#x27;`</span><br></pre></td></tr></table></figure>
-
-<p>删除除某个容器ID外的其他容器</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm `docker ps -a -q | awk &#x27;!/81df01422b69/&#x27;`</span><br></pre></td></tr></table></figure>
-
-<h3 id="docker-attach"><a href="#docker-attach" class="headerlink" title="docker attach"></a>docker attach</h3><p>重新回到了容器的Bash提示符</p>
-<p><code>docker attach bob_the_container</code></p>
-        
-          <p class="article-more-link">
-            <a href="/2019/05/07/Docker%E7%AC%94%E8%AE%B0/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://abcdkyd.github.io/2019/05/07/Docker%E7%AC%94%E8%AE%B0/" data-id="cuid_z2Dbu6QZ3GsZB1Haj0fn" data-title="Docker笔记" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/" rel="tag">Docker</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Mac安装Pygame" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2019/04/27/Mac%E5%AE%89%E8%A3%85Pygame/" class="article-date">
-  <time class="dt-published" datetime="2019-04-27T06:04:42.000Z" itemprop="datePublished">2019-04-27</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/">环境部署</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2019/04/27/Mac%E5%AE%89%E8%A3%85Pygame/">Mac安装Pygame</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <ol>
-<li>安装pygame依赖包：<code>brew install hg sdl sdl_image sdl_ttf</code>，如果想启动更高级的功能，如在游戏中包含声音，可安装下面的两个额外的库：<code>brew install sdl_mixer portmidi</code></li>
-<li>安装Pygame：<code>pip3 install --user hg+http://bitbucket.org/pygame/pygame</code>，如果报错可以尝试：<code>pip3 install pygame</code></li>
-<li>验证 Pygame 是否安装成功，可以启动一个Python终端，输入：<code>import pygame</code></li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://abcdkyd.github.io/2019/04/27/Mac%E5%AE%89%E8%A3%85Pygame/" data-id="cuid-b8rL3Vf9dYZL2K41ntgn" data-title="Mac安装Pygame" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/" rel="tag">Mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Pygame/" rel="tag">Pygame</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Mac安装MongoDB" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2019/04/07/Mac%E5%AE%89%E8%A3%85MongoDB/" class="article-date">
-  <time class="dt-published" datetime="2019-04-07T03:30:44.000Z" itemprop="datePublished">2019-04-07</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/">环境部署</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2019/04/07/Mac%E5%AE%89%E8%A3%85MongoDB/">Mac安装MongoDB</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h4 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h4><ol>
-<li><code>curl -O https://fastdl.mongodb.org/osx/mongodb-osx-ssl-x86_64-4.0.5.tgz</code> 或者 <a target="_blank" rel="noopener" href="https://www.mongodb.com/dr/fastdl.mongodb.org/osx/mongodb-osx-ssl-x86_64-4.0.5.tgz/download">官网下载tar包</a> </li>
-<li>解压 <code>tar -zxvf mongodb-osx-ssl-x86_64-4.0.5.tgz</code></li>
-<li>重命名 <code>mv ./mongodb-osx-ssl-x86_64-4.0.5.tgz ./mongodb</code></li>
-<li>移动到合适位置 <code>sudo mv ./mongodb /usr/local/opt/</code></li>
-<li>在.bashrc文件添加 <code>export PATH=/usr/local/opt/mongodb/bin:$PATH</code></li>
-</ol>
-<h4 id="brew安装"><a href="#brew安装" class="headerlink" title="brew安装"></a>brew安装</h4><ul>
-<li><code>sudo brew install mongodb</code></li>
-<li><code>sudo brew install mongodb --with-openssl</code> &#x2F;&#x2F; 要安装支持 TLS&#x2F;SSL 命令</li>
-<li><code>sudo brew install mongodb --devel</code> &#x2F;&#x2F; 安装最新开发版本</li>
-</ul>
-        
-          <p class="article-more-link">
-            <a href="/2019/04/07/Mac%E5%AE%89%E8%A3%85MongoDB/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://abcdkyd.github.io/2019/04/07/Mac%E5%AE%89%E8%A3%85MongoDB/" data-id="cuidKzEgLTa6MzEh_11ztaFwo" data-title="Mac安装MongoDB" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/" rel="tag">Mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MongoDB/" rel="tag">MongoDB</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-使用vscode开发go" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2019/02/14/%E4%BD%BF%E7%94%A8vscode%E5%BC%80%E5%8F%91go/" class="article-date">
-  <time class="dt-published" datetime="2019-02-14T08:56:28.000Z" itemprop="datePublished">2019-02-14</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/">环境部署</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2019/02/14/%E4%BD%BF%E7%94%A8vscode%E5%BC%80%E5%8F%91go/">使用vscode开发go</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="首先配置GOPATH"><a href="#首先配置GOPATH" class="headerlink" title="首先配置GOPATH"></a>首先配置GOPATH</h3><p><code>GOPATH</code>允许多个目录，当有多个目录时，请注意分隔符，多个目录的时候Windows是分号<code>;</code>，Linux系统是冒号<code>:</code>，当有多个GOPATH时默认将<code>go get</code>获取的包存放在第一个目录下，在开发的gopath中写代码，使用go工具(<code>go install</code>, <code>go build</code>) 会将二进制包安装到开发的gopath中</p>
-<p><code>GOPATH</code>目录约定有三个子目录</p>
-<ul>
-<li><code>src</code>存放源代码(比如：.go .c .h .s等)</li>
-<li><code>pkg</code>编译时生成的中间文件（比如：.a）</li>
-<li><code>bin</code>编译后生成的可执行文件（为了方便，可以把此目录加入到 <code>$PATH</code> 变量中，如果有多个gopath，那么使用<code>${GOPATH//://bin:}/bin</code>添加所有的bin目录）</li>
-</ul>
-        
-          <p class="article-more-link">
-            <a href="/2019/02/14/%E4%BD%BF%E7%94%A8vscode%E5%BC%80%E5%8F%91go/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://abcdkyd.github.io/2019/02/14/%E4%BD%BF%E7%94%A8vscode%E5%BC%80%E5%8F%91go/" data-id="cuidp55H1DGyE36pafoUoytX1" data-title="使用vscode开发go" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Golang/" rel="tag">Golang</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-PostgreSQL触发器" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2019/01/08/PostgreSQL%E8%A7%A6%E5%8F%91%E5%99%A8/" class="article-date">
-  <time class="dt-published" datetime="2019-01-08T06:28:48.000Z" itemprop="datePublished">2019-01-08</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2019/01/08/PostgreSQL%E8%A7%A6%E5%8F%91%E5%99%A8/">PostgreSQL触发器</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="触发器的创建语法"><a href="#触发器的创建语法" class="headerlink" title="触发器的创建语法"></a>触发器的创建语法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">CREATE [CONSTRAINT] TRIGGER name </span><br><span class="line">&#123; BEFORE | AFTER | INSTEAD OF &#125; &#123; event [ OR ...] &#125; </span><br><span class="line">ON table_name</span><br><span class="line">[ FROM referenced_table_name ]</span><br><span class="line">&#123;[ NOT DEFERRABLE ][ DEFERRABLE ]&#123;[ INITIALLY IMMEDIATE ][ INITIALLY DEFERRED]&#125;&#125; </span><br><span class="line">[ FOR [ EACH ] &#123; ROW | STATEMENT &#125; ]</span><br><span class="line">[ WHEN (condition) ]</span><br><span class="line">EXECUTE PROCEDURE function_name ( arguments )</span><br></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2019/01/08/PostgreSQL%E8%A7%A6%E5%8F%91%E5%99%A8/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://abcdkyd.github.io/2019/01/08/PostgreSQL%E8%A7%A6%E5%8F%91%E5%99%A8/" data-id="cuidMiryeLIXQUfLiakZXqxbt" data-title="PostgreSQL触发器" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PostgreSQL/" rel="tag">PostgreSQL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL%E8%A7%A6%E5%8F%91%E5%99%A8/" rel="tag">SQL触发器</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-PHP设计模式" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2018/12/29/PHP%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="article-date">
-  <time class="dt-published" datetime="2018-12-29T14:26:48.000Z" itemprop="datePublished">2018-12-29</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%86%85%E5%AE%B9%E6%95%B4%E7%90%86/">内容整理</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2018/12/29/PHP%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">PHP设计模式</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="适配器模式"><a href="#适配器模式" class="headerlink" title="适配器模式"></a>适配器模式</h3><blockquote>
-<p>适配器设计模式只是将某个对象的接口适配为另外一个对象所期望的接口</p>
-</blockquote>
-<p>当添加新功能时，功能要求采用不同的方式使用现有的对象，而不是采用远行设计的方式，可以采用适配器模式构建另一个对象的方案。</p>
-<p>同时，适配器设计模式也是针对数据源改变的优秀解决方案，常见有<code>改变数据库引擎</code>和<code>第三方提供数据格式变化</code></p>
-<h4 id="关系说明"><a href="#关系说明" class="headerlink" title="关系说明"></a>关系说明</h4><ol>
-<li>MyObject类包含一个名为 methodA()的公共方法。OriginalConsumer类获取MyObject的一个实例，并且在执行其doSomthing()函数期间调用methodA()</li>
-<li>引入NewConsumer类。这个类的doSomthing( )函数在执行期间期望调用MyObject实例的一个公共方法: methodB()</li>
-<li>通过扩展MyObject类创建MyObjectAdapterForNewConsumer类。像NewConsumer期望的样，新创建的类会提供名为methodB()的公共方法。在这个简单的示例中，所有methodB()都会调用methodA()</li>
-</ol>
-        
-          <p class="article-more-link">
-            <a href="/2018/12/29/PHP%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://abcdkyd.github.io/2018/12/29/PHP%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" data-id="cuidO2Le7kxEPw1xvWWJOiNBe" data-title="PHP设计模式" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/" rel="tag">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
-
-  <nav id="page-nav">
-    
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">weiter &raquo;</a>
-  </nav>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Kategorien</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%86%85%E5%AE%B9%E6%95%B4%E7%90%86/">内容整理</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/">环境部署</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/" rel="tag">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Golang/" rel="tag">Golang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/" rel="tag">Mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MongoDB/" rel="tag">MongoDB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ollama/" rel="tag">Ollama</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/" rel="tag">PHP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PostgreSQL/" rel="tag">PostgreSQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pygame/" rel="tag">Pygame</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL%E5%87%BD%E6%95%B0/" rel="tag">SQL函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL%E8%A7%A6%E5%8F%91%E5%99%A8/" rel="tag">SQL触发器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/about/" rel="tag">about</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pgcrypto/" rel="tag">pgcrypto</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/" rel="tag">存储过程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Golang/" style="font-size: 10px;">Golang</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Mac/" style="font-size: 20px;">Mac</a> <a href="/tags/Markdown/" style="font-size: 13.33px;">Markdown</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/Ollama/" style="font-size: 10px;">Ollama</a> <a href="/tags/PHP/" style="font-size: 20px;">PHP</a> <a href="/tags/PostgreSQL/" style="font-size: 16.67px;">PostgreSQL</a> <a href="/tags/Pygame/" style="font-size: 10px;">Pygame</a> <a href="/tags/Python/" style="font-size: 16.67px;">Python</a> <a href="/tags/SQL%E5%87%BD%E6%95%B0/" style="font-size: 10px;">SQL函数</a> <a href="/tags/SQL%E8%A7%A6%E5%8F%91%E5%99%A8/" style="font-size: 10px;">SQL触发器</a> <a href="/tags/about/" style="font-size: 10px;">about</a> <a href="/tags/pgcrypto/" style="font-size: 10px;">pgcrypto</a> <a href="/tags/%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/" style="font-size: 10px;">存储过程</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 10px;">设计模式</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 10px;">面试</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/08/">August 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">letzter Beitrag</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2026/08/12/Python%E4%B8%AD%E4%B8%80%E5%88%87%E7%9A%86%E5%AF%B9%E8%B1%A1/">Pythonz中一切皆对象</a>
-          </li>
-        
-          <li>
-            <a href="/2026/08/08/Python%E5%8F%98%E9%87%8F/">Python变量</a>
-          </li>
-        
-          <li>
-            <a href="/2026/08/06/Ollama%E5%91%BD%E4%BB%A4/">Ollama命令</a>
-          </li>
-        
-          <li>
-            <a href="/2019/07/03/Mac%E8%A7%A3%E5%8E%8Bpkg%E6%96%87%E4%BB%B6/">Mac解压pkg文件</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/07/Docker%E7%AC%94%E8%AE%B0/">Docker笔记</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2026 OKK<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.6.4.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
-</body>
-</html>
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">22</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-08-14T08:50:07.886Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2018 - 2026 By OKK</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.2</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.7.0</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.7.0"></script><script src="/js/main.js?v=5.7.0"></script><div class="js-pjax"></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/dist/canvas-ribbon.min.js" size="200" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜寻文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.7.0"></script></div></div></body></html>
