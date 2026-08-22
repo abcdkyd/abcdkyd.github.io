@@ -1,5 +1,5 @@
 ---
-title: Pythonz中一切皆对象
+title: Python中一切皆对象
 date: 2026-8-12 20:22:50
 tags: Python
 categories: 内容整理
@@ -7,7 +7,7 @@ categories: 内容整理
 
 你大概在各种教程、面试题、知乎回答里都见过这句话：
 
-> Python 中一切皆对象。
+> Python中一切皆对象。
 
 而本章主要讲解的内容，包括下面几点：
 
